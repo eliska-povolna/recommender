@@ -10,12 +10,12 @@ from train_sae import TopKSAE, k
 
 # Načti metadata
 tags_df = pd.read_csv("data/tags.csv")
-with open("item2index.pkl", "rb") as f:
+with open("data/item2index.pkl", "rb") as f:
     item2index = pickle.load(f)
 
 index2item = {v: k for k, v in item2index.items()}
 num_items = len(item2index)
-hidden_dim = 4096
+hidden_dim = 1024
 
 # Převeď tagy na lower case
 tags_df["tag"] = tags_df["tag"].str.lower()
@@ -29,12 +29,12 @@ for _, row in tags_df.iterrows():
 
 # Načti CFAE model
 elsa = ELSA(num_items, latent_dim)
-elsa.load_state_dict(torch.load("elsa_model.pt"))
+elsa.load_state_dict(torch.load("models/elsa_model.pt"))
 elsa.eval()
 
 # Načti SAE model
 sae = TopKSAE(latent_dim, hidden_dim, k)
-sae.load_state_dict(torch.load("sae_model.pt"))
+sae.load_state_dict(torch.load("models/sae_model.pt"))
 sae.eval()
 
 # Připrav CFAE embeddingy položek jako jen přímé řádky A
@@ -84,6 +84,8 @@ norms = torch.norm(tag_tensor, p=2, dim=1, keepdim=True)
 tag_tensor = tag_tensor / norms
 
 # Ulož mapu
-torch.save({"unique_tags": unique_tags, "tag_tensor": tag_tensor}, "tag_neuron_map.pt")
+torch.save(
+    {"unique_tags": unique_tags, "tag_tensor": tag_tensor}, "models/tag_neuron_map.pt"
+)
 
 print(f"Done. Map contains {len(unique_tags)} tags.")

@@ -6,6 +6,8 @@
 .venv/
 *.pkl
 *.csv
+*.pt
+activate/
 
 
 # User-specific files
