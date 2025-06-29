@@ -2,36 +2,19 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import pickle
+import numpy as np
+from sklearn.model_selection import train_test_split
 
-# Načti trénovací embeddingy uživatelů
-with open("processed_train.pkl", "rb") as f:
-    X_train = pickle.load(f)
-X_train = X_train.toarray()
-X_tensor = torch.tensor(X_train, dtype=torch.float32)
+from train_elsa import ELSA, latent_dim
 
-# Načti CFAE model (ELSA)
-from train_elsa import ELSA
-
-latent_dim = 512
-hidden_dim = 4096
-k = 16
-
-# CFAE model pro generování embeddingů
-num_items = X_tensor.shape[1]
-elsa = ELSA(num_items, latent_dim)
-elsa.load_state_dict(torch.load("elsa_model.pt"))
-elsa.eval()
-
-with torch.no_grad():
-    embeddings = torch.matmul(X_tensor, elsa.A)
-
-print("Embedding shape:", embeddings.shape)  # (num_users, latent_dim)
+hidden_dim = 1024
+k = 32  # sparsity level
 
 
-# TopK aktivace
+# TopK activation function
 def topk_activation(x, k):
     """
-    Nuluje všechny hodnoty kromě k největších.
+    Zero out all values except top-k largest.
     """
     values, indices = torch.topk(x, k)
     mask = torch.zeros_like(x)
@@ -54,38 +37,119 @@ class TopKSAE(nn.Module):
         return out, h_sparse
 
 
-sae = TopKSAE(input_dim=latent_dim, hidden_dim=hidden_dim, k=k)
+# Recall@k
+def recall_at_k(y_true, y_pred, k):
+    hits = y_true[y_pred[:k]].sum()
+    total_relevant = y_true.sum()
+    return hits / total_relevant if total_relevant > 0 else np.nan
 
-optimizer = optim.Adam(sae.parameters(), lr=5e-4)
-criterion = nn.MSELoss()
 
-# Trénovací smyčka
-n_epochs = 100
-batch_size = 256
+# NDCG@k
+def ndcg_at_k(y_true, y_pred, k):
+    hits = y_true[y_pred[:k]]
+    if hits.sum() == 0:
+        return 0.0
+    gains = hits / np.log2(np.arange(2, k + 2))
+    dcg = gains.sum()
+    ideal_hits = np.sort(y_true)[::-1][:k]
+    ideal_gains = ideal_hits / np.log2(np.arange(2, k + 2))
+    idcg = ideal_gains.sum()
+    return dcg / idcg if idcg > 0 else 0.0
 
-dataset = torch.utils.data.TensorDataset(embeddings)
-loader = torch.utils.data.DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
-for epoch in range(n_epochs):
-    epoch_loss = 0.0
-    for batch in loader:
-        x_batch = batch[0]
-        optimizer.zero_grad()
-        recon, h_sparse = sae(x_batch)
-        loss = criterion(recon, x_batch)
-        loss.backward()
-        optimizer.step()
-        epoch_loss += loss.item() * x_batch.size(0)
-    avg_loss = epoch_loss / embeddings.shape[0]
-    print(f"Epoch {epoch+1}/{n_epochs}, Loss: {avg_loss:.6f}")
+if __name__ == "__main__":
+    # Load training data
+    with open("data/processed_train.pkl", "rb") as f:
+        X_train = pickle.load(f)
+    X_train = X_train.toarray()
+    X_tensor = torch.tensor(X_train, dtype=torch.float32)
 
-# Ulož model
-torch.save(sae.state_dict(), "sae_model.pt")
+    # Load trained ELSA model
+    num_items = X_tensor.shape[1]
+    elsa = ELSA(num_items, latent_dim)
+    elsa.load_state_dict(torch.load("models/elsa_model.pt"))
+    elsa.eval()
 
-# Ulož sparse embeddingy všech uživatelů
-with torch.no_grad():
-    h = torch.relu(sae.enc(embeddings))
-    h_sparse = topk_activation(h, k)
+    # Generate and normalize embeddings
+    with torch.no_grad():
+        embeddings = torch.matmul(X_tensor, elsa.A)
+        embeddings = torch.nn.functional.normalize(embeddings, dim=-1)
 
-torch.save(h_sparse, "sparse_embeddings.pt")
-print("SAE model trained.")
+    print("Embedding shape:", embeddings.shape)  # (num_users, latent_dim)
+
+    # Split users into train/validation
+    num_users = embeddings.shape[0]
+    user_indices = np.arange(num_users)
+    train_indices, val_indices = train_test_split(
+        user_indices, test_size=0.1, random_state=42
+    )
+
+    train_tensor = torch.tensor(embeddings[train_indices], dtype=torch.float32)
+    val_tensor = torch.tensor(embeddings[val_indices], dtype=torch.float32)
+    val_input_sparse = X_train[val_indices]
+
+    # Initialize SAE
+    sae = TopKSAE(input_dim=latent_dim, hidden_dim=hidden_dim, k=k)
+    optimizer = optim.Adam(sae.parameters(), lr=3e-4, weight_decay=1e-5)
+    criterion = nn.CosineEmbeddingLoss()
+
+    n_epochs = 200
+    batch_size = 1024
+    patience = 10
+
+    train_dataset = torch.utils.data.TensorDataset(train_tensor)
+    train_loader = torch.utils.data.DataLoader(
+        train_dataset, batch_size=batch_size, shuffle=True
+    )
+
+    best_val_loss = float("inf")
+    epochs_no_improve = 0
+
+    for epoch in range(n_epochs):
+        sae.train()
+        epoch_train_loss = 0.0
+        for batch in train_loader:
+            x_batch = batch[0]
+            optimizer.zero_grad()
+            recon, h_sparse = sae(x_batch)
+            labels = torch.ones(x_batch.size(0))
+            loss = criterion(recon, x_batch, labels)
+            loss.backward()
+            optimizer.step()
+            epoch_train_loss += loss.item() * x_batch.size(0)
+        avg_train_loss = epoch_train_loss / len(train_tensor)
+
+        # Validation loss
+        sae.eval()
+        with torch.no_grad():
+            recon_val, _ = sae(val_tensor)
+            labels_val = torch.ones(val_tensor.size(0))
+            val_loss = criterion(recon_val, val_tensor, labels_val).item()
+
+        print(
+            f"Epoch {epoch+1}/{n_epochs} | Train Loss: {avg_train_loss:.6f} | Val Loss: {val_loss:.6f}"
+        )
+
+        if val_loss < best_val_loss - 1e-4:
+            best_val_loss = val_loss
+            epochs_no_improve = 0
+            torch.save(sae.state_dict(), "models/sae_model.pt")
+        else:
+            epochs_no_improve += 1
+
+        if epochs_no_improve >= patience:
+            print("Early stopping triggered.")
+            break
+
+    print("Training finished.")
+
+    # Load best model
+    sae.load_state_dict(torch.load("models/sae_model.pt"))
+
+    # Save sparse embeddings of all users
+    with torch.no_grad():
+        h_all = torch.relu(sae.enc(embeddings))
+        h_sparse_all = topk_activation(h_all, k)
+
+    torch.save(h_sparse_all, "models/sparse_embeddings.pt")
+    print("Best SAE model and embeddings saved.")
