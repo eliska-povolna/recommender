@@ -9,6 +9,7 @@
 *.pt
 *.zip
 activate/
+EasyStudy/server/cache/
 
 
 # User-specific files
