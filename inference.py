@@ -106,10 +106,9 @@ if __name__ == "__main__":
     user_idx = int(input(f"Enter user index (0 to {X_train.shape[0]-1}): "))
     query = input("Enter your query in English (e.g., 'I want a dark thriller'): ")
 
-    boost = query_to_neurons(query)
+    boost = query_to_neurons(query) if query.strip() else None
     if boost is None:
-        print("No boosting vector found, generating only baseline recommendations.")
-        boost = None
+        print("No boosting applied.")
 
     print("\n=== Generating recommendations... ===")
     recs_no_boost, scores_no_boost = recommend(user_idx, boost_vector=None)

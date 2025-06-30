@@ -64,7 +64,7 @@ h_sparse = torch.cat(h_list, dim=0)
 
 print("Sparse embeddings ready.")
 
-# Build neuron × tag table (sum of activations)
+# Build neuron x tag table (sum of activations)
 tag_counts = defaultdict(lambda: torch.zeros(hidden_dim))
 
 print("Aggregating activations by tag...")
@@ -76,11 +76,12 @@ for idx in range(num_items):
 # List of unique tags
 unique_tags = list(tag_counts.keys())
 
-# Convert to tensor (tags × neurons)
+# Convert to tensor (tags x neurons)
 tag_tensor = torch.stack([tag_counts[tag] for tag in unique_tags])
 
 # Normalization
 norms = torch.norm(tag_tensor, p=2, dim=1, keepdim=True)
+norms[norms == 0] = 1.0
 tag_tensor = tag_tensor / norms
 
 # Save the map
