@@ -83,6 +83,8 @@
     "compare_slightly": "was slightly better",
     "compare_same": "They were about the same",
     "compare_algorithm_how_compare": "How would you compare the two algorithms?",
+    "compare_query_label": "Query",
+    "compare_query_placeholder": "Describe what you are looking for",
     "next": "Next",
     "compare_title": "Compare algorithms",
     "footer_contacts": "contacts",

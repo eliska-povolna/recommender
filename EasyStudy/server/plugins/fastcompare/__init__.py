@@ -248,12 +248,15 @@ def prepare_recommendations(loader, conf, recommendations, selected_movies, filt
     algorithm_factories = load_algorithms()
     algorithms = conf["selected_algorithms"]
     print(f"Algorithm factories = {algorithm_factories}")
+    query = session.get("query", "")
     for algorithm_idx, algorithm_name in enumerate(algorithms):
         # Construct the algorithm
         algorithm_displayed_name = conf["algorithm_parameters"][algorithm_idx]["displayed_name"]
         factory = algorithm_factories[algorithm_name]
         algorithm = factory(loader, **filter_params(conf["algorithm_parameters"][algorithm_idx], factory))
         load_algorithm(algorithm, session["user_study_guid"], algorithm_displayed_name)
+        if hasattr(algorithm, "set_query"):
+            algorithm.set_query(query)
         recommended_items = algorithm.predict(selected_movies, filter_out_movies, k=k)
 
         if conf["shuffle_recommendations"]:
@@ -270,6 +273,7 @@ def send_feedback():
     conf = load_user_study_config(session["user_study_id"])
     k = conf["k"]
     session["rec_k"] = k
+    session["query"] = ""
 
     # Movie indices of selected movies
     selected_movies = request.args.get("selectedMovies")
@@ -429,6 +433,9 @@ def compare_algorithms():
     params["next"] = tr("next")
     params["finish"] = tr("compare_finish")
     params["algorithm_how_compare"] = tr("compare_algorithm_how_compare")
+    params["query_label"] = tr("compare_query_label")
+    params["query_placeholder"] = tr("compare_query_placeholder")
+    params["query"] = session.get("query", "")
 
     # Handle textual overrides
     params["comparison_hint_override"] = None
@@ -454,6 +461,8 @@ def algorithm_feedback():
     loader_factory = load_data_loaders()[conf["selected_data_loader"]]
     loader = loader_factory(**filter_params(conf["data_loader_parameters"], loader_factory))
     load_data_loader(loader, session["user_study_guid"], loader_factory.name())
+
+    session["query"] = request.args.get("query", "")
 
     selected_movies = request.args.get("selected_movies")
     selected_movies = selected_movies.split(",") if selected_movies else []

@@ -10,6 +10,8 @@ This repository contains a small movie recommendation pipeline based on the Movi
    pip install -r requirements.txt
    ```
 3. Create an empty `models/` directory where trained models will be saved.
+   Any pretrained `.pt` files used by the EasyStudy plugin should also be
+   stored in this folder.
 
 ## Training
 
