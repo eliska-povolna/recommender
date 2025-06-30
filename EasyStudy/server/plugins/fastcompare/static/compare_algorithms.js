@@ -41,6 +41,7 @@ window.app = new Vue({
             selected: [],
             selectedMovieVariants: [],
             selectedMovieIndices: "",
+            query: defaultQuery,
             algorithmComparisonValue: numAlgorithms == 2 ? null : 0,
             algorithmComparisonValidated: numAlgorithms != 2, // For two algorithms, always mark it is nonvalid and wait for rating
             numAlgorithms: numAlgorithms,

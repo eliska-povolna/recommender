@@ -147,6 +147,13 @@
                 </b-form-radio-group>
             </b-form-group>
         </b-row>
+        <b-row class="mb-3" align-h="center">
+            <b-col cols="6">
+                <b-form-group label="{{query_label}}">
+                    <b-form-input v-model="query" placeholder="{{query_placeholder}}" name="query"></b-form-input>
+                </b-form-group>
+            </b-col>
+        </b-row>
         <b-row class="text-center mb-5" align-h="center">
             <b-col center class="align-middle">
                 
@@ -158,6 +165,7 @@
                     <input v-for="i in variantsResults.length" type="hidden" hidden="true" :key="i" :value="algorithmRatings[i - 1]" :name="'ar_'.concat(i)"/>
                     <input type="hidden" hidden="true" :value="dontLikeAnythingValue" name="nothing"/>
                     <input type="hidden" hidden="true" :value="algorithmComparisonValue" name="cmp"/>
+                    <input type="hidden" hidden="true" :value="query" name="query"/>
                     <b-overlay
                     :show="busy"
                     rounded
@@ -188,6 +196,7 @@
     var iteration = "{{iteration}}";
     var minIterationToCancel = "{{MIN_ITERATION_TO_CANCEL}}";
     var csrfToken = "{{csrf_token()}}"
+    var defaultQuery = "{{ query }}";
     
     {% if result_layout == "columns" %}
     var itemsPerRow = 2; // Two items per row
