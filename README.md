@@ -10,6 +10,22 @@ This repository contains a small movie recommendation pipeline based on the Movi
    pip install -r requirements.txt
    ```
 3. Create an empty `models/` directory where trained models will be saved.
+   Any pretrained `.pt` files used by the EasyStudy plugin should also be
+   stored in this folder. **The models must be trained on the exact dataset
+   that is loaded inside EasyStudy**. Otherwise the loader will raise an error
+   due to mismatching weight shapes.
+
+If you want to train the models on exactly the same data that the EasyStudy
+plugin uses internally, run:
+
+```bash
+python export_easystudy_dataset.py
+```
+
+This script loads the filtered MovieLens dataset using the same preprocessing
+steps as the `fastcompare` plugin and writes `data/processed_train.pkl`,
+`data/processed_test.pkl` and `data/item2index.pkl` for the training scripts
+below.
 
 ## Training
 

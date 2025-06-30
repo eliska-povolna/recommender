@@ -27,12 +27,15 @@ def is_data_loader(cls):
 def load_algorithms():
     algorithms = {}
     for mod in pkgutil.walk_packages(plugins.__path__, prefix=plugins.__name__ + ".", onerror=lambda x: print("##########")):
-        # if mod.name in sys.modules:
-            # continue # Avoid cyclic dependencies
-        imported_module = __import__(mod.name, fromlist="dummy")
+        try:
+            imported_module = __import__(mod.name, fromlist="dummy")
+        except Exception as e:  # Missing dependencies should not break loading
+            print(f"Failed to import {mod.name}: {e}")
+            continue
+
         members = inspect.getmembers(imported_module) if "fastcompare.algo" in mod.name else inspect.getmembers(imported_module, inspect.isclass)
         for name, cls in members:
-            if is_algorithm(cls) and cls.name() not in algorithms: # We need unique names of algorithms!
+            if is_algorithm(cls) and cls.name() not in algorithms:  # We need unique names of algorithms!
                 algorithms[cls.name()] = cls
 
     return algorithms
@@ -41,10 +44,15 @@ def load_algorithms():
 def load_preference_elicitations():
     elicitations = {}
     for mod in pkgutil.walk_packages(plugins.__path__, prefix=plugins.__name__ + ".", onerror=lambda x: print("##########")):
-        imported_module = __import__(mod.name, fromlist="dummy")
+        try:
+            imported_module = __import__(mod.name, fromlist="dummy")
+        except Exception as e:
+            print(f"Failed to import {mod.name}: {e}")
+            continue
+
         members = inspect.getmembers(imported_module, inspect.isclass)
         for _, cls in members:
-            if is_preference_elicitation(cls) and cls.name() not in elicitations: # We need unique names of elicitations!
+            if is_preference_elicitation(cls) and cls.name() not in elicitations:  # We need unique names of elicitations!
                 elicitations[cls.name()] = cls
     return elicitations
 
@@ -52,9 +60,15 @@ def load_preference_elicitations():
 def load_data_loaders():
     data_loaders = {}
     for mod in pkgutil.walk_packages(plugins.__path__, prefix=plugins.__name__ + ".", onerror=lambda x: print("##########")):
-        imported_module = __import__(mod.name, fromlist="dummy")
+        try:
+            imported_module = __import__(mod.name, fromlist="dummy")
+        except Exception as e:
+            print(f"Failed to import {mod.name}: {e}")
+            continue
+
         members = inspect.getmembers(imported_module, inspect.isclass)
         for _, cls in members:
-            if is_data_loader(cls) and cls.name() not in data_loaders: # We need unique names of data loaders!
+            if is_data_loader(cls) and cls.name() not in data_loaders:  # We need unique names of data loaders!
                 data_loaders[cls.name()] = cls
+
     return data_loaders
