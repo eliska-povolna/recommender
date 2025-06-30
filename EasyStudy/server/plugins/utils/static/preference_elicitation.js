@@ -28,6 +28,8 @@ window.app = new Vue({
         userEmail: "{{email}}",
         items: [],
         selected: [],
+        query: defaultQuery,
+        tagOptions: [],
         impl: impl,
         selectMode: "multi",
         lastSelectedCluster: null,
@@ -50,10 +52,18 @@ window.app = new Vue({
 
         // Get the number of items user is supposed to select
         let data = await fetch(initial_data_url + "?impl=" + this.impl + "&i=0").then((resp) => resp.json()).then((resp) => resp);
-        
+
         res = this.prepareTable(data);
         this.rows = res["rows"];
         this.items = res["items"];
+
+        // Load tag suggestions
+        try {
+            let tags = await fetch(tags_url).then(r => r.json());
+            this.tagOptions = tags;
+        } catch (e) {
+            console.error("Failed to load tags", e);
+        }
 
         // Register the handlers for event reporting
         startViewportChangeReportingWithLimit(`/utils/changed-viewport`, csrfToken, 1.0, true, elicitation_ctx_lambda);
@@ -214,7 +224,13 @@ window.app = new Vue({
             selectedMoviesTag.setAttribute("name","selectedMovies");
             selectedMoviesTag.setAttribute("value", this.selected.map((x) => x.movie.idx).join(","));
 
+            let queryTag = document.createElement("input");
+            queryTag.setAttribute("type","hidden");
+            queryTag.setAttribute("name","query");
+            queryTag.setAttribute("value", this.query);
+
             form.appendChild(selectedMoviesTag);
+            form.appendChild(queryTag);
 
             form.submit();
         }
