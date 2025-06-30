@@ -60,7 +60,7 @@ if __name__ == "__main__":
         X_train = pickle.load(f)
 
     num_users, num_items = X_train.shape
-    print(f"Train dataset: {num_users} users × {num_items} items")
+    print(f"Train dataset: {num_users} users x {num_items} items")
 
     # Split users into train/validation
     user_indices = np.arange(num_users)
