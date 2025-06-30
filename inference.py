@@ -8,7 +8,8 @@ from sentence_transformers import SentenceTransformer, util
 from train_elsa import ELSA, latent_dim
 from train_sae import TopKSAE, k
 
-hidden_dim = 4096
+# Hidden dimension of the SAE; must match training
+hidden_dim = 1024
 
 # Load item2index mapping
 with open("data/item2index.pkl", "rb") as f:
