@@ -4,11 +4,11 @@ import torch.nn as nn
 from collections import defaultdict
 import pickle
 
-# Načti CFAE a SAE model
+# Load CFAE and SAE models
 from train_elsa import ELSA, latent_dim
 from train_sae import TopKSAE, k
 
-# Načti metadata
+# Load metadata
 tags_df = pd.read_csv("data/tags.csv")
 with open("item2index.pkl", "rb") as f:
     item2index = pickle.load(f)
@@ -17,37 +17,37 @@ index2item = {v: k for k, v in item2index.items()}
 num_items = len(item2index)
 hidden_dim = 4096
 
-# Převeď tagy na lower case
+# Convert tags to lower case
 tags_df["tag"] = tags_df["tag"].str.lower()
 
-# Mapuj item -> seznam tagů
+# Map item -> list of tags
 item_tags = defaultdict(list)
 for _, row in tags_df.iterrows():
     iid = row["movieId"]
     if iid in item2index:
         item_tags[item2index[iid]].append(row["tag"])
 
-# Načti CFAE model
+# Load CFAE model
 elsa = ELSA(num_items, latent_dim)
 elsa.load_state_dict(torch.load("elsa_model.pt"))
 elsa.eval()
 
-# Načti SAE model
+# Load SAE model
 sae = TopKSAE(latent_dim, hidden_dim, k)
 sae.load_state_dict(torch.load("sae_model.pt"))
 sae.eval()
 
-# Připrav CFAE embeddingy položek jako jen přímé řádky A
+# Prepare CFAE item embeddings as direct rows of A
 with torch.no_grad():
     embeddings = elsa.A.clone()
 
-print("Embeddingy položek načteny.")
+print("Item embeddings loaded.")
 
-# SAE encoding (po dávkách)
+# SAE encoding (in batches)
 batch_size = 1024
 h_list = []
 
-print("Vytvářím sparse embeddingy položek...")
+print("Creating sparse item embeddings...")
 with torch.no_grad():
     for start in range(0, num_items, batch_size):
         end = min(start + batch_size, num_items)
@@ -62,28 +62,28 @@ with torch.no_grad():
 
 h_sparse = torch.cat(h_list, dim=0)
 
-print("Sparse embeddingy hotové.")
+print("Sparse embeddings ready.")
 
-# Vytvoř tabulku neuron × tag (součet aktivací)
+# Build neuron × tag table (sum of activations)
 tag_counts = defaultdict(lambda: torch.zeros(hidden_dim))
 
-print("Agreguji aktivace podle tagů...")
+print("Aggregating activations by tag...")
 for idx in range(num_items):
     tags = item_tags.get(idx, [])
     for tag in tags:
         tag_counts[tag] += h_sparse[idx]
 
-# Seznam unikátních tagů
+# List of unique tags
 unique_tags = list(tag_counts.keys())
 
-# Převod na tensor (tags × neurons)
+# Convert to tensor (tags × neurons)
 tag_tensor = torch.stack([tag_counts[tag] for tag in unique_tags])
 
-# Normalizace
+# Normalization
 norms = torch.norm(tag_tensor, p=2, dim=1, keepdim=True)
-tag_tensor = tag_tensor / norms
+tag_tensor = tag_tensor / (norms + 1e-8)
 
-# Ulož mapu
+# Save mapping
 torch.save({"unique_tags": unique_tags, "tag_tensor": tag_tensor}, "tag_neuron_map.pt")
 
 print(f"Done. Map contains {len(unique_tags)} tags.")

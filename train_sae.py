@@ -3,20 +3,20 @@ import torch.nn as nn
 import torch.optim as optim
 import pickle
 
-# Načti trénovací embeddingy uživatelů
+# Load training user embeddings
 with open("processed_train.pkl", "rb") as f:
     X_train = pickle.load(f)
 X_train = X_train.toarray()
 X_tensor = torch.tensor(X_train, dtype=torch.float32)
 
-# Načti CFAE model (ELSA)
+# Load CFAE model (ELSA)
 from train_elsa import ELSA
 
 latent_dim = 512
 hidden_dim = 4096
 k = 16
 
-# CFAE model pro generování embeddingů
+# CFAE model for generating embeddings
 num_items = X_tensor.shape[1]
 elsa = ELSA(num_items, latent_dim)
 elsa.load_state_dict(torch.load("elsa_model.pt"))
@@ -28,10 +28,10 @@ with torch.no_grad():
 print("Embedding shape:", embeddings.shape)  # (num_users, latent_dim)
 
 
-# TopK aktivace
+# TopK activation
 def topk_activation(x, k):
     """
-    Nuluje všechny hodnoty kromě k největších.
+    Zeroes out all values except the k largest.
     """
     values, indices = torch.topk(x, k)
     mask = torch.zeros_like(x)
@@ -59,7 +59,7 @@ sae = TopKSAE(input_dim=latent_dim, hidden_dim=hidden_dim, k=k)
 optimizer = optim.Adam(sae.parameters(), lr=5e-4)
 criterion = nn.MSELoss()
 
-# Trénovací smyčka
+# Training loop
 n_epochs = 100
 batch_size = 256
 
@@ -79,10 +79,10 @@ for epoch in range(n_epochs):
     avg_loss = epoch_loss / embeddings.shape[0]
     print(f"Epoch {epoch+1}/{n_epochs}, Loss: {avg_loss:.6f}")
 
-# Ulož model
+# Save model
 torch.save(sae.state_dict(), "sae_model.pt")
 
-# Ulož sparse embeddingy všech uživatelů
+# Save sparse embeddings of all users
 with torch.no_grad():
     h = torch.relu(sae.enc(embeddings))
     h_sparse = topk_activation(h, k)

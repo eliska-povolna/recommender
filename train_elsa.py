@@ -4,7 +4,7 @@ import torch.optim as optim
 import pickle
 from torch.utils.data import Dataset
 
-# Načti sparse train data
+# Load sparse training data
 with open("processed_train.pkl", "rb") as f:
     X_train = pickle.load(f)
 
@@ -14,7 +14,7 @@ latent_dim = 512  # embedding dim
 print(f"Train dataset: {num_users} users × {num_items} items")
 
 
-# Dataset, který dávkuje řádky jako dense tensor
+# Dataset that yields rows as dense tensors
 class SparseDataset(Dataset):
     def __init__(self, csr_matrix):
         self.data = csr_matrix
@@ -49,14 +49,14 @@ optimizer = optim.Adam(model.parameters(), lr=5e-4)
 criterion = nn.MSELoss()
 
 
-# Normalizace řádků matice A
+# Normalize rows of matrix A
 def normalize_A(A):
     with torch.no_grad():
         norms = A.norm(p=2, dim=1, keepdim=True)
-        A /= norms
+        A /= norms + 1e-8
 
 
-# Trénovací smyčka
+# Training loop
 n_epochs = 50
 batch_size = 256
 
@@ -77,5 +77,5 @@ for epoch in range(n_epochs):
     avg_loss = epoch_loss / num_users
     print(f"Epoch {epoch+1}/{n_epochs}, Loss: {avg_loss:.6f}")
 
-# Ulož model
+# Save model
 torch.save(model.state_dict(), "elsa_model.pt")
