@@ -6,10 +6,7 @@ from sentence_transformers import SentenceTransformer, util
 
 # Import models and constants
 from train_elsa import ELSA, latent_dim
-from train_sae import TopKSAE, k
-
-# Hidden dimension of the SAE; must match training
-hidden_dim = 1024
+from train_sae import TopKSAE, k, hidden_dim
 
 # Load item2index mapping
 with open("data/item2index.pkl", "rb") as f:

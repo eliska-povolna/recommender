@@ -6,7 +6,7 @@ import pickle
 
 # Load CFAE and SAE models
 from train_elsa import ELSA, latent_dim
-from train_sae import TopKSAE, k
+from train_sae import TopKSAE, k, hidden_dim
 
 # Load metadata
 tags_df = pd.read_csv("data/tags.csv")
@@ -15,7 +15,6 @@ with open("data/item2index.pkl", "rb") as f:
 
 index2item = {v: k for k, v in item2index.items()}
 num_items = len(item2index)
-hidden_dim = 1024
 
 # Convert tags to lowercase
 tags_df["tag"] = tags_df["tag"].str.lower()
