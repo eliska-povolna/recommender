@@ -22,7 +22,14 @@ class ELSAAlgorithm(AlgorithmBase):
 
     def fit(self):
         self.model = ELSA(self.num_items, latent_dim)
-        self.model.load_state_dict(torch.load("models/elsa_model.pt"))
+        state = torch.load("models/elsa_model.pt")
+        loaded_A = state.get("A")
+        if loaded_A is not None and loaded_A.shape[0] != self.num_items:
+            raise RuntimeError(
+                f"Pretrained ELSA model expects {loaded_A.shape[0]} items but the current dataset has {self.num_items}. "
+                "Use a model trained on the same dataset."
+            )
+        self.model.load_state_dict(state)
 
     def predict(self, selected_items, filter_out_items, k):
         user_vector = torch.zeros(self.num_items, dtype=torch.float32)

@@ -38,7 +38,14 @@ class QueryBoostELSA(AlgorithmBase):
     def fit(self):
         num_items = self.num_items
         self.elsa = ELSA(num_items, latent_dim)
-        self.elsa.load_state_dict(torch.load("models/elsa_model.pt"))
+        state = torch.load("models/elsa_model.pt")
+        loaded_A = state.get("A")
+        if loaded_A is not None and loaded_A.shape[0] != num_items:
+            raise RuntimeError(
+                f"Pretrained ELSA model expects {loaded_A.shape[0]} items but the current dataset has {num_items}. "
+                "Use a model trained on the same dataset."
+            )
+        self.elsa.load_state_dict(state)
         self.sae = TopKSAE(latent_dim, hidden_dim, k)
         self.sae.load_state_dict(torch.load("models/sae_model.pt"))
         data = torch.load("models/tag_neuron_map.pt")

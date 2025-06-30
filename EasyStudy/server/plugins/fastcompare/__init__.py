@@ -11,6 +11,8 @@ import sys
 import traceback
 
 import numpy as np
+import torch
+import functools
 [sys.path.append(i) for i in ['.', '..']]
 [sys.path.append(i) for i in ['../.', '../..', '../../.']]
 
@@ -208,7 +210,9 @@ def on_joined():
         continuation_url=url_for(f"{__plugin_name__}.send_feedback"),
         consuming_plugin=__plugin_name__,
         initial_data_url=url_for(f"{__plugin_name__}.get_initial_data"),
-        search_item_url=url_for(f'{__plugin_name__}.item_search')
+        search_item_url=url_for(f'{__plugin_name__}.item_search'),
+        tags_url=url_for(f'{__plugin_name__}.available_tags'),
+        default_query=""
     ))
 
 def search_for_item(pattern, tr=None):
@@ -244,6 +248,16 @@ def item_search():
 
     return jsonify(res)
 
+@functools.lru_cache(maxsize=1)
+def _load_unique_tags():
+    data = torch.load("models/tag_embeddings.pt")
+    return data["unique_tags"]
+
+@bp.route("/available-tags", methods=["GET"])
+def available_tags():
+    """Return list of available textual tags."""
+    return jsonify(_load_unique_tags())
+
 def prepare_recommendations(loader, conf, recommendations, selected_movies, filter_out_movies, k):
     algorithm_factories = load_algorithms()
     algorithms = conf["selected_algorithms"]
@@ -273,7 +287,7 @@ def send_feedback():
     conf = load_user_study_config(session["user_study_id"])
     k = conf["k"]
     session["rec_k"] = k
-    session["query"] = ""
+    session["query"] = request.args.get("query", "")
 
     # Movie indices of selected movies
     selected_movies = request.args.get("selectedMovies")

@@ -25,6 +25,17 @@
     </b-form>
 
     <b-row class="mb-3" align-h="center">
+      <b-col cols="6">
+        <b-form-group label="{{query_label}}">
+          <b-form-input v-model="query" list="tagSuggestions" placeholder="{{query_placeholder}}"></b-form-input>
+          <datalist id="tagSuggestions">
+            <option v-for="t in tagOptions" :key="t" :value="t"></option>
+          </datalist>
+        </b-form-group>
+      </b-col>
+    </b-row>
+
+    <b-row class="mb-3" align-h="center">
       <b-col>
         
       </b-col>
@@ -85,6 +96,8 @@
   var impl = "{{impl}}";
   var initial_data_url = "{{initial_data_url}}";
   var search_item_url = "{{search_item_url}}";
+  var tags_url = "{{tags_url}}";
+  var defaultQuery = "{{default_query}}";
   
 </script>
 <script src="{{url_for('static', filename='resolution_handling.js')}}"></script>
