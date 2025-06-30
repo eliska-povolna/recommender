@@ -39,7 +39,7 @@ sae.load_state_dict(torch.load("models/sae_model.pt"))
 sae.eval()
 
 # Load training matrix for simulating interactions
-with open("models/processed_train.pkl", "rb") as f:
+with open("data/processed_train.pkl", "rb") as f:
     X_train = pickle.load(f)
 X_train = X_train.toarray()
 
@@ -53,20 +53,24 @@ def query_to_neurons(query, top_n=5):
     query_emb = embed_model.encode(query, convert_to_tensor=True)
     cos_scores = util.pytorch_cos_sim(query_emb, tag_embeddings)[0]
 
-    # Top-N indexů a jejich scores
+# Top-N indices and their scores
     top_results = torch.topk(cos_scores, k=top_n)
     indices = top_results.indices
     scores = top_results.values
 
-    # Normalizace vah na součet 1
-    weights = scores / scores.sum()
+    # Normalize weights to sum to 1
+    total = scores.sum()
+    if total > 0:
+        weights = scores / total
+    else:
+        weights = torch.ones_like(scores) / len(scores)
 
     print("Matched tags with weights:")
     for i, w in zip(indices, weights):
         print(f"- {unique_tags[i]} (weight={w:.3f})")
 
-    # Vážený průměr aktivací
-    weighted_sum = torch.zeros(tag_tensor.shape[1])
+    # Weighted average of activations
+    weighted_sum = torch.zeros(tag_tensor.shape[1], dtype=tag_tensor.dtype)
     for idx, weight in zip(indices, weights):
         weighted_sum += weight * tag_tensor[idx]
 
