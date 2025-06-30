@@ -3,9 +3,7 @@ import pickle
 import numpy as np
 
 from train_elsa import ELSA, latent_dim
-from train_sae import TopKSAE, k
-
-hidden_dim = 1024
+from train_sae import TopKSAE, k, hidden_dim
 
 # Load item2index
 with open("data/item2index.pkl", "rb") as f:
