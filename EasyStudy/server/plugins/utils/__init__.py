@@ -182,6 +182,9 @@ def preference_elicitation():
     params["search"] = tr("elicitation_search")
     params["cancel_search"] = tr("elicitation_cancel_search")
     params["enter_name"] = tr("elicitation_enter_name")
+    params["query_label"] = tr("elicitation_query_label")
+    params["query_placeholder"] = tr("elicitation_query_placeholder")
+    params["query"] = flask.session.get("query", "")
     params["header"] = tr("elicitation_header")
     params["hint_lead"] = tr("elicitation_hint_lead")
     params["hint"] = tr("elicitation_hint")
@@ -189,6 +192,7 @@ def preference_elicitation():
     params["continuation_url"] = request.args.get("continuation_url") # Continuation url must be specified
     params["initial_data_url"] = request.args.get("initial_data_url")
     params["search_item_url"] = request.args.get("search_item_url")
+    params["tag_list_url"] = url_for(f"{request.args.get('consuming_plugin')}.get_tags")
 
     # Handle textual overrides
     params["elicitation_hint_override"] = None

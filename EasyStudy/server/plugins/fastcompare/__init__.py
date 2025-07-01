@@ -37,6 +37,8 @@ bp = Blueprint(__plugin_name__, __plugin_name__, url_prefix=f"/{__plugin_name__}
 
 languages = load_languages(os.path.dirname(__file__))
 
+tags_cache = None
+
 
 HIDE_LAST_K = 1000000 # Effectively hides everything
 
@@ -244,6 +246,15 @@ def item_search():
 
     return jsonify(res)
 
+@bp.route("/get-tags", methods=["GET"])
+def get_tags():
+    global tags_cache
+    if tags_cache is None:
+        import torch
+        data = torch.load("models/tag_embeddings.pt")
+        tags_cache = data["unique_tags"]
+    return jsonify(tags_cache)
+
 def prepare_recommendations(loader, conf, recommendations, selected_movies, filter_out_movies, k):
     algorithm_factories = load_algorithms()
     algorithms = conf["selected_algorithms"]
@@ -273,7 +284,7 @@ def send_feedback():
     conf = load_user_study_config(session["user_study_id"])
     k = conf["k"]
     session["rec_k"] = k
-    session["query"] = ""
+    session["query"] = request.args.get("query", "")
 
     # Movie indices of selected movies
     selected_movies = request.args.get("selectedMovies")

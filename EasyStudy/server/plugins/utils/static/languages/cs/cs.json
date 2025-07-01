@@ -52,6 +52,8 @@
     "elicitation_search": "Hledat",
     "elicitation_cancel_search": "Zrušit hledání",
     "elicitation_enter_name": "Zadejte název filmu",
+    "elicitation_query_label": "Dotaz",
+    "elicitation_query_placeholder": "Popište své oblíbené filmové vlastnosti",
     "elicitation_header": "Získávání preferencí",
     "elicitation_hint_lead": "Vyberte všechny filmy, které jste v minulosti viděli a které se Vám líbí. Ke správné funkci doporučování je vhodné vybrat alespoň 5-10 filmů.",
     "elicitation_hint": "Filmy se vybírají kliknutím, každý vybraný film je zvýrazněný pomocí zeleného okraje. Pokud chcete načíst další filmy, můžete použít tlačítko v dolní části stránky. Alternativně můžete použít vyhledávání v horní části obrazovky k nalezení filmů které znáte a které se Vám líbí. Tento krok nám pomůže identifikovat a lépe porozumět Vaším preferencím. Poznámka: nejnovější filmy v naší databázi jsou z roku 2018. Při najetí myší na libovolný film se zobrazí Český název a seznam žánrů.",

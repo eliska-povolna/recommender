@@ -38,6 +38,8 @@ window.app = new Vue({
         jumboHeader: "Preference Elicitation",
         disableNextStep: false,
         searchMovieName: null,
+        query: null,
+        tags: [],
         itemsBackup: null,
         rowsBackup: null,
         busy: false
@@ -54,6 +56,14 @@ window.app = new Vue({
         res = this.prepareTable(data);
         this.rows = res["rows"];
         this.items = res["items"];
+
+        this.query = defaultQuery;
+
+        try {
+            this.tags = await fetch(tag_list_url).then(r => r.json());
+        } catch (e) {
+            console.error("Failed to load tags", e);
+        }
 
         // Register the handlers for event reporting
         startViewportChangeReportingWithLimit(`/utils/changed-viewport`, csrfToken, 1.0, true, elicitation_ctx_lambda);
@@ -214,7 +224,13 @@ window.app = new Vue({
             selectedMoviesTag.setAttribute("name","selectedMovies");
             selectedMoviesTag.setAttribute("value", this.selected.map((x) => x.movie.idx).join(","));
 
+            let queryTag = document.createElement("input");
+            queryTag.setAttribute("type", "hidden");
+            queryTag.setAttribute("name", "query");
+            queryTag.setAttribute("value", this.query ? this.query : "");
+
             form.appendChild(selectedMoviesTag);
+            form.appendChild(queryTag);
 
             form.submit();
         }
