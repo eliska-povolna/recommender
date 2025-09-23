@@ -14,6 +14,7 @@ from train_sae import TopKSAE, k, hidden_dim
 import logging
 from datetime import datetime
 import os
+import pickle
 
 # Create log directory and file handler for detailed logging
 log_dir = "c:\\Users\\elisk\\Desktop\\2024-25\\LS\\Recommenders\\logs"
@@ -37,7 +38,7 @@ print(f"Query boost logging to: {log_filename}")
 class QueryBoostELSAtfidf(AlgorithmBase):
     """ELSA + SAE recommender allowing query-based boosting."""
 
-    def __init__(self, loader, alpha=0.7, **kwargs):
+    def __init__(self, loader, alpha=0.3, **kwargs):
         self.loader = loader
         self.alpha = float(alpha)
         self.query = ""
@@ -49,9 +50,17 @@ class QueryBoostELSAtfidf(AlgorithmBase):
         self.tag_embeddings = None
         self.unique_tags = None
 
+        # Optional eager load of embeddings (kept for compatibility)
+        emb = torch.load("models/tag_embeddings_tf_idf.pt", weights_only=False)
+        self.tag_emb = torch.tensor(emb["embeddings"], dtype=torch.float32)
+        self.tag_texts = emb.get("processed_tags", emb.get("unique_tags"))
+        self.encoder_model = SentenceTransformer(
+            emb.get("model_name", "sentence-transformers/all-distilroberta-v1")
+        )
+
     @classmethod
     def name(cls):
-        return "ELSA+SAE Query tf-idf"
+        return "ELSA+SAE Query TF-IDF"
 
     @classmethod
     def parameters(cls):
@@ -64,75 +73,156 @@ class QueryBoostELSAtfidf(AlgorithmBase):
             )
         ]
 
+    def _ensure_loaded(self):
+        """Lazy-load models and mappings if not loaded yet."""
+        need_elsa = self.elsa is None
+        need_sae = self.sae is None
+        need_tags = not hasattr(self, "tag_mapping") or self.tag_mapping is None
+        if need_elsa or need_sae or need_tags:
+            self.fit()
+
     def set_query(self, query):
         self.query = query or ""
         logger.info(f"Query set to: '{self.query}'")
 
     def fit(self):
         logger.info("Loading ELSA+SAE models...")
-        num_items = self.num_items
-        self.elsa = ELSA(num_items, latent_dim)
-        state = torch.load("models/elsa_model_best.pt")
-        loaded_A = state.get("A")
-        if loaded_A is not None and loaded_A.shape[0] != num_items:
-            raise RuntimeError(
-                f"Pretrained ELSA model expects {loaded_A.shape[0]} items but the current dataset has {num_items}. "
-                "Use a model trained on the same dataset."
-            )
-        self.elsa.load_state_dict(state)
-        self.sae = TopKSAE(latent_dim, hidden_dim, k)
-        self.sae.load_state_dict(torch.load("models/sae_model_r4_k32.pt"))
-        data = torch.load("models/tag_neuron_map_tf_idf.pt")
-        self.tag_tensor = data["tag_tensor"]
-        emb = torch.load("models/tag_embeddings_tf_idf.pt")
-        self.unique_tags = emb["unique_tags"]
-        self.tag_embeddings = emb["embeddings"]
-        self.embed_model = SentenceTransformer("all-MiniLM-L6-v2")
-        logger.info("Models loaded successfully")
 
-    def _query_to_vector(self, query, top_n=5):
-        if not query:
-            logger.info("No query provided, skipping query boosting")
+        # Load full trained model first
+        state = torch.load("models/elsa_model_best.pt", weights_only=False)
+        model_size = state["A"].shape[0]  # Get actual size dynamically
+
+        full_elsa = ELSA(model_size, latent_dim)  # Use actual size
+        full_elsa.load_state_dict(state)
+
+        # Load training item mapping
+        with open("data/item2index.pkl", "rb") as f:
+            training_item2index = pickle.load(f)
+
+        # Get server movie IDs
+        server_movie_ids = self.loader.items_df["item_id"].values
+
+        # Extract embeddings for server items only
+        server_embeddings = []
+        valid_server_indices = []
+
+        for i, movie_id in enumerate(server_movie_ids):
+            if movie_id in training_item2index:
+                training_idx = training_item2index[movie_id]
+                server_embeddings.append(full_elsa.A[training_idx])
+                valid_server_indices.append(i)
+
+        if not server_embeddings:
+            raise RuntimeError("No overlap between server movies and training data!")
+
+        # Create smaller ELSA model with extracted embeddings
+        self.elsa = ELSA(len(valid_server_indices), latent_dim)
+        self.elsa.A.data = torch.stack(server_embeddings)
+
+        # Store the mapping instead of modifying the loader
+        self.valid_indices = valid_server_indices  # Map from model to loader indices
+        self.num_items = len(valid_server_indices)
+
+        logger.info(f"Extracted {self.num_items} items from {model_size}-item model")
+
+        # Rest of the method stays the same...
+        self.A_norm = torch.nn.functional.normalize(self.elsa.A, dim=-1)
+
+        # Load SAE
+        self.sae = TopKSAE(latent_dim, hidden_dim, k)
+        self.sae.load_state_dict(
+            torch.load("models/sae_model_r4_k32.pt", weights_only=False)
+        )
+
+        # Load tag mapping data
+        tag_data = torch.load("models/tag_neuron_map_tf_idf.pt", weights_only=False)
+        self.tag_mapping = {
+            "tag_tensor": tag_data["tag_tensor"],  # [T, H]
+            "unique_tags": tag_data["unique_tags"],
+        }
+        assert (
+            self.tag_mapping["tag_tensor"].shape[1] == hidden_dim
+        ), f"Tag tensor H={self.tag_mapping['tag_tensor'].shape[1]} != hidden_dim={hidden_dim}"
+
+        # Load embeddings for sentence transformer
+        emb = torch.load("models/tag_embeddings_tf_idf.pt", weights_only=False)
+        self.tag_embeddings = emb["embeddings"]  # [T, D]
+        self.tag_texts = emb.get("processed_tags", emb.get("unique_tags"))
+        self.sentence_model = SentenceTransformer(
+            emb.get("model_name", "sentence-transformers/all-distilroberta-v1")
+        )
+
+        logger.info("Models loaded successfully")
+        logger.info(f"Loaded {len(self.tag_mapping['unique_tags'])} tag mappings")
+
+    def _query_to_vector(self, query):
+        self._ensure_loaded()
+        if not hasattr(self, "tag_mapping") or self.tag_mapping is None:
+            logger.warning("Tag mapping not loaded")
             return None
 
-        logger.info(f"Processing query: '{query}'")
+        tag_tensor = self.tag_mapping["tag_tensor"]  # [T, H]
+        tag_emb = torch.as_tensor(self.tag_embeddings, dtype=torch.float32)  # [T, D]
 
-        query_emb = self.embed_model.encode(query, convert_to_tensor=True)
-        cos_scores = util.pytorch_cos_sim(query_emb, self.tag_embeddings)[0]
-        top_results = torch.topk(cos_scores, k=top_n)
-        indices = top_results.indices
-        scores = top_results.values
+        # PŘIDEJ DEBUGGING:
+        logger.info(f"DEBUG Tag Mapping Stats:")
+        logger.info(f"  Tag tensor shape: {tag_tensor.shape}")
+        logger.info(f"  Tag tensor mean: {tag_tensor.mean():.6f}")
+        logger.info(f"  Tag tensor max: {tag_tensor.max():.6f}")
+        logger.info(f"  Tag tensor nonzero: {(tag_tensor > 1e-6).sum().item()}")
 
-        # Log the top matching tags
-        logger.info(f"Top {top_n} matching tags for query '{query}':")
-        for i, (idx, score) in enumerate(zip(indices, scores)):
-            tag_name = self.unique_tags[idx.item()]
-            logger.info(f"  {i+1}. '{tag_name}' (similarity: {score.item():.4f})")
+        # query → embedding
+        q = self.sentence_model.encode(query, convert_to_tensor=True)  # [D]
+        sim = util.cos_sim(q, tag_emb).squeeze(0)  # [T]
 
-        total = scores.sum()
-        weights = scores / total if total > 0 else torch.ones_like(scores) / len(scores)
+        topk = min(10, sim.shape[0])
+        vals, idx = torch.topk(sim, k=topk, largest=True)
 
-        logger.info(f"Tag weights: {[f'{w.item():.4f}' for w in weights]}")
-
-        weighted_sum = torch.zeros(
-            self.tag_tensor.shape[1], dtype=self.tag_tensor.dtype
+        interpreted_tags = [self.tag_texts[t] for t in idx.tolist()]
+        logger.info(
+            f"Query '{query}' interpreted as tags: {interpreted_tags} "
+            f"(scores: {[round(v.item(), 4) for v in vals]})"
         )
-        for idx, weight in zip(indices, weights):
-            weighted_sum += weight * self.tag_tensor[idx]
 
-        # Log some statistics about the boost vector
-        boost_stats = {
-            "mean": weighted_sum.mean().item(),
-            "std": weighted_sum.std().item(),
-            "max": weighted_sum.max().item(),
-            "min": weighted_sum.min().item(),
-            "nonzero_count": (weighted_sum != 0).sum().item(),
+        # temperature-softmax mixing
+        w = torch.softmax(vals / 0.3, dim=0)
+
+        # PŘIDEJ DEBUGGING WEIGHTS:
+        logger.info(f"Softmax weights: {[round(weight.item(), 4) for weight in w]}")
+
+        boost = torch.zeros(tag_tensor.shape[1], dtype=torch.float32)
+        for j, t in enumerate(idx.tolist()):
+            contribution = w[j] * tag_tensor[t]
+            boost += contribution
+            # LOG TOP 3 CONTRIBUTIONS:
+            if j < 3:
+                logger.info(
+                    f"  Tag '{interpreted_tags[j]}': weight={w[j]:.4f}, "
+                    f"tag_vector_norm={tag_tensor[t].norm():.4f}, "
+                    f"contribution_norm={contribution.norm():.4f}"
+                )
+
+        # FINAL BOOST STATS:
+        logger.info(
+            f"Final boost vector: norm={boost.norm():.4f}, "
+            f"max={boost.max():.4f}, nonzero={((boost > 1e-6).sum().item())}"
+        )
+
+        if boost.norm() == 0:
+            logger.warning("Boost vector has zero norm")
+            return None
+        return boost
+
+    def _get_tensor_stats(self, tensor):
+        return {
+            "mean": tensor.mean().item(),
+            "std": tensor.std().item(),
+            "max": tensor.max().item(),
+            "nonzero_count": (tensor > 0).sum().item(),
         }
-        logger.info(f"Query boost vector stats: {boost_stats}")
-
-        return weighted_sum
 
     def predict(self, selected_items, filter_out_items, k):
+        self._ensure_loaded()
         print(f"Using predict query: {self.query}")
         logger.info(
             f"Predicting with {len(selected_items)} selected items, alpha={self.alpha}"
@@ -160,32 +250,46 @@ class QueryBoostELSAtfidf(AlgorithmBase):
             }
             logger.info(f"Original sparse representation stats: {original_stats}")
 
-            boost = self._query_to_vector(self.query)
+            # Apply query boost if query exists
+            if self.query:
+                boost = self._query_to_vector(self.query)
+                if boost is not None:
+                    boost_unsqueezed = boost.unsqueeze(0)
+                    h_sparse_original = h_sparse.clone()
+                    h_sparse = (
+                        self.alpha * h_sparse + (1 - self.alpha) * boost_unsqueezed * 10
+                    )
+                    k_relaxed = min(int(self.sae.k * 1.5), h_sparse.shape[1])
+                    thr = (
+                        torch.topk(h_sparse, k_relaxed, dim=1)
+                        .values[:, -1]
+                        .unsqueeze(1)
+                    )
+                    h_sparse = torch.where(
+                        h_sparse >= thr, h_sparse, torch.zeros_like(h_sparse)
+                    )
 
-            if boost is not None:
-                boost_unsqueezed = boost.unsqueeze(0)
-                h_sparse_original = h_sparse.clone()
-                h_sparse = self.alpha * h_sparse + (1 - self.alpha) * boost_unsqueezed
+                    boost_effect = torch.abs(h_sparse - h_sparse_original).mean().item()
+                    logger.info(
+                        f"Query boost effect (mean absolute change): {boost_effect:.6f}"
+                    )
 
-                # Log the effect of boosting
-                boost_effect = torch.abs(h_sparse - h_sparse_original).mean().item()
-                logger.info(
-                    f"Query boost effect (mean absolute change): {boost_effect:.6f}"
-                )
-
-                # Log boosted representation stats
-                boosted_stats = {
-                    "mean": h_sparse.mean().item(),
-                    "std": h_sparse.std().item(),
-                    "max": h_sparse.max().item(),
-                    "nonzero_count": (h_sparse != 0).sum().item(),
-                }
-                logger.info(f"Boosted sparse representation stats: {boosted_stats}")
+                    boosted_stats = {
+                        "mean": h_sparse.mean().item(),
+                        "std": h_sparse.std().item(),
+                        "max": h_sparse.max().item(),
+                        "nonzero_count": (h_sparse != 0).sum().item(),
+                    }
+                    logger.info(f"Boosted sparse representation stats: {boosted_stats}")
+                else:
+                    logger.info("Query boost vector is None")
             else:
-                logger.info("No query boost applied")
+                logger.info("No query provided - no boost applied")
 
             recon_z = self.sae.dec(h_sparse)
-            scores = torch.matmul(recon_z, self.elsa.A.T) - user_vector.unsqueeze(0)
+            A_norm = torch.nn.functional.normalize(self.elsa.A, dim=-1)
+            recon_z_norm = torch.nn.functional.normalize(recon_z, dim=-1)
+            scores = torch.matmul(recon_z_norm, A_norm.T) - user_vector.unsqueeze(0)
 
         scores_np = scores.squeeze().numpy()
 
@@ -199,11 +303,20 @@ class QueryBoostELSAtfidf(AlgorithmBase):
         scores_np[mask] = -np.inf
         top_indices = np.argsort(-scores_np)[:k]
 
-        # Log top recommendations with scores
         logger.info(f"Top {min(5, k)} recommendations:")
         for i, idx in enumerate(top_indices[:5]):
             score = scores.squeeze()[idx].item()
-            # You might want to add item title lookup here if available
-            logger.info(f"  {i+1}. Item {idx} (score: {score:.4f})")
+            try:
+                if hasattr(self.loader, "items_df") and idx < len(self.loader.items_df):
+                    movie_info = self.loader.items_df.iloc[idx]
+                    title = str(movie_info.get("title", f"Item {idx}"))
+                    title = title.encode("ascii", "ignore").decode("ascii")
+                    logger.info(f"  {i+1}. {title} (Item {idx}, score: {score:.4f})")
+                else:
+                    logger.info(f"  {i+1}. Item {idx} (score: {score:.4f})")
+            except Exception as e:
+                logger.info(
+                    f"  {i+1}. Item {idx} (score: {score:.4f}) [title error: {str(e)}]"
+                )
 
         return top_indices.tolist()

@@ -25,7 +25,8 @@
     <b-row class="mb-3" align-h="center">
       <b-col cols="6">
         <b-form-group label="{{query_label}}">
-          <b-form-input v-model="query" placeholder="{{query_placeholder}}" name="query"></b-form-input>
+          <b-form-input v-model="query" placeholder="{{query_placeholder}}" name="query"
+            @input="console.log('Query changed to:', $event)"></b-form-input>
         </b-form-group>
       </b-col>
     </b-row>

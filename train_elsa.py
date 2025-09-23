@@ -6,7 +6,7 @@ from torch.utils.data import Dataset
 from sklearn.model_selection import train_test_split
 import numpy as np
 
-latent_dim = 128  # embedding dimension
+latent_dim = 512  # embedding dimension
 
 
 # Model matching the reference implementation
@@ -87,11 +87,16 @@ if __name__ == "__main__":
     val_dataset = SparseDataset(X_val_data)
 
     model = ELSA(num_items, latent_dim)
-    optimizer = optim.NAdam(model.parameters(), lr=1e-4, weight_decay=1e-5)
+    optimizer = optim.Adam(
+        model.parameters(),
+        lr=3e-4,  # α = 3×10^-4 as per paper (was 1e-5)
+        betas=(0.9, 0.99),  # β1=0.9, β2=0.99 as per paper
+        weight_decay=0,  # No weight decay mentioned in paper (was 1e-5)
+    )
     criterion = NMSELoss()
 
-    n_epochs = 100
-    batch_size = 256
+    n_epochs = 25
+    batch_size = 1024
     patience = 10  # early stopping patience
 
     train_loader = torch.utils.data.DataLoader(
@@ -131,10 +136,10 @@ if __name__ == "__main__":
         )
 
         # Early stopping check
-        if avg_val_loss < best_val_loss - 1e-5:
+        if avg_val_loss < best_val_loss - 1e-6:
             best_val_loss = avg_val_loss
             epochs_no_improve = 0
-            torch.save(model.state_dict(), "models/elsa_model.pt")
+            torch.save(model.state_dict(), "models/elsa_model_best.pt")
         else:
             epochs_no_improve += 1
 
@@ -143,35 +148,75 @@ if __name__ == "__main__":
             break
 
     # Load best model
-    model.load_state_dict(torch.load("models/elsa_model.pt"))
-    torch.save(model.state_dict(), "models/elsa_model.pt")
-    print("Best model saved to elsa_model.pt")
+    try:
+        model.load_state_dict(torch.load("models/elsa_model_best.pt"))
+    except:
+        pass
+    torch.save(model.state_dict(), "models/elsa_model_best.pt")
+    print("Best model saved to elsa_model_best.pt")
 
-    # Evaluate Recall@20 and NDCG@20 on validation users
+    # Evaluate with 20% item holdout on validation users
+    print(f"\n=== Evaluation on validation users (20% item holdout) ===")
     recall_scores = []
     ndcg_scores = []
     model.eval()
 
     with torch.no_grad():
         for i in range(X_val_data.shape[0]):
-            user_train = X_train_data[i].toarray().squeeze()
-            user_val = X_val_data[i].toarray().squeeze()
-            user_vector = torch.tensor(user_train, dtype=torch.float32).unsqueeze(0)
+            user_full = X_val_data[i].toarray().squeeze()
+            nonzero_items = np.where(user_full > 0)[0]
+            if len(nonzero_items) < 5:  # Skip users s málo interakcemi
+                continue
+            # 20% item holdout per user
+            np.random.seed(42 + i)
+            n_holdout = max(1, int(len(nonzero_items) * 0.2))
+            holdout_items = np.random.choice(
+                nonzero_items, size=n_holdout, replace=False
+            )
+
+            user_input = user_full.copy()
+            user_target = np.zeros_like(user_full)
+
+            user_input[holdout_items] = 0
+            user_target[holdout_items] = user_full[holdout_items]
+
+            user_vector = torch.tensor(user_input, dtype=torch.float32).unsqueeze(0)
             recon = model(user_vector)
             scores = recon - user_vector
 
             scores_np = scores.squeeze().numpy()
-            # Mask training items only
-            scores_np[user_train > 0] = -np.inf
+            scores_np[user_input > 0] = -np.inf  # Mask input items
             top_indices = np.argsort(-scores_np)
 
-            y_true = user_val  # Only held-out items
-            recall = recall_at_k(y_true, top_indices, 20)
-            ndcg = ndcg_at_k(y_true, top_indices, 20)
+            recall = recall_at_k(user_target, top_indices, 20)
+            ndcg = ndcg_at_k(user_target, top_indices, 20)
 
-            recall_scores.append(recall)
-            ndcg_scores.append(ndcg)
+            if not np.isnan(recall):
+                recall_scores.append(recall)
+                ndcg_scores.append(ndcg)
 
-    print("\nValidation Recall@20 and NDCG@20 on held-out users:")
+    print(f"Evaluated on {len(recall_scores)} validation users")
     print(f"Mean Recall@20: {np.nanmean(recall_scores):.4f}")
     print(f"Mean NDCG@20:   {np.nanmean(ndcg_scores):.4f}")
+
+    # Update results
+    results = {
+        "val_recall_20": np.nanmean(recall_scores),
+        "val_ndcg_20": np.nanmean(ndcg_scores),
+        "latent_dim": latent_dim,
+        "num_val_users": len(recall_scores),
+        "training_params": {
+            "optimizer": "Adam",
+            "lr": 3e-4,
+            "batch_size": batch_size,
+            "epochs": epoch + 1,
+            "early_stopped": epochs_no_improve >= patience,
+        },
+    }
+
+    import json
+
+    with open(f"models/elsa_results_d{latent_dim}.json", "w") as f:
+        json.dump(results, f, indent=2)
+
+    print(f"Results saved to models/elsa_results_d{latent_dim}.json")

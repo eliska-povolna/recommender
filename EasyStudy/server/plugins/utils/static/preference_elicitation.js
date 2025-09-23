@@ -1,4 +1,3 @@
-
 function preference_elicitation() {
 
 }
@@ -28,7 +27,6 @@ window.app = new Vue({
             userEmail: "{{email}}",
             items: [],
             selected: [],
-            query: defaultQuery,
             impl: impl,
             selectMode: "multi",
             lastSelectedCluster: null,
@@ -41,7 +39,8 @@ window.app = new Vue({
             searchMovieName: null,
             itemsBackup: null,
             rowsBackup: null,
-            busy: false
+            busy: false,
+            query: ""
         }
     },
     async mounted() {
@@ -50,19 +49,11 @@ window.app = new Vue({
         // This was used for reporting as previously reporting endpoints were defined inside plugin
 
         // Get the number of items user is supposed to select
-        let data = await fetch(initial_data_url + "?impl=" + this.impl + "&i=0").then((resp) => resp.json()).then((resp) => resp);
+        let data = await fetch(initial_data_url + "?impl=" + this.impl + "&i=0" + "&query=" + this.query).then((resp) => resp.json()).then((resp) => resp);
 
         res = this.prepareTable(data);
         this.rows = res["rows"];
         this.items = res["items"];
-
-        // Load tag suggestions
-        // try {
-        //     let tags = await fetch(tags_url).then(r => r.json());
-        //     this.tagOptions = tags;
-        // } catch (e) {
-        //     console.error("Failed to load tags", e);
-        // }
 
         // Register the handlers for event reporting
         startViewportChangeReportingWithLimit(`/utils/changed-viewport`, csrfToken, 1.0, true, elicitation_ctx_lambda);
@@ -217,6 +208,7 @@ window.app = new Vue({
             }
         },
         onElicitationFinish(form) {
+            console.log("Query value before submission:", this.query);
             this.busy = true;
             let selectedMoviesTag = document.createElement("input");
             selectedMoviesTag.setAttribute("type", "hidden");
