@@ -7,11 +7,6 @@ import pickle
 # Load ratings data
 df = pd.read_csv("data/ratings.csv")
 
-# Limit the number of users (e.g., for faster experiments)
-max_users = 50000
-user_ids = df["userId"].unique()[:max_users]
-df = df[df["userId"].isin(user_ids)]
-
 # Convert ratings to implicit feedback (1 if rating >=4)
 df["implicit"] = (df["rating"] >= 4).astype(np.float32)
 
@@ -19,7 +14,7 @@ df["implicit"] = (df["rating"] >= 4).astype(np.float32)
 df = df[df["implicit"] > 0]
 
 # Filter movies with at least N ratings
-min_movie_ratings = 50
+min_movie_ratings = 20
 movie_counts = df.groupby("movieId").size()
 popular_movies = movie_counts[movie_counts >= min_movie_ratings].index
 df = df[df["movieId"].isin(popular_movies)]
@@ -33,6 +28,8 @@ item2index = {iid: idx for idx, iid in enumerate(item_ids)}
 
 df["user_idx"] = df["userId"].map(user2index)
 df["item_idx"] = df["movieId"].map(item2index)
+df = df.drop_duplicates(subset=["userId", "movieId"])
+
 
 num_users = len(user2index)
 num_items = len(item2index)
@@ -49,7 +46,7 @@ X = X[active_users]
 
 # Split train/test (disjoint user sets)
 all_users = np.arange(X.shape[0])
-train_users, test_users = train_test_split(all_users, test_size=0.2, random_state=42)
+train_users, test_users = train_test_split(all_users, test_size=0.1, random_state=42)
 
 X_train = X[train_users]
 X_test = X[test_users]

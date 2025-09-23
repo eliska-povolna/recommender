@@ -75,5 +75,7 @@
     "finish_table_algo_name": "Algorithm Name",
     "finish_table_n_selected": "Number of Selected Items",
     "finish_table_n_shown": "Number of Shown Items",
-    "finish_table_avg_rating": "Average Rating"
+    "finish_table_avg_rating": "Average Rating",
+    "compare_query_label": "Preferences",
+    "compare_query_placeholder": "Describe your preferred topic that will be boosted in recommendations."
 }

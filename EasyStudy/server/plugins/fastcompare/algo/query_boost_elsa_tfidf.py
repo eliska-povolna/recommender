@@ -34,7 +34,7 @@ logger.setLevel(logging.INFO)
 print(f"Query boost logging to: {log_filename}")
 
 
-class QueryBoostELSA(AlgorithmBase):
+class QueryBoostELSAtfidf(AlgorithmBase):
     """ELSA + SAE recommender allowing query-based boosting."""
 
     def __init__(self, loader, alpha=0.7, **kwargs):
@@ -51,7 +51,7 @@ class QueryBoostELSA(AlgorithmBase):
 
     @classmethod
     def name(cls):
-        return "ELSA+SAE Query"
+        return "ELSA+SAE Query tf-idf"
 
     @classmethod
     def parameters(cls):
@@ -82,9 +82,9 @@ class QueryBoostELSA(AlgorithmBase):
         self.elsa.load_state_dict(state)
         self.sae = TopKSAE(latent_dim, hidden_dim, k)
         self.sae.load_state_dict(torch.load("models/sae_model_r4_k32.pt"))
-        data = torch.load("models/tag_neuron_map_centroid.pt")
+        data = torch.load("models/tag_neuron_map_tf_idf.pt")
         self.tag_tensor = data["tag_tensor"]
-        emb = torch.load("models/tag_embeddings_centroid.pt")
+        emb = torch.load("models/tag_embeddings_tf_idf.pt")
         self.unique_tags = emb["unique_tags"]
         self.tag_embeddings = emb["embeddings"]
         self.embed_model = SentenceTransformer("all-MiniLM-L6-v2")

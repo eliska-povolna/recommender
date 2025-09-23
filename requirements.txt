@@ -3,4 +3,6 @@ pandas
 numpy
 scipy
 scikit-learn
-sentence-transformers
+tf-keras
+transformers==4.21.0
+sentence-transformers==2.2.2
