@@ -56,51 +56,24 @@ sae = TopKSAE(latent_dim, hidden_dim, k)
 sae.load_state_dict(torch.load("models/sae_model_r4_k32.pt"))
 sae.eval()
 
-print("Loading precomputed sparse representations...")
-try:
-    raise FileNotFoundError
-    sparse_data = torch.load("models/sparse_embeddings_r4_k32.pt")
+print("Computing sparse embeddings...")
+with torch.no_grad():
+    embeddings = elsa.A.clone()
+    batch_size = 1024
+    h_list = []
 
-    # Handle both compact and full formats
-    if "idx" in sparse_data and "val" in sparse_data:
-        indices = sparse_data["idx"]
-        values = sparse_data["val"]
-        h_sparse = torch.zeros(num_items, sparse_data["hidden_dim"])
+    for start in range(0, num_items, batch_size):
+        end = min(start + batch_size, num_items)
+        batch_emb = embeddings[start:end]
 
-        for i in range(num_items):
-            h_sparse[i, indices[i]] = values[i]
-    else:
-        # Full tensor format
-        h_sparse = sparse_data
+        batch_emb_norm = torch.nn.functional.normalize(batch_emb, dim=1)
+        _, h_sparse_batch, _ = sae(batch_emb_norm)
+        h_list.append(h_sparse_batch)
 
-    print(f"Loaded sparse representations shape: {h_sparse.shape}")
-
-except FileNotFoundError:
-    print("Precomputed sparse embeddings not found, computing from scratch...")
-    with torch.no_grad():
-        embeddings = elsa.A.clone()
-        batch_size = 1024
-        h_list = []
-
-        for start in range(0, num_items, batch_size):
-            end = min(start + batch_size, num_items)
-            batch_emb = embeddings[start:end]
-
-            # Use proper SAE forward pass (like in evaluation)
-            batch_emb_norm = torch.nn.functional.normalize(batch_emb, dim=1)
-            _, h_sparse_batch, _ = sae(batch_emb_norm)
-            h_list.append(h_sparse_batch)
-
-        h_sparse = torch.cat(h_list, dim=0)
+    h_sparse = torch.cat(h_list, dim=0)
 
 print(f"Sparse representations shape: {h_sparse.shape}")
-# Po načtení h_sparse přidej:
-print(f"DEBUG Sparse Activations:")
-print(f"  Shape: {h_sparse.shape}")
-print(f"  Mean: {h_sparse.mean().item():.6f}")
-print(f"  Max: {h_sparse.max().item():.6f}")
-print(f"  Nonzero: {(h_sparse > 0).sum().item()}")
-print(f"  Has NaN: {torch.isnan(h_sparse).any()}")
+
 # EXTRACT GENRES
 print("Processing movie genres...")
 genre_items = defaultdict(list)
@@ -157,21 +130,13 @@ for genre, items in valid_genres.items():
 print(
     f"Total labels: {len(all_tag_items)} ({len(tag_items_dict)} tags + {len(valid_genres)} genres)"
 )
-# Zkontroluj na začátku skriptu:
-print(f"DEBUG Item Indexing:")
-print(f"  num_items from item2index: {len(item2index)}")
-print(f"  h_sparse.shape[0]: {h_sparse.shape[0]}")
-print(
-    f"  Max tag item index: {max(max(items) for items in all_tag_items.values() if items)}"
-)
-print(f"  Total labels: {len(all_tag_items)}")
 
 # ===== COMPARISON OF MULTIPLE METHODS =====
 
 
 def method_1_tfidf_paper(all_tag_items, sparse_activations):
     """Method 1: TF-IDF approach following the paper methodology"""
-    print("Method 1: TF-IDF (Paper Implementation)")
+    print("Method 1: TF-IDF")
 
     all_labels = list(all_tag_items.keys())
     num_labels = len(all_labels)
@@ -199,20 +164,12 @@ def method_1_tfidf_paper(all_tag_items, sparse_activations):
     print(f"  Matrix shape: {joint_distribution.shape}")
     print(f"  Nonzero entries: {joint_distribution.nonzero().shape[0]}")
 
-    # Zkontroluj vzorový tag:
     sample_tag = list(all_tag_items.keys())[0]
     sample_items = all_tag_items[sample_tag]
     print(f"  Sample tag '{sample_tag}' has {len(sample_items)} items")
     print(f"  First 5 item indices: {sample_items[:5]}")
     print(f"  Max item index: {max(sample_items) if sample_items else 'N/A'}")
     print(f"  Expected num_items: {num_items}")
-
-    # PO tag_neuron_matrix:
-    print(f"DEBUG Tag-Neuron Matrix:")
-    print(f"  Shape: {tag_neuron_matrix.shape}")
-    print(f"  Mean: {tag_neuron_matrix.mean().item():.6f}")
-    print(f"  Max: {tag_neuron_matrix.max().item():.6f}")
-    print(f"  Nonzero: {(tag_neuron_matrix > 1e-6).sum().item()}")
 
     # Step 3: Create documents for TF-IDF
     label_documents = []

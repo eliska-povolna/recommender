@@ -189,10 +189,8 @@ def preference_elicitation():
     params["continuation_url"] = request.args.get("continuation_url") # Continuation url must be specified
     params["initial_data_url"] = request.args.get("initial_data_url")
     params["search_item_url"] = request.args.get("search_item_url")
-    params["tags_url"] = request.args.get("tags_url")
-    params["default_query"] = request.args.get("default_query", "")
-    params["query_label"] = tr("elicitation_query_label")
-    params["query_placeholder"] = tr("elicitation_query_placeholder")
+    params["query_label"] = tr("compare_query_label")
+    params["query_placeholder"] = tr("compare_query_placeholder")
 
     # Handle textual overrides
     params["elicitation_hint_override"] = None
@@ -216,7 +214,7 @@ def cluster_data_1():
     #return json.dumps(load_data_1())
     el_movies = flask.session["elicitation_movies"]
     
-    x = load_data_1(el_movies)
+    x = load_data_1(el_movies, request.args.get("query"))
 
     tr = get_tr(languages, get_lang())
     

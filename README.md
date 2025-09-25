@@ -65,15 +65,3 @@ python inference.py
 ```
 
 The script prints a list of recommended movie titles with their scores.
-
-## Repository Structure
-
-- `preprocess.py` - prepares the data set and builds sparse matrices
-- `train_elsa.py` - trains the collaborative filtering model (ELSA)
-- `train_sae.py` - trains the sparse autoencoder
-- `map_neurons_to_tags.py` - aggregates activations of hidden neurons by tags
-- `embeddings.py` - computes sentence-transformer embeddings for tags
-- `evaluate.py` - evaluates Recall@20 and NDCG@20 on test users
-- `inference.py` - interactive demo for querying recommendations
-
-Feel free to adapt the code for your experiments.

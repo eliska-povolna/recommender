@@ -252,12 +252,25 @@ class QueryBoostELSAtfidf(AlgorithmBase):
 
             # Apply query boost if query exists
             if self.query:
+                logger.info(f"Applying query boost for query: '{self.query}'")
                 boost = self._query_to_vector(self.query)
+                logger.info(f"Boost vector stats: {self._get_tensor_stats(boost)}")
                 if boost is not None:
                     boost_unsqueezed = boost.unsqueeze(0)
                     h_sparse_original = h_sparse.clone()
+
+                    recon_z_before = self.sae.dec(h_sparse_original)
+                    A_norm = torch.nn.functional.normalize(self.elsa.A, dim=-1)
+                    recon_z_norm_before = torch.nn.functional.normalize(
+                        recon_z_before, dim=-1
+                    )
+                    scores_before = torch.matmul(
+                        recon_z_norm_before, A_norm.T
+                    ) - user_vector.unsqueeze(0)
+                    scores_before_np = scores_before.squeeze().numpy()
+
                     h_sparse = (
-                        self.alpha * h_sparse + (1 - self.alpha) * boost_unsqueezed * 10
+                        self.alpha * h_sparse + (1 - self.alpha) * boost_unsqueezed * 50
                     )
                     k_relaxed = min(int(self.sae.k * 1.5), h_sparse.shape[1])
                     thr = (
@@ -269,9 +282,59 @@ class QueryBoostELSAtfidf(AlgorithmBase):
                         h_sparse >= thr, h_sparse, torch.zeros_like(h_sparse)
                     )
 
+                    recon_z_after = self.sae.dec(h_sparse)
+                    recon_z_norm_after = torch.nn.functional.normalize(
+                        recon_z_after, dim=-1
+                    )
+                    scores_after = torch.matmul(
+                        recon_z_norm_after, A_norm.T
+                    ) - user_vector.unsqueeze(0)
+                    scores_after_np = scores_after.squeeze().numpy()
+
+                    score_changes = scores_after_np - scores_before_np
+
+                    most_boosted_indices = np.argsort(-score_changes)[:10]
+                    logger.info(
+                        f"most_boosted_indices: {most_boosted_indices}, type {type(most_boosted_indices)}, len {len(most_boosted_indices)} "
+                    )
+                    logger.info("TOP 10 MOST BOOSTED MOVIES:")
+                    for i, idx in enumerate(most_boosted_indices):
+                        before_score = scores_before_np[idx]
+                        after_score = scores_after_np[idx]
+                        boost_change = score_changes[idx]
+                        title = f"Item {idx}"
+                        if (
+                            hasattr(self.loader, "items_df")
+                            and hasattr(self.loader.items_df, "iloc")
+                            and len(self.loader.items_df) > idx
+                            and idx >= 0
+                        ):
+
+                            movie_info = self.loader.items_df.iloc[idx]
+                            if "title" in movie_info:
+                                raw_title = str(movie_info["title"])
+                                title = (
+                                    raw_title[:40]
+                                    .encode("ascii", "ignore")
+                                    .decode("ascii")
+                                )
+                                if not title.strip():
+                                    title = f"Item {idx}"
+                            else:
+                                title = f"Item {idx} (no title)"
+                        else:
+                            title = f"Item {idx} (out of bounds)"
+                        logger.info(f"Processed title {title}")
+                        logger.info(
+                            f"  {i+1}. {title} before:{before_score:.4f} after:{after_score:.4f} change:{boost_change:+.4f}"
+                        )
+
                     boost_effect = torch.abs(h_sparse - h_sparse_original).mean().item()
                     logger.info(
                         f"Query boost effect (mean absolute change): {boost_effect:.6f}"
+                    )
+                    logger.info(
+                        f"Overall score change: mean={score_changes.mean():.6f}, max_boost={score_changes.max():.6f}, max_penalty={score_changes.min():.6f}"
                     )
 
                     boosted_stats = {
@@ -299,11 +362,51 @@ class QueryBoostELSAtfidf(AlgorithmBase):
             f"std={scores_np.std():.4f}, max={scores_np.max():.4f}, min={scores_np.min():.4f}"
         )
 
+        logger.info("DETAILED SCORE ANALYSIS:")
+
+        # Top 10 scores před filtrováním:
+        top_unfiltered_indices = np.argsort(-scores_np)[:10]
+        logger.info("Top 10 scores (before filtering):")
+        for i, idx in enumerate(top_unfiltered_indices):
+            score = scores_np[idx]
+            try:
+                if hasattr(self.loader, "items_df") and idx < len(self.loader.items_df):
+                    movie_info = self.loader.items_df.iloc[idx]
+                    title = str(movie_info.get("title", f"Item {idx}"))[
+                        :50
+                    ]  # Limit title length
+                    title = title.encode("ascii", "ignore").decode("ascii")
+                    logger.info(
+                        f"  {i+1:2d}. {title:<30} (Item {idx:4d}, score: {score:.4f})"
+                    )
+                else:
+                    logger.info(f"  {i+1:2d}. Item {idx:4d} (score: {score:.4f})")
+            except Exception as e:
+                logger.info(
+                    f"  {i+1:2d}. Item {idx:4d} (score: {score:.4f}) [error: {str(e)[:20]}]"
+                )
+
+        # Analýza score distribuce:
+        positive_scores = scores_np[scores_np > 0]
+        negative_scores = scores_np[scores_np < 0]
+
+        logger.info(f"Score distribution:")
+        logger.info(
+            f"  Positive scores: {len(positive_scores)} items (mean: {positive_scores.mean():.4f})"
+            if len(positive_scores) > 0
+            else "  No positive scores!"
+        )
+        logger.info(
+            f"  Negative scores: {len(negative_scores)} items (mean: {negative_scores.mean():.4f})"
+            if len(negative_scores) > 0
+            else "  No negative scores"
+        )
+
         mask = np.isin(np.arange(self.num_items), filter_out_items)
         scores_np[mask] = -np.inf
         top_indices = np.argsort(-scores_np)[:k]
 
-        logger.info(f"Top {min(5, k)} recommendations:")
+        logger.info(f"Top {min(5, k)} recommendations (after filtering):")
         for i, idx in enumerate(top_indices[:5]):
             score = scores.squeeze()[idx].item()
             try:

@@ -164,13 +164,6 @@ class QueryBoostELSA(AlgorithmBase):
         tag_tensor = self.tag_mapping["tag_tensor"]  # [T, H]
         tag_emb = torch.as_tensor(self.tag_embeddings, dtype=torch.float32)  # [T, D]
 
-        # PŘIDEJ DEBUGGING:
-        logger.info(f"DEBUG Tag Mapping Stats:")
-        logger.info(f"  Tag tensor shape: {tag_tensor.shape}")
-        logger.info(f"  Tag tensor mean: {tag_tensor.mean():.6f}")
-        logger.info(f"  Tag tensor max: {tag_tensor.max():.6f}")
-        logger.info(f"  Tag tensor nonzero: {(tag_tensor > 1e-6).sum().item()}")
-
         # query → embedding
         q = self.sentence_model.encode(query, convert_to_tensor=True)  # [D]
         sim = util.cos_sim(q, tag_emb).squeeze(0)  # [T]
@@ -186,9 +179,6 @@ class QueryBoostELSA(AlgorithmBase):
 
         # temperature-softmax mixing
         w = torch.softmax(vals / 0.3, dim=0)
-
-        # PŘIDEJ DEBUGGING WEIGHTS:
-        logger.info(f"Softmax weights: {[round(weight.item(), 4) for weight in w]}")
 
         boost = torch.zeros(tag_tensor.shape[1], dtype=torch.float32)
         for j, t in enumerate(idx.tolist()):
