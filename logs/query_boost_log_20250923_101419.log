@@ -1,0 +1,348 @@
+2025-09-23 10:14:32,636 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'lawyer drama'
+2025-09-23 10:14:32,637 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 0 selected items, alpha=0.7
+2025-09-23 10:14:32,686 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-23 10:14:32,686 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'lawyer drama'
+2025-09-23 10:14:32,686 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 10:14:32,689 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 10:14:32,695 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-23 10:14:32,699 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-23 10:14:32,737 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-23 10:14:32,979 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'lawyer drama' interpreted as tags: ['lawyer movie tag', 'courtroom drama movie tag', 'lawyers movie tag', 'law movie tag', 'drama movie genre', 'court case movie tag', 'court movie tag', 'drama movie tag', 'family drama movie tag', 'scandal movie tag'] (scores: [0.5862, 0.5643, 0.5621, 0.4768, 0.4455, 0.4388, 0.4171, 0.4145, 0.4078, 0.3968])
+2025-09-23 10:14:32,985 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1428, 0.1328, 0.1318, 0.0992, 0.0893, 0.0874, 0.0813, 0.0806, 0.0788, 0.076]
+2025-09-23 10:14:32,987 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'lawyer movie tag': weight=0.1428, tag_vector_norm=1.0000, contribution_norm=0.1428
+2025-09-23 10:14:32,987 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'courtroom drama movie tag': weight=0.1328, tag_vector_norm=1.0000, contribution_norm=0.1328
+2025-09-23 10:14:32,988 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'lawyers movie tag': weight=0.1318, tag_vector_norm=1.0000, contribution_norm=0.1318
+2025-09-23 10:14:32,989 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.5134, max=0.0892, nonzero=1022
+2025-09-23 10:14:32,991 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -0.00032787080272100866, 'std': 0.011343396268785, 'max': 0.08918836712837219, 'nonzero_count': 1023}
+2025-09-23 10:14:33,007 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [201 110 111 133 254 236 117  97  98  44], type <class 'numpy.ndarray'>, len 10 
+2025-09-23 10:14:33,007 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-23 10:14:33,008 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Erin Brockovich (2000)
+2025-09-23 10:14:33,008 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Erin Brockovich (2000) before:0.0065 after:0.3179 change:+0.3114
+2025-09-23 10:14:33,010 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Good Will Hunting (1997)
+2025-09-23 10:14:33,010 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Good Will Hunting (1997) before:0.0826 after:0.3802 change:+0.2976
+2025-09-23 10:14:33,010 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Titanic (1997)
+2025-09-23 10:14:33,011 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Titanic (1997) before:0.0124 after:0.2851 change:+0.2727
+2025-09-23 10:14:33,011 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Few Good Men, A (1992)
+2025-09-23 10:14:33,012 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Few Good Men, A (1992) before:0.0504 after:0.3195 change:+0.2692
+2025-09-23 10:14:33,013 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Legally Blonde (2001)
+2025-09-23 10:14:33,013 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Legally Blonde (2001) before:0.0242 after:0.2677 change:+0.2435
+2025-09-23 10:14:33,014 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Miss Congeniality (2000)
+2025-09-23 10:14:33,014 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Miss Congeniality (2000) before:0.0212 after:0.2630 change:+0.2419
+2025-09-23 10:14:33,014 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title As Good as It Gets (1997)
+2025-09-23 10:14:33,015 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. As Good as It Gets (1997) before:0.0402 after:0.2526 change:+0.2124
+2025-09-23 10:14:33,016 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Contact (1997)
+2025-09-23 10:14:33,017 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Contact (1997) before:0.0213 after:0.2314 change:+0.2101
+2025-09-23 10:14:33,017 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Air Force One (1997)
+2025-09-23 10:14:33,017 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Air Force One (1997) before:-0.0076 after:0.1732 change:+0.1809
+2025-09-23 10:14:33,017 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Philadelphia (1993)
+2025-09-23 10:14:33,017 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Philadelphia (1993) before:0.0551 after:0.2345 change:+0.1793
+2025-09-23 10:14:33,023 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.011155
+2025-09-23 10:14:33,025 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=-0.013380, max_boost=0.311418, max_penalty=-0.188135
+2025-09-23 10:14:33,025 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.011155267246067524, 'std': 0.08002613484859467, 'max': 1.3378256559371948, 'nonzero_count': 48}
+2025-09-23 10:14:33,033 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0156, std=0.0448, max=0.3802, min=-0.0926
+2025-09-23 10:14:33,033 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-23 10:14:33,035 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-23 10:14:33,036 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Good Will Hunting (1997)       (Item  110, score: 0.3802)
+2025-09-23 10:14:33,037 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Few Good Men, A (1992)         (Item  133, score: 0.3195)
+2025-09-23 10:14:33,037 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Erin Brockovich (2000)         (Item  201, score: 0.3179)
+2025-09-23 10:14:33,038 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Titanic (1997)                 (Item  111, score: 0.2851)
+2025-09-23 10:14:33,038 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Shawshank Redemption, The (1994) (Item   29, score: 0.2698)
+2025-09-23 10:14:33,040 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Legally Blonde (2001)          (Item  254, score: 0.2677)
+2025-09-23 10:14:33,041 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Miss Congeniality (2000)       (Item  236, score: 0.2630)
+2025-09-23 10:14:33,041 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Schindler's List (1993)        (Item   45, score: 0.2529)
+2025-09-23 10:14:33,042 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. As Good as It Gets (1997)      (Item  117, score: 0.2526)
+2025-09-23 10:14:33,042 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Cast Away (2000)               (Item  235, score: 0.2439)
+2025-09-23 10:14:33,043 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-23 10:14:33,044 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 988 items (mean: 0.0319)
+2025-09-23 10:14:33,044 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 590 items (mean: -0.0118)
+2025-09-23 10:14:33,044 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-23 10:14:33,046 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-23 10:14:33,047 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Good Will Hunting (1997) (Item 110, score: 0.3802)
+2025-09-23 10:14:33,048 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Few Good Men, A (1992) (Item 133, score: 0.3195)
+2025-09-23 10:14:33,050 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Erin Brockovich (2000) (Item 201, score: 0.3179)
+2025-09-23 10:14:33,050 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Titanic (1997) (Item 111, score: 0.2851)
+2025-09-23 10:14:33,052 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Shawshank Redemption, The (1994) (Item 29, score: 0.2698)
+2025-09-23 10:14:41,053 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'lawyer drama'
+2025-09-23 10:14:41,055 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 0 selected items, alpha=0.7
+2025-09-23 10:14:41,060 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-23 10:14:41,060 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 10:14:41,061 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 10:14:41,064 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-23 10:14:41,067 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-23 10:14:41,105 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-23 10:14:41,189 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'lawyer drama' interpreted as tags: ['lawyer movie tag', 'courtroom drama movie tag', 'lawyers movie tag', 'law movie tag', 'drama movie genre', 'court case movie tag', 'court movie tag', 'drama movie tag', 'family drama movie tag', 'scandal movie tag'] (scores: [0.5862, 0.5643, 0.5621, 0.4768, 0.4455, 0.4388, 0.4171, 0.4145, 0.4078, 0.3968])
+2025-09-23 10:14:41,190 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1428, 0.1328, 0.1318, 0.0992, 0.0893, 0.0874, 0.0813, 0.0806, 0.0788, 0.076]
+2025-09-23 10:14:41,191 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'lawyer movie tag': weight=0.1428, tag_vector_norm=1.0000, contribution_norm=0.1428
+2025-09-23 10:14:41,191 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'courtroom drama movie tag': weight=0.1328, tag_vector_norm=1.0000, contribution_norm=0.1328
+2025-09-23 10:14:41,192 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'lawyers movie tag': weight=0.1318, tag_vector_norm=1.0000, contribution_norm=0.1318
+2025-09-23 10:14:41,193 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6446, max=0.0630, nonzero=1735
+2025-09-23 10:14:41,194 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.002699
+2025-09-23 10:14:41,197 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.002699188655242324, 'std': 0.017658066004514694, 'max': 0.1889607310295105, 'nonzero_count': 48}
+2025-09-23 10:14:41,204 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0060, std=0.0410, max=0.4176, min=-0.1404
+2025-09-23 10:14:41,207 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-23 10:14:41,209 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Erin Brockovich (2000) (Item 201, score: 0.4176)
+2025-09-23 10:14:41,211 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Few Good Men, A (1992) (Item 133, score: 0.3608)
+2025-09-23 10:14:41,211 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Philadelphia (1993) (Item 44, score: 0.3290)
+2025-09-23 10:14:41,212 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Cast Away (2000) (Item 235, score: 0.2651)
+2025-09-23 10:14:41,213 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Remember the Titans (2000) (Item 223, score: 0.2362)
+2025-09-23 10:20:09,946 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'lawyer drama'
+2025-09-23 10:20:09,952 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 0 selected items, alpha=0.3
+2025-09-23 10:20:10,009 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-23 10:20:10,009 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'lawyer drama'
+2025-09-23 10:20:10,011 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 10:20:10,011 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 10:20:10,016 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-23 10:20:10,018 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-23 10:20:10,041 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-23 10:20:10,139 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'lawyer drama' interpreted as tags: ['lawyer movie tag', 'courtroom drama movie tag', 'lawyers movie tag', 'law movie tag', 'drama movie genre', 'court case movie tag', 'court movie tag', 'drama movie tag', 'family drama movie tag', 'scandal movie tag'] (scores: [0.5862, 0.5643, 0.5621, 0.4768, 0.4455, 0.4388, 0.4171, 0.4145, 0.4078, 0.3968])
+2025-09-23 10:20:10,145 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1428, 0.1328, 0.1318, 0.0992, 0.0893, 0.0874, 0.0813, 0.0806, 0.0788, 0.076]
+2025-09-23 10:20:10,146 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'lawyer movie tag': weight=0.1428, tag_vector_norm=1.0000, contribution_norm=0.1428
+2025-09-23 10:20:10,146 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'courtroom drama movie tag': weight=0.1328, tag_vector_norm=1.0000, contribution_norm=0.1328
+2025-09-23 10:20:10,146 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'lawyers movie tag': weight=0.1318, tag_vector_norm=1.0000, contribution_norm=0.1318
+2025-09-23 10:20:10,148 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.5134, max=0.0892, nonzero=1022
+2025-09-23 10:20:10,151 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -0.00032787080272100866, 'std': 0.011343396268785, 'max': 0.08918836712837219, 'nonzero_count': 1023}
+2025-09-23 10:20:10,241 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [201 110 111 133 254 236 117  97  98  44], type <class 'numpy.ndarray'>, len 10 
+2025-09-23 10:20:10,241 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-23 10:20:10,266 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Erin Brockovich (2000)
+2025-09-23 10:20:10,266 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Erin Brockovich (2000) before:0.0065 after:0.3190 change:+0.3125
+2025-09-23 10:20:10,267 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Good Will Hunting (1997)
+2025-09-23 10:20:10,267 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Good Will Hunting (1997) before:0.0826 after:0.3806 change:+0.2980
+2025-09-23 10:20:10,267 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Titanic (1997)
+2025-09-23 10:20:10,267 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Titanic (1997) before:0.0124 after:0.2860 change:+0.2736
+2025-09-23 10:20:10,267 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Few Good Men, A (1992)
+2025-09-23 10:20:10,267 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Few Good Men, A (1992) before:0.0504 after:0.3201 change:+0.2697
+2025-09-23 10:20:10,268 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Legally Blonde (2001)
+2025-09-23 10:20:10,268 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Legally Blonde (2001) before:0.0242 after:0.2684 change:+0.2442
+2025-09-23 10:20:10,268 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Miss Congeniality (2000)
+2025-09-23 10:20:10,268 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Miss Congeniality (2000) before:0.0212 after:0.2637 change:+0.2426
+2025-09-23 10:20:10,269 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title As Good as It Gets (1997)
+2025-09-23 10:20:10,269 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. As Good as It Gets (1997) before:0.0402 after:0.2531 change:+0.2129
+2025-09-23 10:20:10,269 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Contact (1997)
+2025-09-23 10:20:10,269 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Contact (1997) before:0.0213 after:0.2320 change:+0.2107
+2025-09-23 10:20:10,269 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Air Force One (1997)
+2025-09-23 10:20:10,270 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Air Force One (1997) before:-0.0076 after:0.1739 change:+0.1816
+2025-09-23 10:20:10,270 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Philadelphia (1993)
+2025-09-23 10:20:10,270 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Philadelphia (1993) before:0.0551 after:0.2347 change:+0.1796
+2025-09-23 10:20:10,271 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.026029
+2025-09-23 10:20:10,272 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=-0.013645, max_boost=0.312465, max_penalty=-0.189772
+2025-09-23 10:20:10,272 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.026028955355286598, 'std': 0.1867276430130005, 'max': 3.1215927600860596, 'nonzero_count': 48}
+2025-09-23 10:20:10,284 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0153, std=0.0449, max=0.3806, min=-0.0937
+2025-09-23 10:20:10,284 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-23 10:20:10,284 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-23 10:20:10,284 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Good Will Hunting (1997)       (Item  110, score: 0.3806)
+2025-09-23 10:20:10,284 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Few Good Men, A (1992)         (Item  133, score: 0.3201)
+2025-09-23 10:20:10,284 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Erin Brockovich (2000)         (Item  201, score: 0.3190)
+2025-09-23 10:20:10,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Titanic (1997)                 (Item  111, score: 0.2860)
+2025-09-23 10:20:10,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Legally Blonde (2001)          (Item  254, score: 0.2684)
+2025-09-23 10:20:10,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Shawshank Redemption, The (1994) (Item   29, score: 0.2668)
+2025-09-23 10:20:10,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Miss Congeniality (2000)       (Item  236, score: 0.2637)
+2025-09-23 10:20:10,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. As Good as It Gets (1997)      (Item  117, score: 0.2531)
+2025-09-23 10:20:10,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Schindler's List (1993)        (Item   45, score: 0.2512)
+2025-09-23 10:20:10,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Cast Away (2000)               (Item  235, score: 0.2435)
+2025-09-23 10:20:10,286 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-23 10:20:10,288 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 970 items (mean: 0.0323)
+2025-09-23 10:20:10,288 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 608 items (mean: -0.0118)
+2025-09-23 10:20:10,288 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-23 10:20:10,288 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-23 10:20:10,288 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Good Will Hunting (1997) (Item 110, score: 0.3806)
+2025-09-23 10:20:10,288 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Few Good Men, A (1992) (Item 133, score: 0.3201)
+2025-09-23 10:20:10,290 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Erin Brockovich (2000) (Item 201, score: 0.3190)
+2025-09-23 10:20:10,290 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Titanic (1997) (Item 111, score: 0.2860)
+2025-09-23 10:20:10,290 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Legally Blonde (2001) (Item 254, score: 0.2684)
+2025-09-23 10:20:16,098 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'lawyer drama'
+2025-09-23 10:20:16,101 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 0 selected items, alpha=0.3
+2025-09-23 10:20:16,102 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-23 10:20:16,102 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 10:20:16,102 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 10:20:16,102 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-23 10:20:16,106 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-23 10:20:16,123 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-23 10:20:16,162 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'lawyer drama' interpreted as tags: ['lawyer movie tag', 'courtroom drama movie tag', 'lawyers movie tag', 'law movie tag', 'drama movie genre', 'court case movie tag', 'court movie tag', 'drama movie tag', 'family drama movie tag', 'scandal movie tag'] (scores: [0.5862, 0.5643, 0.5621, 0.4768, 0.4455, 0.4388, 0.4171, 0.4145, 0.4078, 0.3968])
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1428, 0.1328, 0.1318, 0.0992, 0.0893, 0.0874, 0.0813, 0.0806, 0.0788, 0.076]
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'lawyer movie tag': weight=0.1428, tag_vector_norm=1.0000, contribution_norm=0.1428
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'courtroom drama movie tag': weight=0.1328, tag_vector_norm=1.0000, contribution_norm=0.1328
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'lawyers movie tag': weight=0.1318, tag_vector_norm=1.0000, contribution_norm=0.1318
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6446, max=0.0630, nonzero=1735
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.006298
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.006298107095062733, 'std': 0.04120215028524399, 'max': 0.44090837240219116, 'nonzero_count': 48}
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0044, std=0.0412, max=0.4220, min=-0.1430
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Erin Brockovich (2000) (Item 201, score: 0.4220)
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Few Good Men, A (1992) (Item 133, score: 0.3621)
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Philadelphia (1993) (Item 44, score: 0.3296)
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Cast Away (2000) (Item 235, score: 0.2618)
+2025-09-23 10:20:16,163 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Remember the Titans (2000) (Item 223, score: 0.2374)
+2025-09-23 10:26:44,123 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'lawyer drama'
+2025-09-23 10:26:44,127 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 3 selected items, alpha=0.3
+2025-09-23 10:26:44,135 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.001819634111598134, 'std': 0.016730017960071564, 'max': 0.3177933692932129, 'nonzero_count': 32}
+2025-09-23 10:26:44,135 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'lawyer drama'
+2025-09-23 10:26:44,136 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 10:26:44,136 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 10:26:44,138 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-23 10:26:44,144 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-23 10:26:44,221 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-23 10:26:44,497 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'lawyer drama' interpreted as tags: ['lawyer movie tag', 'courtroom drama movie tag', 'lawyers movie tag', 'law movie tag', 'drama movie genre', 'court case movie tag', 'court movie tag', 'drama movie tag', 'family drama movie tag', 'scandal movie tag'] (scores: [0.5862, 0.5643, 0.5621, 0.4768, 0.4455, 0.4388, 0.4171, 0.4145, 0.4078, 0.3968])
+2025-09-23 10:26:44,497 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1428, 0.1328, 0.1318, 0.0992, 0.0893, 0.0874, 0.0813, 0.0806, 0.0788, 0.076]
+2025-09-23 10:26:44,499 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'lawyer movie tag': weight=0.1428, tag_vector_norm=1.0000, contribution_norm=0.1428
+2025-09-23 10:26:44,501 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'courtroom drama movie tag': weight=0.1328, tag_vector_norm=1.0000, contribution_norm=0.1328
+2025-09-23 10:26:44,503 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'lawyers movie tag': weight=0.1318, tag_vector_norm=1.0000, contribution_norm=0.1318
+2025-09-23 10:26:44,505 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.5134, max=0.0892, nonzero=1022
+2025-09-23 10:26:44,505 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -0.00032787080272100866, 'std': 0.011343396268785, 'max': 0.08918836712837219, 'nonzero_count': 1023}
+2025-09-23 10:26:44,522 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [101 111 110 366  57 100 684 104 108 175], type <class 'numpy.ndarray'>, len 10 
+2025-09-23 10:26:44,522 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-23 10:26:44,525 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Game, The (1997)
+2025-09-23 10:26:44,525 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Game, The (1997) before:-0.0315 after:0.2356 change:+0.2671
+2025-09-23 10:26:44,526 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Titanic (1997)
+2025-09-23 10:26:44,526 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Titanic (1997) before:0.0379 after:0.2788 change:+0.2408
+2025-09-23 10:26:44,527 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Good Will Hunting (1997)
+2025-09-23 10:26:44,527 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Good Will Hunting (1997) before:0.1466 after:0.3739 change:+0.2273
+2025-09-23 10:26:44,527 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Eternal Sunshine of the Spotless Mind (2
+2025-09-23 10:26:44,527 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Eternal Sunshine of the Spotless Mind (2 before:-0.0820 after:0.1441 change:+0.2261
+2025-09-23 10:26:44,529 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fargo (1996)
+2025-09-23 10:26:44,529 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Fargo (1996) before:-0.0223 after:0.1876 change:+0.2098
+2025-09-23 10:26:44,529 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title L.A. Confidential (1997)
+2025-09-23 10:26:44,529 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. L.A. Confidential (1997) before:-0.0312 after:0.1782 change:+0.2094
+2025-09-23 10:26:44,531 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title (500) Days of Summer (2009)
+2025-09-23 10:26:44,531 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. (500) Days of Summer (2009) before:-0.0484 after:0.1595 change:+0.2079
+2025-09-23 10:26:44,531 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title The Devil's Advocate (1997)
+2025-09-23 10:26:44,531 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. The Devil's Advocate (1997) before:-0.0563 after:0.1478 change:+0.2040
+2025-09-23 10:26:44,531 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Truman Show, The (1998)
+2025-09-23 10:26:44,534 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Truman Show, The (1998) before:0.0074 after:0.2089 change:+0.2015
+2025-09-23 10:26:44,534 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fight Club (1999)
+2025-09-23 10:26:44,534 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Fight Club (1999) before:0.0044 after:0.1914 change:+0.1870
+2025-09-23 10:26:44,534 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.026194
+2025-09-23 10:26:44,535 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.009711, max_boost=0.267054, max_penalty=-0.340610
+2025-09-23 10:26:44,536 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.026309296488761902, 'std': 0.18881814181804657, 'max': 3.144216537475586, 'nonzero_count': 48}
+2025-09-23 10:26:44,540 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0134, std=0.0537, max=0.3739, min=-0.7354
+2025-09-23 10:26:44,540 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-23 10:26:44,540 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-23 10:26:44,542 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Good Will Hunting (1997)       (Item  110, score: 0.3739)
+2025-09-23 10:26:44,543 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Few Good Men, A (1992)         (Item  133, score: 0.3207)
+2025-09-23 10:26:44,543 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Titanic (1997)                 (Item  111, score: 0.2788)
+2025-09-23 10:26:44,543 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Miss Congeniality (2000)       (Item  236, score: 0.2702)
+2025-09-23 10:26:44,545 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Shawshank Redemption, The (1994) (Item   29, score: 0.2659)
+2025-09-23 10:26:44,545 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Schindler's List (1993)        (Item   45, score: 0.2626)
+2025-09-23 10:26:44,545 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. As Good as It Gets (1997)      (Item  117, score: 0.2571)
+2025-09-23 10:26:44,546 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Cast Away (2000)               (Item  235, score: 0.2439)
+2025-09-23 10:26:44,546 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Game, The (1997)               (Item  101, score: 0.2356)
+2025-09-23 10:26:44,546 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Contact (1997)                 (Item   97, score: 0.2304)
+2025-09-23 10:26:44,546 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-23 10:26:44,546 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 967 items (mean: 0.0314)
+2025-09-23 10:26:44,550 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 611 items (mean: -0.0152)
+2025-09-23 10:26:44,573 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-23 10:26:44,575 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-23 10:26:44,579 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Game, The (1997) (Item 101, score: 0.2356)
+2025-09-23 10:26:44,579 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Forrest Gump (1994) (Item 33, score: 0.2283)
+2025-09-23 10:26:44,581 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Beautiful Mind, A (2001) (Item 277, score: 0.2208)
+2025-09-23 10:26:44,581 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. American Beauty (1999) (Item 171, score: 0.2104)
+2025-09-23 10:26:44,583 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Truman Show, The (1998) (Item 108, score: 0.2089)
+2025-09-23 10:26:52,189 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'lawyer drama'
+2025-09-23 10:26:52,191 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 3 selected items, alpha=0.3
+2025-09-23 10:26:52,198 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.001819634111598134, 'std': 0.016730017960071564, 'max': 0.3177933692932129, 'nonzero_count': 32}
+2025-09-23 10:26:52,198 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 10:26:52,198 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 10:26:52,202 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-23 10:26:52,204 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-23 10:26:52,239 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-23 10:26:52,321 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'lawyer drama' interpreted as tags: ['lawyer movie tag', 'courtroom drama movie tag', 'lawyers movie tag', 'law movie tag', 'drama movie genre', 'court case movie tag', 'court movie tag', 'drama movie tag', 'family drama movie tag', 'scandal movie tag'] (scores: [0.5862, 0.5643, 0.5621, 0.4768, 0.4455, 0.4388, 0.4171, 0.4145, 0.4078, 0.3968])
+2025-09-23 10:26:52,322 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1428, 0.1328, 0.1318, 0.0992, 0.0893, 0.0874, 0.0813, 0.0806, 0.0788, 0.076]
+2025-09-23 10:26:52,322 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'lawyer movie tag': weight=0.1428, tag_vector_norm=1.0000, contribution_norm=0.1428
+2025-09-23 10:26:52,322 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'courtroom drama movie tag': weight=0.1328, tag_vector_norm=1.0000, contribution_norm=0.1328
+2025-09-23 10:26:52,325 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'lawyers movie tag': weight=0.1318, tag_vector_norm=1.0000, contribution_norm=0.1318
+2025-09-23 10:26:52,327 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6446, max=0.0630, nonzero=1735
+2025-09-23 10:26:52,329 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.006606
+2025-09-23 10:26:52,329 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.006526622921228409, 'std': 0.04284965619444847, 'max': 0.44090837240219116, 'nonzero_count': 48}
+2025-09-23 10:26:52,337 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0037, std=0.0504, max=0.3584, min=-0.8849
+2025-09-23 10:26:52,339 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-23 10:26:52,339 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Chocolat (2000) (Item 231, score: 0.2096)
+2025-09-23 10:26:52,339 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. What Women Want (2000) (Item 233, score: 0.1973)
+2025-09-23 10:26:52,339 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Bridget Jones's Diary (2001) (Item 245, score: 0.1964)
+2025-09-23 10:26:52,343 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. My Big Fat Greek Wedding (2002) (Item 288, score: 0.1662)
+2025-09-23 10:26:52,344 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Primal Fear (1996) (Item 58, score: 0.1658)
+2025-09-23 10:38:25,612 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'lawyer drama'
+2025-09-23 10:38:25,612 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 3 selected items, alpha=0.3
+2025-09-23 10:38:25,620 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.001819634111598134, 'std': 0.016730017960071564, 'max': 0.3177933692932129, 'nonzero_count': 32}
+2025-09-23 10:38:25,620 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'lawyer drama'
+2025-09-23 10:38:25,620 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 10:38:25,620 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 10:38:25,625 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-23 10:38:25,625 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-23 10:38:25,643 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-23 10:38:25,680 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'lawyer drama' interpreted as tags: ['lawyer movie tag', 'courtroom drama movie tag', 'lawyers movie tag', 'law movie tag', 'drama movie genre', 'court case movie tag', 'court movie tag', 'drama movie tag', 'family drama movie tag', 'scandal movie tag'] (scores: [0.5862, 0.5643, 0.5621, 0.4768, 0.4455, 0.4388, 0.4171, 0.4145, 0.4078, 0.3968])
+2025-09-23 10:38:25,680 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1428, 0.1328, 0.1318, 0.0992, 0.0893, 0.0874, 0.0813, 0.0806, 0.0788, 0.076]
+2025-09-23 10:38:25,680 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'lawyer movie tag': weight=0.1428, tag_vector_norm=1.0000, contribution_norm=0.1428
+2025-09-23 10:38:25,680 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'courtroom drama movie tag': weight=0.1328, tag_vector_norm=1.0000, contribution_norm=0.1328
+2025-09-23 10:38:25,680 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'lawyers movie tag': weight=0.1318, tag_vector_norm=1.0000, contribution_norm=0.1318
+2025-09-23 10:38:25,680 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.5134, max=0.0892, nonzero=1022
+2025-09-23 10:38:25,680 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -0.00032787080272100866, 'std': 0.011343396268785, 'max': 0.08918836712837219, 'nonzero_count': 1023}
+2025-09-23 10:38:25,684 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [101 111 110 366  57 100 684 104 108 175], type <class 'numpy.ndarray'>, len 10 
+2025-09-23 10:38:25,686 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-23 10:38:25,686 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Game, The (1997)
+2025-09-23 10:38:25,686 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Game, The (1997) before:-0.0315 after:0.2356 change:+0.2671
+2025-09-23 10:38:25,686 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Titanic (1997)
+2025-09-23 10:38:25,686 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Titanic (1997) before:0.0379 after:0.2788 change:+0.2408
+2025-09-23 10:38:25,686 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Good Will Hunting (1997)
+2025-09-23 10:38:25,686 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Good Will Hunting (1997) before:0.1466 after:0.3739 change:+0.2273
+2025-09-23 10:38:25,686 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Eternal Sunshine of the Spotless Mind (2
+2025-09-23 10:38:25,686 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Eternal Sunshine of the Spotless Mind (2 before:-0.0820 after:0.1441 change:+0.2261
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fargo (1996)
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Fargo (1996) before:-0.0223 after:0.1876 change:+0.2098
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title L.A. Confidential (1997)
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. L.A. Confidential (1997) before:-0.0312 after:0.1782 change:+0.2094
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title (500) Days of Summer (2009)
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. (500) Days of Summer (2009) before:-0.0484 after:0.1595 change:+0.2079
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title The Devil's Advocate (1997)
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. The Devil's Advocate (1997) before:-0.0563 after:0.1478 change:+0.2040
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Truman Show, The (1998)
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Truman Show, The (1998) before:0.0074 after:0.2089 change:+0.2015
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fight Club (1999)
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Fight Club (1999) before:0.0044 after:0.1914 change:+0.1870
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.026194
+2025-09-23 10:38:25,688 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.009711, max_boost=0.267054, max_penalty=-0.340610
+2025-09-23 10:38:25,690 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.026309296488761902, 'std': 0.18881814181804657, 'max': 3.144216537475586, 'nonzero_count': 48}
+2025-09-23 10:38:25,691 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0134, std=0.0537, max=0.3739, min=-0.7354
+2025-09-23 10:38:25,691 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-23 10:38:25,691 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-23 10:38:25,691 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Good Will Hunting (1997)       (Item  110, score: 0.3739)
+2025-09-23 10:38:25,691 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Few Good Men, A (1992)         (Item  133, score: 0.3207)
+2025-09-23 10:38:25,691 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Titanic (1997)                 (Item  111, score: 0.2788)
+2025-09-23 10:38:25,693 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Miss Congeniality (2000)       (Item  236, score: 0.2702)
+2025-09-23 10:38:25,693 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Shawshank Redemption, The (1994) (Item   29, score: 0.2659)
+2025-09-23 10:38:25,693 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Schindler's List (1993)        (Item   45, score: 0.2626)
+2025-09-23 10:38:25,693 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. As Good as It Gets (1997)      (Item  117, score: 0.2571)
+2025-09-23 10:38:25,693 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Cast Away (2000)               (Item  235, score: 0.2439)
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Game, The (1997)               (Item  101, score: 0.2356)
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Contact (1997)                 (Item   97, score: 0.2304)
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 967 items (mean: 0.0314)
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 611 items (mean: -0.0152)
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. L.A. Confidential (1997) (Item 100, score: 0.1782)
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. 10 Things I Hate About You (1999) (Item 155, score: 0.1780)
+2025-09-23 10:38:25,694 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Air Force One (1997) (Item 98, score: 0.1720)
+2025-09-23 10:38:25,696 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Gladiator (2000) (Item 210, score: 0.1676)
+2025-09-23 10:38:25,696 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Hunt for Red October, The (1990) (Item 99, score: 0.1674)
+2025-09-23 10:38:30,376 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'lawyer drama'
+2025-09-23 10:38:30,376 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 3 selected items, alpha=0.3
+2025-09-23 10:38:30,380 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.001819634111598134, 'std': 0.016730017960071564, 'max': 0.3177933692932129, 'nonzero_count': 32}
+2025-09-23 10:38:30,380 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 10:38:30,381 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 10:38:30,381 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-23 10:38:30,383 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-23 10:38:30,409 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-23 10:38:30,444 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'lawyer drama' interpreted as tags: ['lawyer movie tag', 'courtroom drama movie tag', 'lawyers movie tag', 'law movie tag', 'drama movie genre', 'court case movie tag', 'court movie tag', 'drama movie tag', 'family drama movie tag', 'scandal movie tag'] (scores: [0.5862, 0.5643, 0.5621, 0.4768, 0.4455, 0.4388, 0.4171, 0.4145, 0.4078, 0.3968])
+2025-09-23 10:38:30,444 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1428, 0.1328, 0.1318, 0.0992, 0.0893, 0.0874, 0.0813, 0.0806, 0.0788, 0.076]
+2025-09-23 10:38:30,444 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'lawyer movie tag': weight=0.1428, tag_vector_norm=1.0000, contribution_norm=0.1428
+2025-09-23 10:38:30,444 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'courtroom drama movie tag': weight=0.1328, tag_vector_norm=1.0000, contribution_norm=0.1328
+2025-09-23 10:38:30,444 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'lawyers movie tag': weight=0.1318, tag_vector_norm=1.0000, contribution_norm=0.1318
+2025-09-23 10:38:30,444 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6446, max=0.0630, nonzero=1735
+2025-09-23 10:38:30,444 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.006606
+2025-09-23 10:38:30,444 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.006526622921228409, 'std': 0.04284965619444847, 'max': 0.44090837240219116, 'nonzero_count': 48}
+2025-09-23 10:38:30,450 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0037, std=0.0504, max=0.3584, min=-0.8849
+2025-09-23 10:38:30,450 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-23 10:38:30,451 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Gladiator (2000) (Item 210, score: 0.1427)
+2025-09-23 10:38:30,451 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Billy Elliot (2000) (Item 226, score: 0.1416)
+2025-09-23 10:38:30,451 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Adjustment Bureau, The (2011) (Item 811, score: 0.1405)
+2025-09-23 10:38:30,451 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Pretty Woman (1990) (Item 56, score: 0.1365)
+2025-09-23 10:38:30,451 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Sleepers (1996) (Item 69, score: 0.1361)

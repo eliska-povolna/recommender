@@ -1,0 +1,87 @@
+2025-09-23 21:02:41,881 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 21:02:41,885 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 27 selected items, alpha=0.3
+2025-09-23 21:02:41,967 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.005801822058856487, 'std': 0.11039403080940247, 'max': 4.752086639404297, 'nonzero_count': 32}
+2025-09-23 21:02:41,967 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'dungeons and dragons'
+2025-09-23 21:02:41,967 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 21:02:41,969 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 21:02:41,974 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-23 21:02:41,976 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-23 21:02:42,004 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-23 21:02:42,229 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 21:02:42,232 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 21:02:42,234 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 21:02:42,234 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 21:02:42,234 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 21:02:42,236 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.5365, max=0.1988, nonzero=988
+2025-09-23 21:02:42,236 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -0.0002526108000893146, 'std': 0.01185629889369011, 'max': 0.19875752925872803, 'nonzero_count': 989}
+2025-09-23 21:02:42,250 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [762   7 740 136  47 794 946 601 115 158], type <class 'numpy.ndarray'>, len 10 
+2025-09-23 21:02:42,250 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-23 21:02:42,259 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Despicable Me (2010)
+2025-09-23 21:02:42,261 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Despicable Me (2010) before:0.1269 after:0.3720 change:+0.2451
+2025-09-23 21:02:42,261 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title City of Lost Children, The (Cit des enf
+2025-09-23 21:02:42,263 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. City of Lost Children, The (Cit des enf before:0.0133 after:0.2083 change:+0.1950
+2025-09-23 21:02:42,264 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title How to Train Your Dragon (2010)
+2025-09-23 21:02:42,264 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. How to Train Your Dragon (2010) before:-0.7850 after:-0.5975 change:+0.1875
+2025-09-23 21:02:42,265 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Edward Scissorhands (1990)
+2025-09-23 21:02:42,265 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Edward Scissorhands (1990) before:0.0094 after:0.1826 change:+0.1732
+2025-09-23 21:02:42,265 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Nightmare Before Christmas, The (1993)
+2025-09-23 21:02:42,265 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Nightmare Before Christmas, The (1993) before:0.0030 after:0.1670 change:+0.1640
+2025-09-23 21:02:42,265 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Tangled (2010)
+2025-09-23 21:02:42,265 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Tangled (2010) before:0.1652 after:0.3291 change:+0.1639
+2025-09-23 21:02:42,265 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Wreck-It Ralph (2012)
+2025-09-23 21:02:42,267 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Wreck-It Ralph (2012) before:0.0931 after:0.2567 change:+0.1637
+2025-09-23 21:02:42,267 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Kung Fu Panda (2008)
+2025-09-23 21:02:42,267 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Kung Fu Panda (2008) before:0.1045 after:0.2662 change:+0.1617
+2025-09-23 21:02:42,267 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Dark City (1998)
+2025-09-23 21:02:42,267 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Dark City (1998) before:-0.0183 after:0.1354 change:+0.1537
+2025-09-23 21:02:42,267 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Star Wars: Episode I - The Phantom Menac
+2025-09-23 21:02:42,267 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Star Wars: Episode I - The Phantom Menac before:0.0256 after:0.1640 change:+0.1384
+2025-09-23 21:02:42,269 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.026653
+2025-09-23 21:02:42,271 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.006819, max_boost=0.245118, max_penalty=-0.346073
+2025-09-23 21:02:42,271 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.028203072026371956, 'std': 0.2921709716320038, 'max': 8.382139205932617, 'nonzero_count': 48}
+2025-09-23 21:02:42,275 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0056, std=0.0793, max=0.3720, min=-0.9614
+2025-09-23 21:02:42,275 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-23 21:02:42,275 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-23 21:02:42,277 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Despicable Me (2010)           (Item  762, score: 0.3720)
+2025-09-23 21:02:42,277 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Tangled (2010)                 (Item  794, score: 0.3291)
+2025-09-23 21:02:42,277 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Kung Fu Panda (2008)           (Item  601, score: 0.2662)
+2025-09-23 21:02:42,277 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Wreck-It Ralph (2012)          (Item  946, score: 0.2567)
+2025-09-23 21:02:42,277 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Frozen (2013)                  (Item 1042, score: 0.2495)
+2025-09-23 21:02:42,277 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Big Hero 6 (2014)              (Item 1133, score: 0.2330)
+2025-09-23 21:02:42,279 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. City of Lost Children, The (Cit des enfants perdu (Item    7, score: 0.2083)
+2025-09-23 21:02:42,279 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Despicable Me 2 (2013)         (Item 1000, score: 0.1886)
+2025-09-23 21:02:42,279 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Edward Scissorhands (1990)     (Item  136, score: 0.1826)
+2025-09-23 21:02:42,280 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Megamind (2010)                (Item  788, score: 0.1797)
+2025-09-23 21:02:42,280 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-23 21:02:42,280 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 995 items (mean: 0.0268)
+2025-09-23 21:02:42,280 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 583 items (mean: -0.0305)
+2025-09-23 21:02:42,284 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-23 21:02:42,286 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-23 21:02:42,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Monsters University (2013) (Item 994, score: 0.1313)
+2025-09-23 21:02:42,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Kung Fu Panda 2 (2011) (Item 840, score: 0.1299)
+2025-09-23 21:02:42,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Kick-Ass (2010) (Item 742, score: 0.1276)
+2025-09-23 21:02:42,288 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Corpse Bride (2005) (Item 453, score: 0.1272)
+2025-09-23 21:02:42,288 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Hobbit: The Desolation of Smaug, The (2013) (Item 1040, score: 0.1246)
+2025-09-23 21:02:48,076 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 21:02:48,078 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 27 selected items, alpha=0.3
+2025-09-23 21:02:48,084 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.005801822058856487, 'std': 0.11039403080940247, 'max': 4.752086639404297, 'nonzero_count': 32}
+2025-09-23 21:02:48,084 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 21:02:48,084 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 21:02:48,086 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-23 21:02:48,088 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-23 21:02:48,144 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-23 21:02:48,211 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 21:02:48,211 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 21:02:48,211 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 21:02:48,213 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 21:02:48,213 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 21:02:48,213 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6339, max=0.0618, nonzero=1743
+2025-09-23 21:02:48,215 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.008427
+2025-09-23 21:02:48,215 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.007333994377404451, 'std': 0.0595817007124424, 'max': 1.858381748199463, 'nonzero_count': 48}
+2025-09-23 21:02:48,223 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=-0.0000, std=0.0761, max=0.1973, min=-0.8914
+2025-09-23 21:02:48,223 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-23 21:02:48,223 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Madagascar (2005) (Item 438, score: 0.1197)
+2025-09-23 21:02:48,225 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Mulan (1998) (Item 119, score: 0.1029)
+2025-09-23 21:02:48,225 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Deadpool (2016) (Item 1179, score: 0.1028)
+2025-09-23 21:02:48,225 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Allegiant: Part 1 (2016) (Item 1230, score: 0.1019)
+2025-09-23 21:02:48,225 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Edge of Tomorrow (2014) (Item 1086, score: 0.1009)

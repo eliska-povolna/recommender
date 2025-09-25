@@ -1,0 +1,348 @@
+2025-09-23 15:28:49,904 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 15:28:49,953 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 15:28:49,957 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 0 selected items, alpha=0.3
+2025-09-23 15:28:49,958 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 0 selected items, alpha=0.3
+2025-09-23 15:28:50,173 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-23 15:28:50,173 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'dungeons and dragons'
+2025-09-23 15:28:50,177 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 15:28:50,179 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 15:28:50,179 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-23 15:28:50,179 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'dungeons and dragons'
+2025-09-23 15:28:50,179 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 15:28:50,181 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 15:28:50,200 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-23 15:28:50,207 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-23 15:28:50,208 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-23 15:28:50,212 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-23 15:28:50,294 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-23 15:28:50,310 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-23 15:28:51,087 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 15:28:51,090 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 15:28:51,098 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 15:28:51,099 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 15:28:51,103 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 15:28:51,105 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 15:28:51,108 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 15:28:51,108 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 15:28:51,112 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 15:28:51,114 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.5365, max=0.1988, nonzero=988
+2025-09-23 15:28:51,114 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 15:28:51,117 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -0.0002526108000893146, 'std': 0.01185629889369011, 'max': 0.19875752925872803, 'nonzero_count': 989}
+2025-09-23 15:28:51,125 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.5365, max=0.1988, nonzero=988
+2025-09-23 15:28:51,125 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -0.0002526108000893146, 'std': 0.01185629889369011, 'max': 0.19875752925872803, 'nonzero_count': 989}
+2025-09-23 15:28:51,153 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [792 685 848 380 465 270 308 544 740 794], type <class 'numpy.ndarray'>, len 10 
+2025-09-23 15:28:51,153 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-23 15:28:51,156 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [792 685 848 380 465 270 308 544 740 794], type <class 'numpy.ndarray'>, len 10 
+2025-09-23 15:28:51,170 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Deathly Hallows: Pa
+2025-09-23 15:28:51,176 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-23 15:28:51,177 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Harry Potter and the Deathly Hallows: Pa before:-0.0194 after:0.5116 change:+0.5310
+2025-09-23 15:28:51,179 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Deathly Hallows: Pa
+2025-09-23 15:28:51,179 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Half-Blood Prince (
+2025-09-23 15:28:51,181 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Harry Potter and the Deathly Hallows: Pa before:-0.0194 after:0.5116 change:+0.5310
+2025-09-23 15:28:51,181 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Harry Potter and the Half-Blood Prince ( before:-0.0120 after:0.5044 change:+0.5164
+2025-09-23 15:28:51,181 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Half-Blood Prince (
+2025-09-23 15:28:51,183 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Deathly Hallows: Pa
+2025-09-23 15:28:51,183 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Harry Potter and the Half-Blood Prince ( before:-0.0120 after:0.5044 change:+0.5164
+2025-09-23 15:28:51,183 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Harry Potter and the Deathly Hallows: Pa before:-0.0290 after:0.4813 change:+0.5103
+2025-09-23 15:28:51,185 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Deathly Hallows: Pa
+2025-09-23 15:28:51,186 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Prisoner of Azkaban
+2025-09-23 15:28:51,186 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Harry Potter and the Deathly Hallows: Pa before:-0.0290 after:0.4813 change:+0.5103
+2025-09-23 15:28:51,192 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Harry Potter and the Prisoner of Azkaban before:0.0148 after:0.5041 change:+0.4893
+2025-09-23 15:28:51,193 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Prisoner of Azkaban
+2025-09-23 15:28:51,195 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Goblet of Fire (200
+2025-09-23 15:28:51,195 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Harry Potter and the Prisoner of Azkaban before:0.0148 after:0.5041 change:+0.4893
+2025-09-23 15:28:51,197 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Harry Potter and the Goblet of Fire (200 before:0.0158 after:0.5020 change:+0.4862
+2025-09-23 15:28:51,197 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Goblet of Fire (200
+2025-09-23 15:28:51,197 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Sorcerer's Stone (a
+2025-09-23 15:28:51,199 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Harry Potter and the Goblet of Fire (200 before:0.0158 after:0.5020 change:+0.4862
+2025-09-23 15:28:51,199 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Harry Potter and the Sorcerer's Stone (a before:0.0105 after:0.4964 change:+0.4858
+2025-09-23 15:28:51,201 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Sorcerer's Stone (a
+2025-09-23 15:28:51,203 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Chamber of Secrets 
+2025-09-23 15:28:51,203 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Harry Potter and the Sorcerer's Stone (a before:0.0105 after:0.4964 change:+0.4858
+2025-09-23 15:28:51,203 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Harry Potter and the Chamber of Secrets  before:0.0054 after:0.4610 change:+0.4556
+2025-09-23 15:28:51,209 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Chamber of Secrets 
+2025-09-23 15:28:51,209 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Order of the Phoeni
+2025-09-23 15:28:51,211 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Harry Potter and the Chamber of Secrets  before:0.0054 after:0.4610 change:+0.4556
+2025-09-23 15:28:51,212 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Harry Potter and the Order of the Phoeni before:0.0172 after:0.4605 change:+0.4433
+2025-09-23 15:28:51,212 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Harry Potter and the Order of the Phoeni
+2025-09-23 15:28:51,212 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title How to Train Your Dragon (2010)
+2025-09-23 15:28:51,214 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Harry Potter and the Order of the Phoeni before:0.0172 after:0.4605 change:+0.4433
+2025-09-23 15:28:51,215 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. How to Train Your Dragon (2010) before:-0.0147 after:0.4099 change:+0.4246
+2025-09-23 15:28:51,215 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title How to Train Your Dragon (2010)
+2025-09-23 15:28:51,216 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Tangled (2010)
+2025-09-23 15:28:51,218 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. How to Train Your Dragon (2010) before:-0.0147 after:0.4099 change:+0.4246
+2025-09-23 15:28:51,218 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Tangled (2010) before:-0.0403 after:0.3391 change:+0.3794
+2025-09-23 15:28:51,223 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Tangled (2010)
+2025-09-23 15:28:51,229 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Tangled (2010) before:-0.0403 after:0.3391 change:+0.3794
+2025-09-23 15:28:51,229 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.027100
+2025-09-23 15:28:51,231 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=-0.012381, max_boost=0.530967, max_penalty=-0.387705
+2025-09-23 15:28:51,231 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.027100
+2025-09-23 15:28:51,233 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=-0.012381, max_boost=0.530967, max_penalty=-0.387705
+2025-09-23 15:28:51,233 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.027100326493382454, 'std': 0.26943448185920715, 'max': 6.956513404846191, 'nonzero_count': 48}
+2025-09-23 15:28:51,235 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.027100326493382454, 'std': 0.26943448185920715, 'max': 6.956513404846191, 'nonzero_count': 48}
+2025-09-23 15:28:51,249 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0166, std=0.0524, max=0.5116, min=-0.0756
+2025-09-23 15:28:51,251 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-23 15:28:51,251 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0166, std=0.0524, max=0.5116, min=-0.0756
+2025-09-23 15:28:51,251 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-23 15:28:51,253 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-23 15:28:51,255 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Harry Potter and the Deathly Hallows: Part 1 (2010 (Item  792, score: 0.5116)
+2025-09-23 15:28:51,257 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Harry Potter and the Half-Blood Prince (2009) (Item  685, score: 0.5044)
+2025-09-23 15:28:51,257 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Harry Potter and the Prisoner of Azkaban (2004) (Item  380, score: 0.5041)
+2025-09-23 15:28:51,257 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Harry Potter and the Goblet of Fire (2005) (Item  465, score: 0.5020)
+2025-09-23 15:28:51,257 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Harry Potter and the Sorcerer's Stone (a.k.a. Harr (Item  270, score: 0.4964)
+2025-09-23 15:28:51,259 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Harry Potter and the Deathly Hallows: Part 2 (2011 (Item  848, score: 0.4813)
+2025-09-23 15:28:51,259 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Harry Potter and the Chamber of Secrets (2002) (Item  308, score: 0.4610)
+2025-09-23 15:28:51,259 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Harry Potter and the Order of the Phoenix (2007) (Item  544, score: 0.4605)
+2025-09-23 15:28:51,261 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. How to Train Your Dragon (2010) (Item  740, score: 0.4099)
+2025-09-23 15:28:51,261 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Despicable Me (2010)           (Item  762, score: 0.3863)
+2025-09-23 15:28:51,263 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-23 15:28:51,264 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Harry Potter and the Deathly Hallows: Part 1 (2010 (Item  792, score: 0.5116)
+2025-09-23 15:28:51,265 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-23 15:28:51,266 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Harry Potter and the Half-Blood Prince (2009) (Item  685, score: 0.5044)
+2025-09-23 15:28:51,267 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 1005 items (mean: 0.0332)
+2025-09-23 15:28:51,269 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Harry Potter and the Prisoner of Azkaban (2004) (Item  380, score: 0.5041)
+2025-09-23 15:28:51,269 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 573 items (mean: -0.0125)
+2025-09-23 15:28:51,269 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Harry Potter and the Goblet of Fire (2005) (Item  465, score: 0.5020)
+2025-09-23 15:28:51,273 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-23 15:28:51,278 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Harry Potter and the Sorcerer's Stone (a.k.a. Harr (Item  270, score: 0.4964)
+2025-09-23 15:28:51,280 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Harry Potter and the Deathly Hallows: Part 2 (2011 (Item  848, score: 0.4813)
+2025-09-23 15:28:51,280 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-23 15:28:51,282 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Harry Potter and the Chamber of Secrets (2002) (Item  308, score: 0.4610)
+2025-09-23 15:28:51,283 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Harry Potter and the Order of the Phoenix (2007) (Item  544, score: 0.4605)
+2025-09-23 15:28:51,285 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. How to Train Your Dragon (2010) (Item  740, score: 0.4099)
+2025-09-23 15:28:51,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Harry Potter and the Deathly Hallows: Part 1 (2010) (Item 792, score: 0.5116)
+2025-09-23 15:28:51,286 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Despicable Me (2010)           (Item  762, score: 0.3863)
+2025-09-23 15:28:51,290 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Harry Potter and the Half-Blood Prince (2009) (Item 685, score: 0.5044)
+2025-09-23 15:28:51,291 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Harry Potter and the Prisoner of Azkaban (2004) (Item 380, score: 0.5041)
+2025-09-23 15:28:51,291 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Harry Potter and the Goblet of Fire (2005) (Item 465, score: 0.5020)
+2025-09-23 15:28:51,293 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Harry Potter and the Sorcerer's Stone (a.k.a. Harry Potter and the Philosopher's Stone) (2001) (Item 270, score: 0.4964)
+2025-09-23 15:28:51,293 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-23 15:28:51,295 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 1005 items (mean: 0.0332)
+2025-09-23 15:28:51,297 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 573 items (mean: -0.0125)
+2025-09-23 15:28:51,314 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-23 15:28:51,315 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-23 15:28:51,319 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Harry Potter and the Deathly Hallows: Part 1 (2010) (Item 792, score: 0.5116)
+2025-09-23 15:28:51,332 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Harry Potter and the Half-Blood Prince (2009) (Item 685, score: 0.5044)
+2025-09-23 15:28:51,342 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Harry Potter and the Prisoner of Azkaban (2004) (Item 380, score: 0.5041)
+2025-09-23 15:28:51,344 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Harry Potter and the Goblet of Fire (2005) (Item 465, score: 0.5020)
+2025-09-23 15:28:51,344 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Harry Potter and the Sorcerer's Stone (a.k.a. Harry Potter and the Philosopher's Stone) (2001) (Item 270, score: 0.4964)
+2025-09-23 15:29:05,161 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 15:29:05,171 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 0 selected items, alpha=0.3
+2025-09-23 15:29:05,189 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-23 15:29:05,189 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 15:29:05,189 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 15:29:05,195 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-23 15:29:05,206 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-23 15:29:05,353 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-23 15:29:05,731 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 15:29:05,740 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 15:29:05,741 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 15:29:05,742 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 15:29:05,742 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 15:29:05,744 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6339, max=0.0618, nonzero=1743
+2025-09-23 15:29:05,745 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.006207
+2025-09-23 15:29:05,745 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.0062065282836556435, 'std': 0.0406331941485405, 'max': 0.4327557682991028, 'nonzero_count': 48}
+2025-09-23 15:29:05,777 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0072, std=0.0423, max=0.2405, min=-0.1536
+2025-09-23 15:29:05,778 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-23 15:29:05,780 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Harry Potter and the Prisoner of Azkaban (2004) (Item 380, score: 0.2405)
+2025-09-23 15:29:05,782 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Harry Potter and the Sorcerer's Stone (a.k.a. Harry Potter and the Philosopher's Stone) (2001) (Item 270, score: 0.2339)
+2025-09-23 15:29:05,786 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Harry Potter and the Chamber of Secrets (2002) (Item 308, score: 0.2303)
+2025-09-23 15:29:05,786 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Harry Potter and the Goblet of Fire (2005) (Item 465, score: 0.2258)
+2025-09-23 15:29:05,788 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Despicable Me (2010) (Item 762, score: 0.2170)
+2025-09-23 15:29:07,665 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 15:29:07,666 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 0 selected items, alpha=0.3
+2025-09-23 15:29:07,671 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-23 15:29:07,671 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 15:29:07,671 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 15:29:07,687 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-23 15:29:07,698 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-23 15:29:07,849 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-23 15:29:08,148 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 15:29:08,152 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 15:29:08,154 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 15:29:08,154 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 15:29:08,154 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 15:29:08,157 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6339, max=0.0618, nonzero=1743
+2025-09-23 15:29:08,160 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.006207
+2025-09-23 15:29:08,162 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.0062065282836556435, 'std': 0.0406331941485405, 'max': 0.4327557682991028, 'nonzero_count': 48}
+2025-09-23 15:29:08,167 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0072, std=0.0423, max=0.2405, min=-0.1536
+2025-09-23 15:29:08,168 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-23 15:29:08,168 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Harry Potter and the Prisoner of Azkaban (2004) (Item 380, score: 0.2405)
+2025-09-23 15:29:08,170 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Harry Potter and the Sorcerer's Stone (a.k.a. Harry Potter and the Philosopher's Stone) (2001) (Item 270, score: 0.2339)
+2025-09-23 15:29:08,171 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Harry Potter and the Chamber of Secrets (2002) (Item 308, score: 0.2303)
+2025-09-23 15:29:08,171 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Harry Potter and the Goblet of Fire (2005) (Item 465, score: 0.2258)
+2025-09-23 15:29:08,171 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Despicable Me (2010) (Item 762, score: 0.2170)
+2025-09-23 15:31:19,169 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 15:31:19,171 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 10 selected items, alpha=0.3
+2025-09-23 15:31:19,176 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.004002003464847803, 'std': 0.10454811155796051, 'max': 4.678124904632568, 'nonzero_count': 32}
+2025-09-23 15:31:19,176 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'dungeons and dragons'
+2025-09-23 15:31:19,176 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 15:31:19,176 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 15:31:19,180 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-23 15:31:19,182 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-23 15:31:19,209 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-23 15:31:19,293 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 15:31:19,293 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 15:31:19,293 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 15:31:19,295 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 15:31:19,295 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 15:31:19,297 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.5365, max=0.1988, nonzero=988
+2025-09-23 15:31:19,297 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -0.0002526108000893146, 'std': 0.01185629889369011, 'max': 0.19875752925872803, 'nonzero_count': 989}
+2025-09-23 15:31:19,304 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [ 762  740  794  946    7 1092 1042  601 1133  136], type <class 'numpy.ndarray'>, len 10 
+2025-09-23 15:31:19,306 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-23 15:31:19,307 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Despicable Me (2010)
+2025-09-23 15:31:19,307 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Despicable Me (2010) before:0.0636 after:0.3669 change:+0.3033
+2025-09-23 15:31:19,307 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title How to Train Your Dragon (2010)
+2025-09-23 15:31:19,307 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. How to Train Your Dragon (2010) before:-0.8579 after:-0.6041 change:+0.2538
+2025-09-23 15:31:19,309 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Tangled (2010)
+2025-09-23 15:31:19,309 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Tangled (2010) before:0.0700 after:0.3235 change:+0.2536
+2025-09-23 15:31:19,309 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Wreck-It Ralph (2012)
+2025-09-23 15:31:19,309 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Wreck-It Ralph (2012) before:0.0146 after:0.2511 change:+0.2365
+2025-09-23 15:31:19,311 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title City of Lost Children, The (Cit des enf
+2025-09-23 15:31:19,311 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. City of Lost Children, The (Cit des enf before:-0.0054 after:0.2093 change:+0.2147
+2025-09-23 15:31:19,311 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title How to Train Your Dragon 2 (2014)
+2025-09-23 15:31:19,311 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. How to Train Your Dragon 2 (2014) before:0.0561 after:0.2572 change:+0.2012
+2025-09-23 15:31:19,311 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Frozen (2013)
+2025-09-23 15:31:19,311 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Frozen (2013) before:0.0482 after:0.2434 change:+0.1952
+2025-09-23 15:31:19,313 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Kung Fu Panda (2008)
+2025-09-23 15:31:19,313 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Kung Fu Panda (2008) before:0.0799 after:0.2643 change:+0.1845
+2025-09-23 15:31:19,313 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Big Hero 6 (2014)
+2025-09-23 15:31:19,313 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Big Hero 6 (2014) before:0.0459 after:0.2257 change:+0.1798
+2025-09-23 15:31:19,313 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Edward Scissorhands (1990)
+2025-09-23 15:31:19,313 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Edward Scissorhands (1990) before:0.0111 after:0.1843 change:+0.1732
+2025-09-23 15:31:19,315 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.026216
+2025-09-23 15:31:19,315 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.007787, max_boost=0.303283, max_penalty=-0.394732
+2025-09-23 15:31:19,315 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.02796267531812191, 'std': 0.28962230682373047, 'max': 8.35995101928711, 'nonzero_count': 48}
+2025-09-23 15:31:19,317 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0100, std=0.0555, max=0.3669, min=-0.7775
+2025-09-23 15:31:19,320 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-23 15:31:19,321 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-23 15:31:19,321 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Despicable Me (2010)           (Item  762, score: 0.3669)
+2025-09-23 15:31:19,323 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Tangled (2010)                 (Item  794, score: 0.3235)
+2025-09-23 15:31:19,323 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Kung Fu Panda (2008)           (Item  601, score: 0.2643)
+2025-09-23 15:31:19,323 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. How to Train Your Dragon 2 (2014) (Item 1092, score: 0.2572)
+2025-09-23 15:31:19,323 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Wreck-It Ralph (2012)          (Item  946, score: 0.2511)
+2025-09-23 15:31:19,324 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Frozen (2013)                  (Item 1042, score: 0.2434)
+2025-09-23 15:31:19,324 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Big Hero 6 (2014)              (Item 1133, score: 0.2257)
+2025-09-23 15:31:19,324 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. City of Lost Children, The (Cit des enfants perdu (Item    7, score: 0.2093)
+2025-09-23 15:31:19,324 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Brave (2012)                   (Item  915, score: 0.1994)
+2025-09-23 15:31:19,325 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Despicable Me 2 (2013)         (Item 1000, score: 0.1851)
+2025-09-23 15:31:19,325 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-23 15:31:19,325 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 996 items (mean: 0.0277)
+2025-09-23 15:31:19,325 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 582 items (mean: -0.0203)
+2025-09-23 15:31:19,329 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-23 15:31:19,331 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-23 15:31:19,332 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Tangled (2010) (Item 794, score: 0.3235)
+2025-09-23 15:31:19,332 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Kung Fu Panda (2008) (Item 601, score: 0.2643)
+2025-09-23 15:31:19,332 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. How to Train Your Dragon 2 (2014) (Item 1092, score: 0.2572)
+2025-09-23 15:31:19,334 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Frozen (2013) (Item 1042, score: 0.2434)
+2025-09-23 15:31:19,334 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Big Hero 6 (2014) (Item 1133, score: 0.2257)
+2025-09-23 15:31:26,451 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 15:31:26,451 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 10 selected items, alpha=0.3
+2025-09-23 15:31:26,456 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.004002003464847803, 'std': 0.10454811155796051, 'max': 4.678124904632568, 'nonzero_count': 32}
+2025-09-23 15:31:26,458 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 15:31:26,458 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 15:31:26,460 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-23 15:31:26,462 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-23 15:31:26,493 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-23 15:31:26,578 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 15:31:26,578 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 15:31:26,580 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 15:31:26,580 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 15:31:26,580 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 15:31:26,582 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6339, max=0.0618, nonzero=1743
+2025-09-23 15:31:26,587 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.008141
+2025-09-23 15:31:26,587 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.007014250848442316, 'std': 0.057282350957393646, 'max': 1.836193323135376, 'nonzero_count': 48}
+2025-09-23 15:31:26,592 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0038, std=0.0499, max=0.1814, min=-0.7605
+2025-09-23 15:31:26,593 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-23 15:31:26,595 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Pirates of the Caribbean: The Curse of the Black Pearl (2003) (Item 335, score: 0.1814)
+2025-09-23 15:31:26,595 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Charlie and the Chocolate Factory (2005) (Item 422, score: 0.1724)
+2025-09-23 15:31:26,595 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Tangled (2010) (Item 794, score: 0.1703)
+2025-09-23 15:31:26,595 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Shrek (2001) (Item 248, score: 0.1554)
+2025-09-23 15:31:26,595 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Finding Nemo (2003) (Item 331, score: 0.1502)
+2025-09-23 15:33:05,324 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 15:33:05,325 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 20 selected items, alpha=0.3
+2025-09-23 15:33:05,329 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.004002003464847803, 'std': 0.10454811155796051, 'max': 4.678124904632568, 'nonzero_count': 32}
+2025-09-23 15:33:05,329 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'dungeons and dragons'
+2025-09-23 15:33:05,331 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 15:33:05,331 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 15:33:05,335 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-23 15:33:05,337 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-23 15:33:05,367 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-23 15:33:05,478 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 15:33:05,480 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 15:33:05,481 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 15:33:05,482 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 15:33:05,483 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 15:33:05,485 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.5365, max=0.1988, nonzero=988
+2025-09-23 15:33:05,487 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -0.0002526108000893146, 'std': 0.01185629889369011, 'max': 0.19875752925872803, 'nonzero_count': 989}
+2025-09-23 15:33:05,496 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [ 762  740  794  946    7 1092 1042  601 1133  136], type <class 'numpy.ndarray'>, len 10 
+2025-09-23 15:33:05,496 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-23 15:33:05,497 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Despicable Me (2010)
+2025-09-23 15:33:05,497 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Despicable Me (2010) before:0.0636 after:0.3669 change:+0.3033
+2025-09-23 15:33:05,498 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title How to Train Your Dragon (2010)
+2025-09-23 15:33:05,498 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. How to Train Your Dragon (2010) before:-0.8579 after:-0.6041 change:+0.2538
+2025-09-23 15:33:05,498 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Tangled (2010)
+2025-09-23 15:33:05,498 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Tangled (2010) before:0.0700 after:0.3235 change:+0.2536
+2025-09-23 15:33:05,500 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Wreck-It Ralph (2012)
+2025-09-23 15:33:05,500 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Wreck-It Ralph (2012) before:0.0146 after:0.2511 change:+0.2365
+2025-09-23 15:33:05,500 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title City of Lost Children, The (Cit des enf
+2025-09-23 15:33:05,500 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. City of Lost Children, The (Cit des enf before:-0.0054 after:0.2093 change:+0.2147
+2025-09-23 15:33:05,502 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title How to Train Your Dragon 2 (2014)
+2025-09-23 15:33:05,502 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. How to Train Your Dragon 2 (2014) before:0.0561 after:0.2572 change:+0.2012
+2025-09-23 15:33:05,503 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Frozen (2013)
+2025-09-23 15:33:05,503 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Frozen (2013) before:0.0482 after:0.2434 change:+0.1952
+2025-09-23 15:33:05,503 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Kung Fu Panda (2008)
+2025-09-23 15:33:05,503 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Kung Fu Panda (2008) before:0.0799 after:0.2643 change:+0.1845
+2025-09-23 15:33:05,503 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Big Hero 6 (2014)
+2025-09-23 15:33:05,505 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Big Hero 6 (2014) before:0.0459 after:0.2257 change:+0.1798
+2025-09-23 15:33:05,506 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Edward Scissorhands (1990)
+2025-09-23 15:33:05,507 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Edward Scissorhands (1990) before:0.0111 after:0.1843 change:+0.1732
+2025-09-23 15:33:05,509 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.026216
+2025-09-23 15:33:05,509 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.007787, max_boost=0.303283, max_penalty=-0.394732
+2025-09-23 15:33:05,510 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.02796267531812191, 'std': 0.28962230682373047, 'max': 8.35995101928711, 'nonzero_count': 48}
+2025-09-23 15:33:05,518 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0100, std=0.0555, max=0.3669, min=-0.7775
+2025-09-23 15:33:05,518 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-23 15:33:05,518 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-23 15:33:05,519 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Despicable Me (2010)           (Item  762, score: 0.3669)
+2025-09-23 15:33:05,519 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Tangled (2010)                 (Item  794, score: 0.3235)
+2025-09-23 15:33:05,521 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Kung Fu Panda (2008)           (Item  601, score: 0.2643)
+2025-09-23 15:33:05,522 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. How to Train Your Dragon 2 (2014) (Item 1092, score: 0.2572)
+2025-09-23 15:33:05,522 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Wreck-It Ralph (2012)          (Item  946, score: 0.2511)
+2025-09-23 15:33:05,522 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Frozen (2013)                  (Item 1042, score: 0.2434)
+2025-09-23 15:33:05,523 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Big Hero 6 (2014)              (Item 1133, score: 0.2257)
+2025-09-23 15:33:05,525 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. City of Lost Children, The (Cit des enfants perdu (Item    7, score: 0.2093)
+2025-09-23 15:33:05,526 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Brave (2012)                   (Item  915, score: 0.1994)
+2025-09-23 15:33:05,526 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Despicable Me 2 (2013)         (Item 1000, score: 0.1851)
+2025-09-23 15:33:05,526 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-23 15:33:05,528 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 996 items (mean: 0.0277)
+2025-09-23 15:33:05,528 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 582 items (mean: -0.0203)
+2025-09-23 15:33:05,530 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-23 15:33:05,530 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-23 15:33:05,532 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Megamind (2010) (Item 788, score: 0.1771)
+2025-09-23 15:33:05,532 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Me Before You (2016) (Item 1300, score: 0.1693)
+2025-09-23 15:33:05,534 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. The Lego Movie (2014) (Item 1058, score: 0.1691)
+2025-09-23 15:33:05,534 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Nightmare Before Christmas, The (1993) (Item 47, score: 0.1684)
+2025-09-23 15:33:05,535 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Star Wars: Episode I - The Phantom Menace (1999) (Item 158, score: 0.1653)
+2025-09-23 15:33:12,556 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'dungeons and dragons'
+2025-09-23 15:33:12,556 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 20 selected items, alpha=0.3
+2025-09-23 15:33:12,565 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.004002003464847803, 'std': 0.10454811155796051, 'max': 4.678124904632568, 'nonzero_count': 32}
+2025-09-23 15:33:12,567 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-23 15:33:12,567 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-23 15:33:12,573 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-23 15:33:12,573 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-23 15:33:12,603 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-23 15:33:12,677 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'dungeons and dragons' interpreted as tags: ['fantasy movie genre', 'dragons movie tag', 'dragon movie tag', 'adventure movie genre', 'dark fantasy movie tag', 'fantasy movie tag', 'dinosaurs movie tag', 'fantasy world movie tag', 'video games movie tag', 'dinosaur movie tag'] (scores: [0.428, 0.4064, 0.3669, 0.3578, 0.3471, 0.3344, 0.3304, 0.3177, 0.317, 0.3137])
+2025-09-23 15:33:12,679 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1278, 0.119, 0.1043, 0.1012, 0.0976, 0.0936, 0.0923, 0.0885, 0.0883, 0.0873]
+2025-09-23 15:33:12,679 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'fantasy movie genre': weight=0.1278, tag_vector_norm=1.0000, contribution_norm=0.1278
+2025-09-23 15:33:12,679 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragons movie tag': weight=0.1190, tag_vector_norm=1.0000, contribution_norm=0.1190
+2025-09-23 15:33:12,679 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'dragon movie tag': weight=0.1043, tag_vector_norm=1.0000, contribution_norm=0.1043
+2025-09-23 15:33:12,679 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6339, max=0.0618, nonzero=1743
+2025-09-23 15:33:12,679 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.008141
+2025-09-23 15:33:12,679 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.007014250848442316, 'std': 0.057282350957393646, 'max': 1.836193323135376, 'nonzero_count': 48}
+2025-09-23 15:33:12,685 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0038, std=0.0499, max=0.1814, min=-0.7605
+2025-09-23 15:33:12,688 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-23 15:33:12,690 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. National Treasure: Book of Secrets (2007) (Item 578, score: 0.1299)
+2025-09-23 15:33:12,690 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Nightmare Before Christmas, The (1993) (Item 47, score: 0.1189)
+2025-09-23 15:33:12,690 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Incredibles, The (2004) (Item 407, score: 0.1154)
+2025-09-23 15:33:12,692 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Hobbit: An Unexpected Journey, The (2012) (Item 956, score: 0.1136)
+2025-09-23 15:33:12,692 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Pirates of the Caribbean: At World's End (2007) (Item 535, score: 0.1121)

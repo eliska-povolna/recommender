@@ -1,0 +1,957 @@
+2025-09-25 15:40:32,487 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'mysterious psychology'
+2025-09-25 15:40:32,487 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 0 selected items, alpha=0.3
+2025-09-25 15:40:32,511 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-25 15:40:32,511 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'mysterious psychology'
+2025-09-25 15:40:32,512 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 15:40:32,512 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 15:40:32,520 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 15:40:32,523 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 15:40:32,569 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 15:40:32,706 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'mysterious psychology' interpreted as tags: ['group psychology movie tag', 'psychology movie tag', 'psychological movie tag', 'psychologist movie tag', 'psychological horror movie tag', 'psychic movie tag', 'psychopathy movie tag', 'psychiatry movie tag', 'psychopath movie tag', 'psychiatrist movie tag'] (scores: [0.4208, 0.3867, 0.3782, 0.3569, 0.3355, 0.3352, 0.3233, 0.3197, 0.3013, 0.2917])
+2025-09-25 15:40:32,710 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1277, 0.114, 0.1108, 0.1032, 0.0961, 0.096, 0.0923, 0.0912, 0.0857, 0.083]
+2025-09-25 15:40:32,710 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'group psychology movie tag': weight=0.1277, tag_vector_norm=1.0000, contribution_norm=0.1277
+2025-09-25 15:40:32,711 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychology movie tag': weight=0.1140, tag_vector_norm=1.0000, contribution_norm=0.1140
+2025-09-25 15:40:32,712 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychological movie tag': weight=0.1108, tag_vector_norm=1.0000, contribution_norm=0.1108
+2025-09-25 15:40:32,712 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4091, max=0.1036, nonzero=966
+2025-09-25 15:40:32,713 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': 0.0004413303977344185, 'std': 0.00903048925101757, 'max': 0.10355990380048752, 'nonzero_count': 966}
+2025-09-25 15:40:32,719 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [1099  268  242  731 1098  366 1062 1140  175  763], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 15:40:32,720 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 15:40:32,720 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Gone Girl (2014)
+2025-09-25 15:40:32,721 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Gone Girl (2014) before:-0.0015 after:0.4675 change:+0.4690
+2025-09-25 15:40:32,722 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Donnie Darko (2001)
+2025-09-25 15:40:32,722 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Donnie Darko (2001) before:0.0122 after:0.4528 change:+0.4407
+2025-09-25 15:40:32,722 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Memento (2000)
+2025-09-25 15:40:32,722 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Memento (2000) before:0.0971 after:0.4991 change:+0.4020
+2025-09-25 15:40:32,722 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Shutter Island (2010)
+2025-09-25 15:40:32,723 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Shutter Island (2010) before:0.0665 after:0.4596 change:+0.3932
+2025-09-25 15:40:32,723 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Whiplash (2014)
+2025-09-25 15:40:32,723 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Whiplash (2014) before:0.0056 after:0.3985 change:+0.3929
+2025-09-25 15:40:32,724 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Eternal Sunshine of the Spotless Mind (2
+2025-09-25 15:40:32,724 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Eternal Sunshine of the Spotless Mind (2 before:0.0269 after:0.4020 change:+0.3751
+2025-09-25 15:40:32,724 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Interstellar (2014)
+2025-09-25 15:40:32,724 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Interstellar (2014) before:0.0429 after:0.4020 change:+0.3592
+2025-09-25 15:40:32,725 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title The Imitation Game (2014)
+2025-09-25 15:40:32,725 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. The Imitation Game (2014) before:0.0322 after:0.3620 change:+0.3298
+2025-09-25 15:40:32,725 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fight Club (1999)
+2025-09-25 15:40:32,725 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Fight Club (1999) before:0.1056 after:0.4294 change:+0.3239
+2025-09-25 15:40:32,726 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Inception (2010)
+2025-09-25 15:40:32,726 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Inception (2010) before:0.0808 after:0.3934 change:+0.3126
+2025-09-25 15:40:32,728 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.028059
+2025-09-25 15:40:32,729 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=-0.015940, max_boost=0.468992, max_penalty=-0.257809
+2025-09-25 15:40:32,729 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.028058798983693123, 'std': 0.21706034243106842, 'max': 3.624596357345581, 'nonzero_count': 48}
+2025-09-25 15:40:32,734 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0130, std=0.0554, max=0.4991, min=-0.0912
+2025-09-25 15:40:32,734 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 15:40:32,735 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 15:40:32,735 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Memento (2000)                 (Item  242, score: 0.4991)
+2025-09-25 15:40:32,735 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Gone Girl (2014)               (Item 1099, score: 0.4675)
+2025-09-25 15:40:32,736 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Shutter Island (2010)          (Item  731, score: 0.4596)
+2025-09-25 15:40:32,736 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Donnie Darko (2001)            (Item  268, score: 0.4528)
+2025-09-25 15:40:32,737 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Fight Club (1999)              (Item  175, score: 0.4294)
+2025-09-25 15:40:32,737 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Prestige, The (2006)           (Item  511, score: 0.4292)
+2025-09-25 15:40:32,737 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Interstellar (2014)            (Item 1062, score: 0.4020)
+2025-09-25 15:40:32,738 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Eternal Sunshine of the Spotless Mind (2004) (Item  366, score: 0.4020)
+2025-09-25 15:40:32,738 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Whiplash (2014)                (Item 1098, score: 0.3985)
+2025-09-25 15:40:32,738 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Inception (2010)               (Item  763, score: 0.3934)
+2025-09-25 15:40:32,738 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 15:40:32,738 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 858 items (mean: 0.0371)
+2025-09-25 15:40:32,739 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 720 items (mean: -0.0156)
+2025-09-25 15:40:32,739 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 15:40:32,739 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 15:40:32,740 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Memento (2000) (Item 242, score: 0.4991)
+2025-09-25 15:40:32,740 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Gone Girl (2014) (Item 1099, score: 0.4675)
+2025-09-25 15:40:32,740 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Shutter Island (2010) (Item 731, score: 0.4596)
+2025-09-25 15:40:32,741 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Donnie Darko (2001) (Item 268, score: 0.4528)
+2025-09-25 15:40:32,741 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Fight Club (1999) (Item 175, score: 0.4294)
+2025-09-25 15:40:38,242 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'mysterious psychology'
+2025-09-25 15:40:38,242 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 0 selected items, alpha=0.3
+2025-09-25 15:40:38,245 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.0, 'std': 0.0, 'max': 0.0, 'nonzero_count': 0}
+2025-09-25 15:40:38,245 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 15:40:38,245 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 15:40:38,246 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 15:40:38,248 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 15:40:38,275 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 15:40:38,341 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'mysterious psychology' interpreted as tags: ['group psychology movie tag', 'psychology movie tag', 'psychological movie tag', 'psychologist movie tag', 'psychological horror movie tag', 'psychic movie tag', 'psychopathy movie tag', 'psychiatry movie tag', 'psychopath movie tag', 'psychiatrist movie tag'] (scores: [0.4208, 0.3867, 0.3782, 0.3569, 0.3355, 0.3352, 0.3233, 0.3197, 0.3013, 0.2917])
+2025-09-25 15:40:38,341 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1277, 0.114, 0.1108, 0.1032, 0.0961, 0.096, 0.0923, 0.0912, 0.0857, 0.083]
+2025-09-25 15:40:38,342 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'group psychology movie tag': weight=0.1277, tag_vector_norm=1.0000, contribution_norm=0.1277
+2025-09-25 15:40:38,342 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychology movie tag': weight=0.1140, tag_vector_norm=1.0000, contribution_norm=0.1140
+2025-09-25 15:40:38,342 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychological movie tag': weight=0.1108, tag_vector_norm=1.0000, contribution_norm=0.1108
+2025-09-25 15:40:38,343 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.5581, max=0.0489, nonzero=1587
+2025-09-25 15:40:38,345 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.005615
+2025-09-25 15:40:38,345 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.005614554509520531, 'std': 0.03644750267267227, 'max': 0.34202638268470764, 'nonzero_count': 48}
+2025-09-25 15:40:38,348 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0002, std=0.0441, max=0.2336, min=-0.2277
+2025-09-25 15:40:38,349 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 15:40:38,350 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Exam (2009) (Item 753, score: 0.2336)
+2025-09-25 15:40:38,350 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. The Machinist (2004) (Item 404, score: 0.1851)
+2025-09-25 15:40:38,350 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Requiem for a Dream (2000) (Item 225, score: 0.1761)
+2025-09-25 15:40:38,351 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Donnie Darko (2001) (Item 268, score: 0.1405)
+2025-09-25 15:40:38,351 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Mulholland Drive (2001) (Item 265, score: 0.1398)
+2025-09-25 15:54:43,340 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 15:54:43,341 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 9 selected items, alpha=0.3
+2025-09-25 15:54:43,348 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.002490085083991289, 'std': 0.023356247693300247, 'max': 0.5818321704864502, 'nonzero_count': 32}
+2025-09-25 15:54:43,348 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'mysterious psychology drama'
+2025-09-25 15:54:43,348 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 15:54:43,349 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 15:54:43,353 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 15:54:43,357 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 15:54:43,419 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 15:54:43,543 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 15:54:43,544 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 15:54:43,544 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 15:54:43,545 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 15:54:43,546 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 15:54:43,547 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4403, max=0.1385, nonzero=1035
+2025-09-25 15:54:43,548 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': 0.00045661383774131536, 'std': 0.00972079485654831, 'max': 0.13849715888500214, 'nonzero_count': 1037}
+2025-09-25 15:54:43,561 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [1137 1099  242 1098  366 1047  229 1132  268 1062], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 15:54:43,562 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 15:54:43,563 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Ex Machina (2015)
+2025-09-25 15:54:43,563 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Ex Machina (2015) before:-0.0015 after:0.2743 change:+0.2757
+2025-09-25 15:54:43,564 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Gone Girl (2014)
+2025-09-25 15:54:43,565 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Gone Girl (2014) before:0.1617 after:0.4370 change:+0.2753
+2025-09-25 15:54:43,565 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Memento (2000)
+2025-09-25 15:54:43,566 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Memento (2000) before:0.2472 after:0.5098 change:+0.2626
+2025-09-25 15:54:43,567 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Whiplash (2014)
+2025-09-25 15:54:43,567 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Whiplash (2014) before:0.0958 after:0.3326 change:+0.2368
+2025-09-25 15:54:43,568 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Eternal Sunshine of the Spotless Mind (2
+2025-09-25 15:54:43,568 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Eternal Sunshine of the Spotless Mind (2 before:0.1776 after:0.3922 change:+0.2146
+2025-09-25 15:54:43,569 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Her (2013)
+2025-09-25 15:54:43,569 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Her (2013) before:0.0065 after:0.2190 change:+0.2125
+2025-09-25 15:54:43,570 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Crouching Tiger, Hidden Dragon (Wo hu ca
+2025-09-25 15:54:43,570 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Crouching Tiger, Hidden Dragon (Wo hu ca before:-0.2059 after:-0.0003 change:+0.2055
+2025-09-25 15:54:43,571 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Nightcrawler (2014)
+2025-09-25 15:54:43,571 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Nightcrawler (2014) before:0.0163 after:0.2176 change:+0.2013
+2025-09-25 15:54:43,571 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Donnie Darko (2001)
+2025-09-25 15:54:43,571 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Donnie Darko (2001) before:0.2706 after:0.4447 change:+0.1740
+2025-09-25 15:54:43,572 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Interstellar (2014)
+2025-09-25 15:54:43,572 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Interstellar (2014) before:0.2340 after:0.4023 change:+0.1682
+2025-09-25 15:54:43,573 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.031289
+2025-09-25 15:54:43,574 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.000439, max_boost=0.275734, max_penalty=-0.244817
+2025-09-25 15:54:43,574 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.030964352190494537, 'std': 0.25057363510131836, 'max': 5.0219502449035645, 'nonzero_count': 48}
+2025-09-25 15:54:43,577 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0090, std=0.0849, max=0.5098, min=-1.0055
+2025-09-25 15:54:43,578 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 15:54:43,578 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 15:54:43,579 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Memento (2000)                 (Item  242, score: 0.5098)
+2025-09-25 15:54:43,580 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Prestige, The (2006)           (Item  511, score: 0.5026)
+2025-09-25 15:54:43,580 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Inception (2010)               (Item  763, score: 0.4763)
+2025-09-25 15:54:43,580 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Donnie Darko (2001)            (Item  268, score: 0.4447)
+2025-09-25 15:54:43,582 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Gone Girl (2014)               (Item 1099, score: 0.4370)
+2025-09-25 15:54:43,583 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Interstellar (2014)            (Item 1062, score: 0.4023)
+2025-09-25 15:54:43,583 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Eternal Sunshine of the Spotless Mind (2004) (Item  366, score: 0.3922)
+2025-09-25 15:54:43,584 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Requiem for a Dream (2000)     (Item  225, score: 0.3572)
+2025-09-25 15:54:43,585 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. The Imitation Game (2014)      (Item 1140, score: 0.3394)
+2025-09-25 15:54:43,585 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Seven (a.k.a. Se7en) (1995)    (Item   11, score: 0.3389)
+2025-09-25 15:54:43,586 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 15:54:43,586 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 903 items (mean: 0.0339)
+2025-09-25 15:54:43,586 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 675 items (mean: -0.0243)
+2025-09-25 15:54:43,589 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 15:54:43,591 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 15:54:43,592 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Memento (2000) (Item 242, score: 0.5098)
+2025-09-25 15:54:43,593 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Prestige, The (2006) (Item 511, score: 0.5026)
+2025-09-25 15:54:43,594 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Inception (2010) (Item 763, score: 0.4763)
+2025-09-25 15:54:43,594 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Donnie Darko (2001) (Item 268, score: 0.4447)
+2025-09-25 15:54:43,595 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Gone Girl (2014) (Item 1099, score: 0.4370)
+2025-09-25 15:54:50,212 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 15:54:50,213 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 9 selected items, alpha=0.3
+2025-09-25 15:54:50,219 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.002490085083991289, 'std': 0.023356247693300247, 'max': 0.5818321704864502, 'nonzero_count': 32}
+2025-09-25 15:54:50,219 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 15:54:50,219 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 15:54:50,222 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 15:54:50,223 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 15:54:50,259 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 15:54:50,358 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 15:54:50,360 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 15:54:50,361 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 15:54:50,362 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 15:54:50,362 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 15:54:50,364 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.5750, max=0.0490, nonzero=1700
+2025-09-25 15:54:50,365 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.006720
+2025-09-25 15:54:50,366 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.005983414128422737, 'std': 0.03910587355494499, 'max': 0.4025631844997406, 'nonzero_count': 48}
+2025-09-25 15:54:50,372 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0006, std=0.0814, max=0.2961, min=-1.0435
+2025-09-25 15:54:50,372 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 15:54:50,374 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Shawshank Redemption, The (1994) (Item 29, score: 0.2961)
+2025-09-25 15:54:50,375 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Prestige, The (2006) (Item 511, score: 0.2845)
+2025-09-25 15:54:50,375 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Seven (a.k.a. Se7en) (1995) (Item 11, score: 0.2751)
+2025-09-25 15:54:50,376 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Inception (2010) (Item 763, score: 0.2682)
+2025-09-25 15:54:50,377 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. The Machinist (2004) (Item 404, score: 0.2380)
+2025-09-25 15:56:31,921 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 15:56:31,923 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 21 selected items, alpha=0.3
+2025-09-25 15:56:31,925 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.00687998253852129, 'std': 0.07156171649694443, 'max': 1.4794093370437622, 'nonzero_count': 32}
+2025-09-25 15:56:31,926 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'mysterious psychology drama'
+2025-09-25 15:56:31,926 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 15:56:31,926 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 15:56:31,928 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 15:56:31,931 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 15:56:31,963 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 15:56:32,062 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 15:56:32,063 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 15:56:32,063 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 15:56:32,064 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 15:56:32,064 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 15:56:32,066 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4403, max=0.1385, nonzero=1035
+2025-09-25 15:56:32,070 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': 0.00045661383774131536, 'std': 0.00972079485654831, 'max': 0.13849715888500214, 'nonzero_count': 1037}
+2025-09-25 15:56:32,074 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [ 684 1047  936  192  574  774  947  912  117  849], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 15:56:32,075 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 15:56:32,077 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title (500) Days of Summer (2009)
+2025-09-25 15:56:32,077 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. (500) Days of Summer (2009) before:0.0477 after:0.1837 change:+0.1360
+2025-09-25 15:56:32,078 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Her (2013)
+2025-09-25 15:56:32,078 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Her (2013) before:0.0970 after:0.2126 change:+0.1155
+2025-09-25 15:56:32,078 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Perks of Being a Wallflower, The (2012)
+2025-09-25 15:56:32,078 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Perks of Being a Wallflower, The (2012) before:0.0118 after:0.1249 change:+0.1131
+2025-09-25 15:56:32,079 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Girl, Interrupted (1999)
+2025-09-25 15:56:32,079 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Girl, Interrupted (1999) before:-0.0105 after:0.0999 change:+0.1104
+2025-09-25 15:56:32,079 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Juno (2007)
+2025-09-25 15:56:32,079 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Juno (2007) before:-0.0546 after:0.0546 change:+0.1093
+2025-09-25 15:56:32,079 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Scott Pilgrim vs. the World (2010)
+2025-09-25 15:56:32,079 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Scott Pilgrim vs. the World (2010) before:-0.0176 after:0.0915 change:+0.1091
+2025-09-25 15:56:32,080 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Silver Linings Playbook (2012)
+2025-09-25 15:56:32,080 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Silver Linings Playbook (2012) before:-0.0190 after:0.0872 change:+0.1062
+2025-09-25 15:56:32,080 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Moonrise Kingdom (2012)
+2025-09-25 15:56:32,080 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Moonrise Kingdom (2012) before:-0.0586 after:0.0469 change:+0.1055
+2025-09-25 15:56:32,081 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title As Good as It Gets (1997)
+2025-09-25 15:56:32,081 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. As Good as It Gets (1997) before:-0.0776 after:0.0216 change:+0.0992
+2025-09-25 15:56:32,082 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Drive (2011)
+2025-09-25 15:56:32,082 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Drive (2011) before:-0.0056 after:0.0934 change:+0.0990
+2025-09-25 15:56:32,083 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.028174
+2025-09-25 15:56:32,083 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.003601, max_boost=0.136005, max_penalty=-0.190461
+2025-09-25 15:56:32,083 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.03225695341825485, 'std': 0.263216495513916, 'max': 5.291223526000977, 'nonzero_count': 48}
+2025-09-25 15:56:32,090 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0011, std=0.0958, max=0.3913, min=-1.0051
+2025-09-25 15:56:32,090 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 15:56:32,090 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 15:56:32,091 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Eternal Sunshine of the Spotless Mind (2004) (Item  366, score: 0.3913)
+2025-09-25 15:56:32,092 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Whiplash (2014)                (Item 1098, score: 0.3361)
+2025-09-25 15:56:32,093 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Beautiful Mind, A (2001)       (Item  277, score: 0.3202)
+2025-09-25 15:56:32,093 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Black Swan (2010)              (Item  789, score: 0.3168)
+2025-09-25 15:56:32,094 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Departed, The (2006)           (Item  508, score: 0.3002)
+2025-09-25 15:56:32,094 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Ex Machina (2015)              (Item 1137, score: 0.2770)
+2025-09-25 15:56:32,095 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Dark Knight, The (2008)        (Item  593, score: 0.2691)
+2025-09-25 15:56:32,095 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. American History X (1998)      (Item  140, score: 0.2598)
+2025-09-25 15:56:32,096 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Pulp Fiction (1994)            (Item   26, score: 0.2584)
+2025-09-25 15:56:32,096 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Wolf of Wall Street, The (2013) (Item 1044, score: 0.2566)
+2025-09-25 15:56:32,096 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 15:56:32,096 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 877 items (mean: 0.0290)
+2025-09-25 15:56:32,098 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 701 items (mean: -0.0339)
+2025-09-25 15:56:32,098 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 15:56:32,099 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 15:56:32,100 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Whiplash (2014) (Item 1098, score: 0.3361)
+2025-09-25 15:56:32,101 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Beautiful Mind, A (2001) (Item 277, score: 0.3202)
+2025-09-25 15:56:32,102 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Black Swan (2010) (Item 789, score: 0.3168)
+2025-09-25 15:56:32,103 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Departed, The (2006) (Item 508, score: 0.3002)
+2025-09-25 15:56:32,103 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Ex Machina (2015) (Item 1137, score: 0.2770)
+2025-09-25 15:56:38,221 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 15:56:38,222 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 21 selected items, alpha=0.3
+2025-09-25 15:56:38,227 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.00687998253852129, 'std': 0.07156171649694443, 'max': 1.4794093370437622, 'nonzero_count': 32}
+2025-09-25 15:56:38,228 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 15:56:38,228 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 15:56:38,232 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 15:56:38,234 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 15:56:38,301 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 15:56:38,387 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 15:56:38,387 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 15:56:38,388 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 15:56:38,388 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 15:56:38,389 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 15:56:38,391 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.5750, max=0.0490, nonzero=1700
+2025-09-25 15:56:38,391 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.007579
+2025-09-25 15:56:38,392 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.007110930047929287, 'std': 0.04899656027555466, 'max': 0.6222739219665527, 'nonzero_count': 48}
+2025-09-25 15:56:38,402 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=-0.0056, std=0.0947, max=0.2911, min=-1.0345
+2025-09-25 15:56:38,404 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 15:56:38,405 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Usual Suspects, The (1995) (Item 12, score: 0.2839)
+2025-09-25 15:56:38,406 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Whiplash (2014) (Item 1098, score: 0.2490)
+2025-09-25 15:56:38,406 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Ex Machina (2015) (Item 1137, score: 0.2354)
+2025-09-25 15:56:38,406 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Black Swan (2010) (Item 789, score: 0.2289)
+2025-09-25 15:56:38,407 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Departed, The (2006) (Item 508, score: 0.2242)
+2025-09-25 15:58:09,314 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 15:58:09,316 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 30 selected items, alpha=0.3
+2025-09-25 15:58:09,325 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.009383957833051682, 'std': 0.09234710037708282, 'max': 1.9065965414047241, 'nonzero_count': 32}
+2025-09-25 15:58:09,325 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'mysterious psychology drama'
+2025-09-25 15:58:09,326 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 15:58:09,326 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 15:58:09,332 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 15:58:09,339 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 15:58:09,396 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 15:58:09,545 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 15:58:09,546 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 15:58:09,548 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 15:58:09,551 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 15:58:09,552 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 15:58:09,553 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4403, max=0.1385, nonzero=1035
+2025-09-25 15:58:09,554 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': 0.00045661383774131536, 'std': 0.00972079485654831, 'max': 0.13849715888500214, 'nonzero_count': 1037}
+2025-09-25 15:58:09,562 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [171 684 192 176 273 774 777 742 574 117], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 15:58:09,563 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 15:58:09,565 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title American Beauty (1999)
+2025-09-25 15:58:09,565 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. American Beauty (1999) before:0.1013 after:0.2480 change:+0.1467
+2025-09-25 15:58:09,566 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title (500) Days of Summer (2009)
+2025-09-25 15:58:09,570 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. (500) Days of Summer (2009) before:0.0625 after:0.1823 change:+0.1198
+2025-09-25 15:58:09,571 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Girl, Interrupted (1999)
+2025-09-25 15:58:09,572 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Girl, Interrupted (1999) before:-0.0116 after:0.0972 change:+0.1088
+2025-09-25 15:58:09,572 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Being John Malkovich (1999)
+2025-09-25 15:58:09,573 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Being John Malkovich (1999) before:-0.0060 after:0.0860 change:+0.0920
+2025-09-25 15:58:09,574 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Amelie (Fabuleux destin d'Amlie Poulain
+2025-09-25 15:58:09,574 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Amelie (Fabuleux destin d'Amlie Poulain before:0.0828 after:0.1747 change:+0.0919
+2025-09-25 15:58:09,575 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Scott Pilgrim vs. the World (2010)
+2025-09-25 15:58:09,576 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Scott Pilgrim vs. the World (2010) before:0.0027 after:0.0911 change:+0.0885
+2025-09-25 15:58:09,577 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Social Network, The (2010)
+2025-09-25 15:58:09,579 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Social Network, The (2010) before:0.1299 after:0.2160 change:+0.0861
+2025-09-25 15:58:09,580 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Kick-Ass (2010)
+2025-09-25 15:58:09,580 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Kick-Ass (2010) before:0.0111 after:0.0950 change:+0.0840
+2025-09-25 15:58:09,580 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Juno (2007)
+2025-09-25 15:58:09,580 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Juno (2007) before:-0.0296 after:0.0537 change:+0.0833
+2025-09-25 15:58:09,583 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title As Good as It Gets (1997)
+2025-09-25 15:58:09,583 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. As Good as It Gets (1997) before:-0.0611 after:0.0218 change:+0.0829
+2025-09-25 15:58:09,586 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.026713
+2025-09-25 15:58:09,587 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.002181, max_boost=0.146706, max_penalty=-0.127057
+2025-09-25 15:58:09,588 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.03293517231941223, 'std': 0.26926854252815247, 'max': 5.389866828918457, 'nonzero_count': 48}
+2025-09-25 15:58:09,593 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=-0.0045, std=0.1093, max=0.3900, min=-1.0053
+2025-09-25 15:58:09,593 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 15:58:09,595 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 15:58:09,596 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Eternal Sunshine of the Spotless Mind (2004) (Item  366, score: 0.3900)
+2025-09-25 15:58:09,597 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Whiplash (2014)                (Item 1098, score: 0.3376)
+2025-09-25 15:58:09,597 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. American History X (1998)      (Item  140, score: 0.2571)
+2025-09-25 15:58:09,598 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Wolf of Wall Street, The (2013) (Item 1044, score: 0.2561)
+2025-09-25 15:58:09,599 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Pulp Fiction (1994)            (Item   26, score: 0.2525)
+2025-09-25 15:58:09,602 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. American Beauty (1999)         (Item  171, score: 0.2480)
+2025-09-25 15:58:09,604 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Dark Knight Rises, The (2012)  (Item  884, score: 0.2371)
+2025-09-25 15:58:09,604 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Django Unchained (2012)        (Item  960, score: 0.2352)
+2025-09-25 15:58:09,605 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Usual Suspects, The (1995)     (Item   12, score: 0.2255)
+2025-09-25 15:58:09,605 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Game, The (1997)               (Item  101, score: 0.2212)
+2025-09-25 15:58:09,605 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 15:58:09,606 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 870 items (mean: 0.0266)
+2025-09-25 15:58:09,606 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 708 items (mean: -0.0428)
+2025-09-25 15:58:09,607 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 15:58:09,608 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 15:58:09,608 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Game, The (1997) (Item 101, score: 0.2212)
+2025-09-25 15:58:09,609 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Social Network, The (2010) (Item 777, score: 0.2160)
+2025-09-25 15:58:09,611 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Her (2013) (Item 1047, score: 0.2155)
+2025-09-25 15:58:09,612 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Good Will Hunting (1997) (Item 110, score: 0.2139)
+2025-09-25 15:58:09,614 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Catch Me If You Can (2002) (Item 317, score: 0.2130)
+2025-09-25 15:58:17,575 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 15:58:17,576 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 30 selected items, alpha=0.3
+2025-09-25 15:58:17,588 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.009383957833051682, 'std': 0.09234710037708282, 'max': 1.9065965414047241, 'nonzero_count': 32}
+2025-09-25 15:58:17,599 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 15:58:17,600 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 15:58:17,610 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 15:58:17,638 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 15:58:17,762 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 15:58:17,920 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 15:58:17,921 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 15:58:17,924 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 15:58:17,925 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 15:58:17,926 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 15:58:17,928 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.5750, max=0.0490, nonzero=1700
+2025-09-25 15:58:17,933 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.008169
+2025-09-25 15:58:17,935 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.007712266407907009, 'std': 0.05379146710038185, 'max': 0.7753758430480957, 'nonzero_count': 48}
+2025-09-25 15:58:17,945 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=-0.0075, std=0.1078, max=0.3217, min=-1.0241
+2025-09-25 15:58:17,948 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 15:58:17,952 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Catch Me If You Can (2002) (Item 317, score: 0.2306)
+2025-09-25 15:58:17,953 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Illusionist, The (2006) (Item 500, score: 0.2141)
+2025-09-25 15:58:17,954 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Game, The (1997) (Item 101, score: 0.2010)
+2025-09-25 15:58:17,955 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Truman Show, The (1998) (Item 108, score: 0.1817)
+2025-09-25 15:58:17,956 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Batman Begins (2005) (Item 441, score: 0.1804)
+2025-09-25 15:59:52,136 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 15:59:52,137 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 40 selected items, alpha=0.3
+2025-09-25 15:59:52,144 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.011474857106804848, 'std': 0.10903393477201462, 'max': 2.5938093662261963, 'nonzero_count': 32}
+2025-09-25 15:59:52,145 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'mysterious psychology drama'
+2025-09-25 15:59:52,145 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 15:59:52,146 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 15:59:52,153 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 15:59:52,160 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 15:59:52,218 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 15:59:52,351 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 15:59:52,351 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 15:59:52,353 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 15:59:52,354 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 15:59:52,356 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 15:59:52,357 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4403, max=0.1385, nonzero=1035
+2025-09-25 15:59:52,359 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': 0.00045661383774131536, 'std': 0.00972079485654831, 'max': 0.13849715888500214, 'nonzero_count': 1037}
+2025-09-25 15:59:52,369 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [ 171  176  684  192  777  273  574 1044  175  165], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 15:59:52,370 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 15:59:52,372 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title American Beauty (1999)
+2025-09-25 15:59:52,372 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. American Beauty (1999) before:0.0641 after:0.2472 change:+0.1831
+2025-09-25 15:59:52,373 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Being John Malkovich (1999)
+2025-09-25 15:59:52,374 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Being John Malkovich (1999) before:-0.0359 after:0.0839 change:+0.1198
+2025-09-25 15:59:52,374 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title (500) Days of Summer (2009)
+2025-09-25 15:59:52,374 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. (500) Days of Summer (2009) before:0.0623 after:0.1815 change:+0.1192
+2025-09-25 15:59:52,375 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Girl, Interrupted (1999)
+2025-09-25 15:59:52,375 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Girl, Interrupted (1999) before:-0.0216 after:0.0948 change:+0.1164
+2025-09-25 15:59:52,376 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Social Network, The (2010)
+2025-09-25 15:59:52,376 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Social Network, The (2010) before:0.1021 after:0.2131 change:+0.1110
+2025-09-25 15:59:52,377 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Amelie (Fabuleux destin d'Amlie Poulain
+2025-09-25 15:59:52,377 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Amelie (Fabuleux destin d'Amlie Poulain before:0.0800 after:0.1758 change:+0.0958
+2025-09-25 15:59:52,378 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Juno (2007)
+2025-09-25 15:59:52,379 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Juno (2007) before:-0.0405 after:0.0531 change:+0.0936
+2025-09-25 15:59:52,380 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Wolf of Wall Street, The (2013)
+2025-09-25 15:59:52,381 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Wolf of Wall Street, The (2013) before:0.1601 after:0.2514 change:+0.0914
+2025-09-25 15:59:52,382 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fight Club (1999)
+2025-09-25 15:59:52,383 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Fight Club (1999) before:-0.6467 after:-0.5554 change:+0.0913
+2025-09-25 15:59:52,384 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title American Pie (1999)
+2025-09-25 15:59:52,384 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. American Pie (1999) before:-0.1218 after:-0.0309 change:+0.0908
+2025-09-25 15:59:52,386 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.027143
+2025-09-25 15:59:52,386 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.001117, max_boost=0.183055, max_penalty=-0.148129
+2025-09-25 15:59:52,389 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.03323521837592125, 'std': 0.272205650806427, 'max': 5.366420745849609, 'nonzero_count': 48}
+2025-09-25 15:59:52,395 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=-0.0107, std=0.1271, max=0.3905, min=-1.0048
+2025-09-25 15:59:52,396 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 15:59:52,397 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 15:59:52,398 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Eternal Sunshine of the Spotless Mind (2004) (Item  366, score: 0.3905)
+2025-09-25 15:59:52,400 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Whiplash (2014)                (Item 1098, score: 0.3349)
+2025-09-25 15:59:52,401 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. American History X (1998)      (Item  140, score: 0.2591)
+2025-09-25 15:59:52,403 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Wolf of Wall Street, The (2013) (Item 1044, score: 0.2514)
+2025-09-25 15:59:52,404 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Pulp Fiction (1994)            (Item   26, score: 0.2484)
+2025-09-25 15:59:52,405 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. American Beauty (1999)         (Item  171, score: 0.2472)
+2025-09-25 15:59:52,406 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Dark Knight Rises, The (2012)  (Item  884, score: 0.2372)
+2025-09-25 15:59:52,407 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Django Unchained (2012)        (Item  960, score: 0.2306)
+2025-09-25 15:59:52,407 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Usual Suspects, The (1995)     (Item   12, score: 0.2242)
+2025-09-25 15:59:52,408 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Catch Me If You Can (2002)     (Item  317, score: 0.2158)
+2025-09-25 15:59:52,409 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 15:59:52,409 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 859 items (mean: 0.0252)
+2025-09-25 15:59:52,409 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 719 items (mean: -0.0536)
+2025-09-25 15:59:52,411 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 15:59:52,413 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 15:59:52,414 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Moon (2009) (Item 669, score: 0.1637)
+2025-09-25 15:59:52,415 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Limitless (2011) (Item 805, score: 0.1593)
+2025-09-25 15:59:52,417 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Twelve Monkeys (a.k.a. 12 Monkeys) (1995) (Item 8, score: 0.1478)
+2025-09-25 15:59:52,418 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Source Code (2011) (Item 816, score: 0.1425)
+2025-09-25 15:59:52,419 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Grand Budapest Hotel, The (2014) (Item 1061, score: 0.1387)
+2025-09-25 16:00:00,531 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 16:00:00,532 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 40 selected items, alpha=0.3
+2025-09-25 16:00:00,537 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.011474857106804848, 'std': 0.10903393477201462, 'max': 2.5938093662261963, 'nonzero_count': 32}
+2025-09-25 16:00:00,538 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:00:00,538 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:00:00,547 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 16:00:00,550 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 16:00:00,601 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 16:00:00,799 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 16:00:00,800 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 16:00:00,801 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 16:00:00,802 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 16:00:00,803 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 16:00:00,805 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.5750, max=0.0490, nonzero=1700
+2025-09-25 16:00:00,806 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.009812
+2025-09-25 16:00:00,807 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.008127515204250813, 'std': 0.057401034981012344, 'max': 0.9815397262573242, 'nonzero_count': 48}
+2025-09-25 16:00:00,818 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=-0.0129, std=0.1239, max=0.3281, min=-1.0186
+2025-09-25 16:00:00,820 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 16:00:00,822 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Mulholland Drive (2001) (Item 265, score: 0.1406)
+2025-09-25 16:00:00,823 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Zodiac (2007) (Item 521, score: 0.1299)
+2025-09-25 16:00:00,824 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Moon (2009) (Item 669, score: 0.1297)
+2025-09-25 16:00:00,825 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Lucky Number Slevin (2006) (Item 479, score: 0.1251)
+2025-09-25 16:00:00,826 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Limitless (2011) (Item 805, score: 0.1222)
+2025-09-25 16:02:04,732 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 16:02:04,733 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 49 selected items, alpha=0.3
+2025-09-25 16:02:04,737 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.01261171605437994, 'std': 0.1180122122168541, 'max': 3.0670833587646484, 'nonzero_count': 32}
+2025-09-25 16:02:04,737 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'mysterious psychology drama'
+2025-09-25 16:02:04,737 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:02:04,737 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:02:04,743 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 16:02:04,746 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 16:02:04,800 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 16:02:04,893 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 16:02:04,894 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 16:02:04,895 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 16:02:04,896 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 16:02:04,896 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 16:02:04,897 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4403, max=0.1385, nonzero=1035
+2025-09-25 16:02:04,898 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': 0.00045661383774131536, 'std': 0.00972079485654831, 'max': 0.13849715888500214, 'nonzero_count': 1037}
+2025-09-25 16:02:04,904 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [ 171  574  684  493  777  175  176  960 1044 1099], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 16:02:04,905 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 16:02:04,907 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title American Beauty (1999)
+2025-09-25 16:02:04,907 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. American Beauty (1999) before:0.0676 after:0.2465 change:+0.1789
+2025-09-25 16:02:04,908 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Juno (2007)
+2025-09-25 16:02:04,908 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Juno (2007) before:-0.1203 after:0.0521 change:+0.1724
+2025-09-25 16:02:04,909 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title (500) Days of Summer (2009)
+2025-09-25 16:02:04,909 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. (500) Days of Summer (2009) before:0.0355 after:0.1819 change:+0.1464
+2025-09-25 16:02:04,910 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Little Miss Sunshine (2006)
+2025-09-25 16:02:04,910 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Little Miss Sunshine (2006) before:-0.0696 after:0.0687 change:+0.1382
+2025-09-25 16:02:04,910 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Social Network, The (2010)
+2025-09-25 16:02:04,910 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Social Network, The (2010) before:0.0874 after:0.2122 change:+0.1249
+2025-09-25 16:02:04,911 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fight Club (1999)
+2025-09-25 16:02:04,911 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Fight Club (1999) before:-0.6767 after:-0.5584 change:+0.1183
+2025-09-25 16:02:04,911 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Being John Malkovich (1999)
+2025-09-25 16:02:04,911 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Being John Malkovich (1999) before:-0.0324 after:0.0837 change:+0.1161
+2025-09-25 16:02:04,912 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Django Unchained (2012)
+2025-09-25 16:02:04,912 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Django Unchained (2012) before:0.1097 after:0.2246 change:+0.1149
+2025-09-25 16:02:04,913 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Wolf of Wall Street, The (2013)
+2025-09-25 16:02:04,913 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Wolf of Wall Street, The (2013) before:0.1340 after:0.2455 change:+0.1115
+2025-09-25 16:02:04,913 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Gone Girl (2014)
+2025-09-25 16:02:04,914 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Gone Girl (2014) before:-0.6718 after:-0.5653 change:+0.1065
+2025-09-25 16:02:04,914 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.027682
+2025-09-25 16:02:04,914 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=-0.001308, max_boost=0.178892, max_penalty=-0.177599
+2025-09-25 16:02:04,915 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.033331792801618576, 'std': 0.2727380692958832, 'max': 5.315840721130371, 'nonzero_count': 48}
+2025-09-25 16:02:04,919 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=-0.0164, std=0.1428, max=0.3934, min=-1.0046
+2025-09-25 16:02:04,920 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 16:02:04,921 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 16:02:04,922 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. Eternal Sunshine of the Spotless Mind (2004) (Item  366, score: 0.3934)
+2025-09-25 16:02:04,923 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Whiplash (2014)                (Item 1098, score: 0.3322)
+2025-09-25 16:02:04,924 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. American History X (1998)      (Item  140, score: 0.2568)
+2025-09-25 16:02:04,924 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Pulp Fiction (1994)            (Item   26, score: 0.2491)
+2025-09-25 16:02:04,925 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. American Beauty (1999)         (Item  171, score: 0.2465)
+2025-09-25 16:02:04,925 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Wolf of Wall Street, The (2013) (Item 1044, score: 0.2455)
+2025-09-25 16:02:04,926 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Dark Knight Rises, The (2012)  (Item  884, score: 0.2285)
+2025-09-25 16:02:04,926 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Usual Suspects, The (1995)     (Item   12, score: 0.2273)
+2025-09-25 16:02:04,926 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Django Unchained (2012)        (Item  960, score: 0.2246)
+2025-09-25 16:02:04,928 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Her (2013)                     (Item 1047, score: 0.2181)
+2025-09-25 16:02:04,928 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 16:02:04,928 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 850 items (mean: 0.0243)
+2025-09-25 16:02:04,929 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 728 items (mean: -0.0639)
+2025-09-25 16:02:04,929 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 16:02:04,930 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 16:02:04,931 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Snatch (2000) (Item 230, score: 0.1171)
+2025-09-25 16:02:04,932 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Into the Wild (2007) (Item 556, score: 0.1131)
+2025-09-25 16:02:04,932 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Ocean's Eleven (2001) (Item 272, score: 0.1077)
+2025-09-25 16:02:04,932 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Birdman: Or (The Unexpected Virtue of Ignorance) (2014) (Item 1093, score: 0.1072)
+2025-09-25 16:02:04,933 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. L.A. Confidential (1997) (Item 100, score: 0.1070)
+2025-09-25 16:02:12,712 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'mysterious psychology drama'
+2025-09-25 16:02:12,713 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 49 selected items, alpha=0.3
+2025-09-25 16:02:12,732 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.01261171605437994, 'std': 0.1180122122168541, 'max': 3.0670833587646484, 'nonzero_count': 32}
+2025-09-25 16:02:12,732 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:02:12,732 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:02:12,740 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 16:02:12,745 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 16:02:12,791 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 16:02:12,955 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'mysterious psychology drama' interpreted as tags: ['psychology movie tag', 'group psychology movie tag', 'psychologist movie tag', 'psychological movie tag', 'psychiatry movie tag', 'psychological thriller movie tag', 'drama movie genre', 'psychological horror movie tag', 'psychopathy movie tag', 'psychiatrist movie tag'] (scores: [0.5097, 0.5023, 0.5012, 0.4816, 0.4709, 0.4652, 0.4627, 0.4607, 0.4553, 0.4547])
+2025-09-25 16:02:12,957 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1115, 0.1088, 0.1084, 0.1015, 0.098, 0.0961, 0.0953, 0.0947, 0.093, 0.0928]
+2025-09-25 16:02:12,959 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychology movie tag': weight=0.1115, tag_vector_norm=1.0000, contribution_norm=0.1115
+2025-09-25 16:02:12,961 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'group psychology movie tag': weight=0.1088, tag_vector_norm=1.0000, contribution_norm=0.1088
+2025-09-25 16:02:12,962 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'psychologist movie tag': weight=0.1084, tag_vector_norm=1.0000, contribution_norm=0.1084
+2025-09-25 16:02:12,964 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.5750, max=0.0490, nonzero=1700
+2025-09-25 16:02:12,966 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.009798
+2025-09-25 16:02:12,967 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.008400436490774155, 'std': 0.059577587991952896, 'max': 1.1235219240188599, 'nonzero_count': 48}
+2025-09-25 16:02:12,971 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=-0.0169, std=0.1384, max=0.3334, min=-1.0119
+2025-09-25 16:02:12,972 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 16:02:12,975 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Gattaca (1997) (Item 105, score: 0.1722)
+2025-09-25 16:02:12,977 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Edge of Tomorrow (2014) (Item 1086, score: 0.1504)
+2025-09-25 16:02:12,978 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Over the Garden Wall (2013) (Item 1373, score: 0.1385)
+2025-09-25 16:02:12,978 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Predestination (2014) (Item 1126, score: 0.1360)
+2025-09-25 16:02:12,979 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. District 9 (2009) (Item 689, score: 0.1267)
+2025-09-25 16:07:42,451 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:07:42,452 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 5 selected items, alpha=0.3
+2025-09-25 16:07:42,456 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.00243360991589725, 'std': 0.021863721311092377, 'max': 0.40049082040786743, 'nonzero_count': 32}
+2025-09-25 16:07:42,458 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'light comedy that will cheer me up'
+2025-09-25 16:07:42,459 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:07:42,459 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:07:42,472 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 16:07:42,492 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 16:07:42,568 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 16:07:42,728 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:07:42,729 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:07:42,729 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:07:42,732 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:07:42,733 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:07:42,734 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4732, max=0.1798, nonzero=971
+2025-09-25 16:07:42,735 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -8.548163168597966e-05, 'std': 0.01045780349522829, 'max': 0.17980608344078064, 'nonzero_count': 972}
+2025-09-25 16:07:42,746 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [450 445 549 390 531 323 595 506 372 360], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 16:07:42,746 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 16:07:42,748 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title 40-Year-Old Virgin, The (2005)
+2025-09-25 16:07:42,749 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. 40-Year-Old Virgin, The (2005) before:-0.0194 after:0.5247 change:+0.5441
+2025-09-25 16:07:42,750 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Wedding Crashers (2005)
+2025-09-25 16:07:42,751 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Wedding Crashers (2005) before:-0.0013 after:0.5217 change:+0.5230
+2025-09-25 16:07:42,751 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Superbad (2007)
+2025-09-25 16:07:42,752 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Superbad (2007) before:0.0094 after:0.5231 change:+0.5137
+2025-09-25 16:07:42,752 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Anchorman: The Legend of Ron Burgundy (2
+2025-09-25 16:07:42,753 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Anchorman: The Legend of Ron Burgundy (2 before:0.0276 after:0.4593 change:+0.4317
+2025-09-25 16:07:42,754 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Knocked Up (2007)
+2025-09-25 16:07:42,754 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Knocked Up (2007) before:-0.0233 after:0.3861 change:+0.4094
+2025-09-25 16:07:42,755 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Old School (2003)
+2025-09-25 16:07:42,755 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Old School (2003) before:0.0121 after:0.4037 change:+0.3915
+2025-09-25 16:07:42,756 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Forgetting Sarah Marshall (2008)
+2025-09-25 16:07:42,756 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Forgetting Sarah Marshall (2008) before:0.0028 after:0.3679 change:+0.3651
+2025-09-25 16:07:42,757 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Borat: Cultural Learnings of America for
+2025-09-25 16:07:42,757 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Borat: Cultural Learnings of America for before:-0.0368 after:0.3115 change:+0.3483
+2025-09-25 16:07:42,758 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Mean Girls (2004)
+2025-09-25 16:07:42,758 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Mean Girls (2004) before:-0.0080 after:0.3237 change:+0.3317
+2025-09-25 16:07:42,759 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title 50 First Dates (2004)
+2025-09-25 16:07:42,759 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. 50 First Dates (2004) before:-0.0277 after:0.3028 change:+0.3305
+2025-09-25 16:07:42,760 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.031561
+2025-09-25 16:07:42,761 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.008781, max_boost=0.544075, max_penalty=-0.525772
+2025-09-25 16:07:42,762 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.03041699342429638, 'std': 0.2446393221616745, 'max': 6.293212413787842, 'nonzero_count': 48}
+2025-09-25 16:07:42,767 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0165, std=0.0805, max=0.5247, min=-0.9637
+2025-09-25 16:07:42,768 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 16:07:42,768 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 16:07:42,769 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. 40-Year-Old Virgin, The (2005) (Item  450, score: 0.5247)
+2025-09-25 16:07:42,770 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Superbad (2007)                (Item  549, score: 0.5231)
+2025-09-25 16:07:42,770 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Wedding Crashers (2005)        (Item  445, score: 0.5217)
+2025-09-25 16:07:42,771 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Anchorman: The Legend of Ron Burgundy (2004) (Item  390, score: 0.4593)
+2025-09-25 16:07:42,771 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Hangover, The (2009)           (Item  677, score: 0.4070)
+2025-09-25 16:07:42,772 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Old School (2003)              (Item  323, score: 0.4037)
+2025-09-25 16:07:42,772 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Knocked Up (2007)              (Item  531, score: 0.3861)
+2025-09-25 16:07:42,773 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Meet the Parents (2000)        (Item  224, score: 0.3824)
+2025-09-25 16:07:42,774 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Forgetting Sarah Marshall (2008) (Item  595, score: 0.3679)
+2025-09-25 16:07:42,775 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Mean Girls (2004)              (Item  372, score: 0.3237)
+2025-09-25 16:07:42,776 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 16:07:42,776 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 933 items (mean: 0.0420)
+2025-09-25 16:07:42,777 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 645 items (mean: -0.0203)
+2025-09-25 16:07:42,779 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 16:07:42,781 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 16:07:42,784 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. 40-Year-Old Virgin, The (2005) (Item 450, score: 0.5247)
+2025-09-25 16:07:42,785 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Superbad (2007) (Item 549, score: 0.5231)
+2025-09-25 16:07:42,787 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Wedding Crashers (2005) (Item 445, score: 0.5217)
+2025-09-25 16:07:42,788 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Anchorman: The Legend of Ron Burgundy (2004) (Item 390, score: 0.4593)
+2025-09-25 16:07:42,788 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Hangover, The (2009) (Item 677, score: 0.4070)
+2025-09-25 16:07:52,044 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:07:52,045 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 5 selected items, alpha=0.3
+2025-09-25 16:07:52,052 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.00243360991589725, 'std': 0.021863721311092377, 'max': 0.40049082040786743, 'nonzero_count': 32}
+2025-09-25 16:07:52,053 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:07:52,053 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:07:52,062 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 16:07:52,067 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 16:07:52,149 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 16:07:52,319 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:07:52,320 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:07:52,322 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:07:52,328 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:07:52,328 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:07:52,330 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6198, max=0.0479, nonzero=1821
+2025-09-25 16:07:52,332 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.006860
+2025-09-25 16:07:52,333 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.005508054979145527, 'std': 0.03576689958572388, 'max': 0.33549046516418457, 'nonzero_count': 48}
+2025-09-25 16:07:52,348 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0085, std=0.0765, max=0.3804, min=-1.0186
+2025-09-25 16:07:52,349 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 16:07:52,353 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. 50 First Dates (2004) (Item 360, score: 0.3804)
+2025-09-25 16:07:52,355 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. My Big Fat Greek Wedding (2002) (Item 288, score: 0.3766)
+2025-09-25 16:07:52,355 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. 40-Year-Old Virgin, The (2005) (Item 450, score: 0.3514)
+2025-09-25 16:07:52,356 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Meet the Parents (2000) (Item 224, score: 0.3513)
+2025-09-25 16:07:52,358 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Wedding Crashers (2005) (Item 445, score: 0.3125)
+2025-09-25 16:09:59,357 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:09:59,358 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 11 selected items, alpha=0.3
+2025-09-25 16:09:59,362 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.00411559920758009, 'std': 0.036537669599056244, 'max': 0.7085722088813782, 'nonzero_count': 32}
+2025-09-25 16:09:59,363 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'light comedy that will cheer me up'
+2025-09-25 16:09:59,363 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:09:59,363 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:09:59,365 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 16:09:59,367 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 16:09:59,436 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 16:09:59,533 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:09:59,534 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:09:59,535 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:09:59,535 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:09:59,537 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:09:59,539 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4732, max=0.1798, nonzero=971
+2025-09-25 16:09:59,541 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -8.548163168597966e-05, 'std': 0.01045780349522829, 'max': 0.17980608344078064, 'nonzero_count': 972}
+2025-09-25 16:09:59,548 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [248  70 230 153 123 588 901  26 229  25], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 16:09:59,548 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 16:09:59,550 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Shrek (2001)
+2025-09-25 16:09:59,550 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Shrek (2001) before:-0.0334 after:0.1875 change:+0.2209
+2025-09-25 16:09:59,551 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Reservoir Dogs (1992)
+2025-09-25 16:09:59,551 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Reservoir Dogs (1992) before:-0.0149 after:0.1943 change:+0.2092
+2025-09-25 16:09:59,552 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Snatch (2000)
+2025-09-25 16:09:59,553 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Snatch (2000) before:0.0524 after:0.2532 change:+0.2008
+2025-09-25 16:09:59,554 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Lock, Stock & Two Smoking Barrels (1998)
+2025-09-25 16:09:59,554 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Lock, Stock & Two Smoking Barrels (1998) before:0.0132 after:0.2095 change:+0.1963
+2025-09-25 16:09:59,555 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title There's Something About Mary (1998)
+2025-09-25 16:09:59,556 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. There's Something About Mary (1998) before:0.0572 after:0.2365 change:+0.1792
+2025-09-25 16:09:59,556 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title In Bruges (2008)
+2025-09-25 16:09:59,556 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. In Bruges (2008) before:-0.1308 after:0.0470 change:+0.1778
+2025-09-25 16:09:59,558 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title 21 Jump Street (2012)
+2025-09-25 16:09:59,558 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. 21 Jump Street (2012) before:0.0915 after:0.2623 change:+0.1709
+2025-09-25 16:09:59,559 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Pulp Fiction (1994)
+2025-09-25 16:09:59,560 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Pulp Fiction (1994) before:0.0649 after:0.2340 change:+0.1691
+2025-09-25 16:09:59,561 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Crouching Tiger, Hidden Dragon (Wo hu ca
+2025-09-25 16:09:59,562 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Crouching Tiger, Hidden Dragon (Wo hu ca before:-0.1391 after:0.0292 change:+0.1683
+2025-09-25 16:09:59,563 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Lon: The Professional (a.k.a. The Profe
+2025-09-25 16:09:59,563 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Lon: The Professional (a.k.a. The Profe before:-0.1072 after:0.0575 change:+0.1647
+2025-09-25 16:09:59,565 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.029992
+2025-09-25 16:09:59,565 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.006360, max_boost=0.220858, max_penalty=-0.249928
+2025-09-25 16:09:59,567 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.030928581953048706, 'std': 0.24985241889953613, 'max': 6.505784034729004, 'nonzero_count': 48}
+2025-09-25 16:09:59,573 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0126, std=0.0881, max=0.5254, min=-0.9501
+2025-09-25 16:09:59,573 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 16:09:59,574 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 16:09:59,575 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. 40-Year-Old Virgin, The (2005) (Item  450, score: 0.5254)
+2025-09-25 16:09:59,576 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Superbad (2007)                (Item  549, score: 0.5223)
+2025-09-25 16:09:59,577 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Anchorman: The Legend of Ron Burgundy (2004) (Item  390, score: 0.4628)
+2025-09-25 16:09:59,578 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Old School (2003)              (Item  323, score: 0.4065)
+2025-09-25 16:09:59,579 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Meet the Parents (2000)        (Item  224, score: 0.3861)
+2025-09-25 16:09:59,580 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Knocked Up (2007)              (Item  531, score: 0.3826)
+2025-09-25 16:09:59,581 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Forgetting Sarah Marshall (2008) (Item  595, score: 0.3640)
+2025-09-25 16:09:59,582 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Mean Girls (2004)              (Item  372, score: 0.3279)
+2025-09-25 16:09:59,583 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. Borat: Cultural Learnings of America for Make Bene (Item  506, score: 0.3134)
+2025-09-25 16:09:59,584 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. My Big Fat Greek Wedding (2002) (Item  288, score: 0.3087)
+2025-09-25 16:09:59,584 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 16:09:59,585 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 927 items (mean: 0.0400)
+2025-09-25 16:09:59,585 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 651 items (mean: -0.0264)
+2025-09-25 16:09:59,587 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 16:09:59,588 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 16:09:59,589 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan (2006) (Item 506, score: 0.3134)
+2025-09-25 16:09:59,590 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Dodgeball: A True Underdog Story (2004) (Item 384, score: 0.2795)
+2025-09-25 16:09:59,590 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Pineapple Express (2008) (Item 613, score: 0.2746)
+2025-09-25 16:09:59,590 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Napoleon Dynamite (2004) (Item 382, score: 0.2716)
+2025-09-25 16:09:59,591 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Bridget Jones's Diary (2001) (Item 245, score: 0.2652)
+2025-09-25 16:10:07,240 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:10:07,240 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 11 selected items, alpha=0.3
+2025-09-25 16:10:07,247 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.00411559920758009, 'std': 0.036537669599056244, 'max': 0.7085722088813782, 'nonzero_count': 32}
+2025-09-25 16:10:07,247 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:10:07,247 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:10:07,250 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 16:10:07,253 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 16:10:07,301 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 16:10:07,446 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:10:07,447 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:10:07,447 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:10:07,448 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:10:07,449 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:10:07,450 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6198, max=0.0479, nonzero=1821
+2025-09-25 16:10:07,452 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.005959
+2025-09-25 16:10:07,452 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.006008051335811615, 'std': 0.039814386516809464, 'max': 0.4963262677192688, 'nonzero_count': 48}
+2025-09-25 16:10:07,459 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0079, std=0.0860, max=0.4290, min=-0.9687
+2025-09-25 16:10:07,460 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 16:10:07,462 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Miss Congeniality (2000) (Item 236, score: 0.3253)
+2025-09-25 16:10:07,463 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. School of Rock (2003) (Item 341, score: 0.3223)
+2025-09-25 16:10:07,463 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Napoleon Dynamite (2004) (Item 382, score: 0.3125)
+2025-09-25 16:10:07,464 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Bridget Jones's Diary (2001) (Item 245, score: 0.3079)
+2025-09-25 16:10:07,465 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. 10 Things I Hate About You (1999) (Item 155, score: 0.2955)
+2025-09-25 16:11:57,916 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:11:57,917 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 18 selected items, alpha=0.3
+2025-09-25 16:11:57,920 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.006086312234401703, 'std': 0.05581612139940262, 'max': 1.085619568824768, 'nonzero_count': 32}
+2025-09-25 16:11:57,920 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'light comedy that will cheer me up'
+2025-09-25 16:11:57,920 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:11:57,920 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:11:57,922 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 16:11:57,924 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 16:11:57,957 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 16:11:58,006 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:11:58,007 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:11:58,007 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:11:58,007 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:11:58,008 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:11:58,009 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4732, max=0.1798, nonzero=971
+2025-09-25 16:11:58,010 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -8.548163168597966e-05, 'std': 0.01045780349522829, 'max': 0.17980608344078064, 'nonzero_count': 972}
+2025-09-25 16:11:58,015 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [ 26 230  70 123 140 248 153 117  73 175], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 16:11:58,015 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 16:11:58,015 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Pulp Fiction (1994)
+2025-09-25 16:11:58,015 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Pulp Fiction (1994) before:0.0053 after:0.2275 change:+0.2222
+2025-09-25 16:11:58,015 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Snatch (2000)
+2025-09-25 16:11:58,016 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Snatch (2000) before:0.0325 after:0.2472 change:+0.2147
+2025-09-25 16:11:58,016 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Reservoir Dogs (1992)
+2025-09-25 16:11:58,016 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Reservoir Dogs (1992) before:-0.0196 after:0.1897 change:+0.2093
+2025-09-25 16:11:58,016 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title There's Something About Mary (1998)
+2025-09-25 16:11:58,016 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. There's Something About Mary (1998) before:0.0331 after:0.2335 change:+0.2004
+2025-09-25 16:11:58,016 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title American History X (1998)
+2025-09-25 16:11:58,017 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. American History X (1998) before:0.0234 after:0.2238 change:+0.2004
+2025-09-25 16:11:58,017 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Shrek (2001)
+2025-09-25 16:11:58,017 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Shrek (2001) before:-0.0082 after:0.1854 change:+0.1936
+2025-09-25 16:11:58,017 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Lock, Stock & Two Smoking Barrels (1998)
+2025-09-25 16:11:58,018 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Lock, Stock & Two Smoking Barrels (1998) before:0.0257 after:0.2047 change:+0.1790
+2025-09-25 16:11:58,018 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title As Good as It Gets (1997)
+2025-09-25 16:11:58,018 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. As Good as It Gets (1997) before:-0.0381 after:0.1330 change:+0.1711
+2025-09-25 16:11:58,018 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Goodfellas (1990)
+2025-09-25 16:11:58,018 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Goodfellas (1990) before:-0.0276 after:0.1433 change:+0.1709
+2025-09-25 16:11:58,018 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fight Club (1999)
+2025-09-25 16:11:58,019 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Fight Club (1999) before:0.0667 after:0.2364 change:+0.1697
+2025-09-25 16:11:58,019 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.029639
+2025-09-25 16:11:58,019 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.006385, max_boost=0.222190, max_penalty=-0.237010
+2025-09-25 16:11:58,019 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.0313386432826519, 'std': 0.25342893600463867, 'max': 6.597334384918213, 'nonzero_count': 48}
+2025-09-25 16:11:58,021 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0081, std=0.1009, max=0.5292, min=-0.9495
+2025-09-25 16:11:58,021 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 16:11:58,021 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 16:11:58,022 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. 40-Year-Old Virgin, The (2005) (Item  450, score: 0.5292)
+2025-09-25 16:11:58,022 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Superbad (2007)                (Item  549, score: 0.5241)
+2025-09-25 16:11:58,023 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Anchorman: The Legend of Ron Burgundy (2004) (Item  390, score: 0.4644)
+2025-09-25 16:11:58,023 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Old School (2003)              (Item  323, score: 0.4057)
+2025-09-25 16:11:58,023 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Meet the Parents (2000)        (Item  224, score: 0.3886)
+2025-09-25 16:11:58,023 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Knocked Up (2007)              (Item  531, score: 0.3832)
+2025-09-25 16:11:58,024 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Forgetting Sarah Marshall (2008) (Item  595, score: 0.3633)
+2025-09-25 16:11:58,024 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Mean Girls (2004)              (Item  372, score: 0.3378)
+2025-09-25 16:11:58,024 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. My Big Fat Greek Wedding (2002) (Item  288, score: 0.3210)
+2025-09-25 16:11:58,025 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Dodgeball: A True Underdog Story (2004) (Item  384, score: 0.2802)
+2025-09-25 16:11:58,025 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 16:11:58,026 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 919 items (mean: 0.0384)
+2025-09-25 16:11:58,026 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 659 items (mean: -0.0343)
+2025-09-25 16:11:58,027 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 16:11:58,027 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 16:11:58,028 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Pulp Fiction (1994) (Item 26, score: 0.2275)
+2025-09-25 16:11:58,028 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. American History X (1998) (Item 140, score: 0.2238)
+2025-09-25 16:11:58,029 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. I Love You, Man (2009) (Item 657, score: 0.2104)
+2025-09-25 16:11:58,029 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Harold and Kumar Go to White Castle (2004) (Item 396, score: 0.2088)
+2025-09-25 16:11:58,029 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Lock, Stock & Two Smoking Barrels (1998) (Item 153, score: 0.2047)
+2025-09-25 16:12:03,839 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:12:03,840 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 18 selected items, alpha=0.3
+2025-09-25 16:12:03,845 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.006086312234401703, 'std': 0.05581612139940262, 'max': 1.085619568824768, 'nonzero_count': 32}
+2025-09-25 16:12:03,846 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:12:03,846 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:12:03,850 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 16:12:03,852 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 16:12:03,902 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 16:12:03,967 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:12:03,967 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:12:03,968 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:12:03,969 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:12:03,969 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:12:03,970 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6198, max=0.0479, nonzero=1821
+2025-09-25 16:12:03,971 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.007075
+2025-09-25 16:12:03,971 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.006451919674873352, 'std': 0.04385102912783623, 'max': 0.5878764390945435, 'nonzero_count': 48}
+2025-09-25 16:12:03,974 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=0.0028, std=0.0971, max=0.4757, min=-0.9742
+2025-09-25 16:12:03,974 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 16:12:03,975 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Bruce Almighty (2003) (Item 330, score: 0.2477)
+2025-09-25 16:12:03,975 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Meet the Fockers (2004) (Item 426, score: 0.2308)
+2025-09-25 16:12:03,976 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Bend It Like Beckham (2002) (Item 324, score: 0.2299)
+2025-09-25 16:12:03,976 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. What Women Want (2000) (Item 233, score: 0.2174)
+2025-09-25 16:12:03,976 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Chocolat (2000) (Item 231, score: 0.2091)
+2025-09-25 16:13:14,419 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:13:14,420 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 21 selected items, alpha=0.3
+2025-09-25 16:13:14,427 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.0063968501053750515, 'std': 0.05821302905678749, 'max': 1.0777661800384521, 'nonzero_count': 32}
+2025-09-25 16:13:14,428 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'light comedy that will cheer me up'
+2025-09-25 16:13:14,428 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:13:14,429 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:13:14,442 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 16:13:14,445 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 16:13:14,528 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 16:13:14,634 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:13:14,636 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:13:14,636 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:13:14,638 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:13:14,639 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:13:14,640 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4732, max=0.1798, nonzero=971
+2025-09-25 16:13:14,640 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -8.548163168597966e-05, 'std': 0.01045780349522829, 'max': 0.17980608344078064, 'nonzero_count': 972}
+2025-09-25 16:13:14,648 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [230  70  26 153 140  65 123 248 175  73], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 16:13:14,649 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 16:13:14,651 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Snatch (2000)
+2025-09-25 16:13:14,652 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Snatch (2000) before:0.0142 after:0.2471 change:+0.2330
+2025-09-25 16:13:14,652 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Reservoir Dogs (1992)
+2025-09-25 16:13:14,652 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Reservoir Dogs (1992) before:-0.0426 after:0.1892 change:+0.2318
+2025-09-25 16:13:14,654 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Pulp Fiction (1994)
+2025-09-25 16:13:14,654 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Pulp Fiction (1994) before:-0.0005 after:0.2258 change:+0.2262
+2025-09-25 16:13:14,654 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Lock, Stock & Two Smoking Barrels (1998)
+2025-09-25 16:13:14,654 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Lock, Stock & Two Smoking Barrels (1998) before:0.0086 after:0.2052 change:+0.1966
+2025-09-25 16:13:14,655 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title American History X (1998)
+2025-09-25 16:13:14,655 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. American History X (1998) before:0.0279 after:0.2236 change:+0.1957
+2025-09-25 16:13:14,656 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Trainspotting (1996)
+2025-09-25 16:13:14,657 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Trainspotting (1996) before:-0.0312 after:0.1583 change:+0.1895
+2025-09-25 16:13:14,657 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title There's Something About Mary (1998)
+2025-09-25 16:13:14,658 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. There's Something About Mary (1998) before:0.0424 after:0.2313 change:+0.1889
+2025-09-25 16:13:14,658 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Shrek (2001)
+2025-09-25 16:13:14,658 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. Shrek (2001) before:-0.0043 after:0.1836 change:+0.1880
+2025-09-25 16:13:14,659 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fight Club (1999)
+2025-09-25 16:13:14,659 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Fight Club (1999) before:0.0649 after:0.2334 change:+0.1685
+2025-09-25 16:13:14,660 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Goodfellas (1990)
+2025-09-25 16:13:14,660 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Goodfellas (1990) before:-0.0154 after:0.1441 change:+0.1595
+2025-09-25 16:13:14,661 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.029209
+2025-09-25 16:13:14,662 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.006285, max_boost=0.232973, max_penalty=-0.197984
+2025-09-25 16:13:14,663 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.031459808349609375, 'std': 0.2542859613895416, 'max': 6.616542339324951, 'nonzero_count': 48}
+2025-09-25 16:13:14,672 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0060, std=0.1072, max=0.5275, min=-0.9479
+2025-09-25 16:13:14,673 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 16:13:14,673 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 16:13:14,674 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. 40-Year-Old Virgin, The (2005) (Item  450, score: 0.5275)
+2025-09-25 16:13:14,677 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Superbad (2007)                (Item  549, score: 0.5202)
+2025-09-25 16:13:14,677 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Anchorman: The Legend of Ron Burgundy (2004) (Item  390, score: 0.4642)
+2025-09-25 16:13:14,678 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Old School (2003)              (Item  323, score: 0.4050)
+2025-09-25 16:13:14,678 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Meet the Parents (2000)        (Item  224, score: 0.3900)
+2025-09-25 16:13:14,680 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Knocked Up (2007)              (Item  531, score: 0.3790)
+2025-09-25 16:13:14,680 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Forgetting Sarah Marshall (2008) (Item  595, score: 0.3624)
+2025-09-25 16:13:14,681 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Mean Girls (2004)              (Item  372, score: 0.3440)
+2025-09-25 16:13:14,681 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. My Big Fat Greek Wedding (2002) (Item  288, score: 0.3210)
+2025-09-25 16:13:14,683 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Dodgeball: A True Underdog Story (2004) (Item  384, score: 0.2812)
+2025-09-25 16:13:14,683 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 16:13:14,684 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 909 items (mean: 0.0382)
+2025-09-25 16:13:14,684 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 669 items (mean: -0.0377)
+2025-09-25 16:13:14,687 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 16:13:14,688 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 16:13:14,689 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Shrek 2 (2004) (Item 378, score: 0.1872)
+2025-09-25 16:13:14,689 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Shrek (2001) (Item 248, score: 0.1836)
+2025-09-25 16:13:14,691 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Happy Gilmore (1996) (Item 14, score: 0.1822)
+2025-09-25 16:13:14,691 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Role Models (2008) (Item 630, score: 0.1821)
+2025-09-25 16:13:14,692 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Bridesmaids (2011) (Item 833, score: 0.1815)
+2025-09-25 16:13:22,346 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:13:22,353 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 21 selected items, alpha=0.3
+2025-09-25 16:13:22,366 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.0063968501053750515, 'std': 0.05821302905678749, 'max': 1.0777661800384521, 'nonzero_count': 32}
+2025-09-25 16:13:22,366 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:13:22,370 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:13:22,412 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 16:13:22,414 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 16:13:22,833 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 16:13:23,397 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:13:23,398 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:13:23,399 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:13:23,399 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:13:23,401 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:13:23,402 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6198, max=0.0479, nonzero=1821
+2025-09-25 16:13:23,405 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.006540
+2025-09-25 16:13:23,405 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.006631230004131794, 'std': 0.04506557807326317, 'max': 0.6070845127105713, 'nonzero_count': 48}
+2025-09-25 16:13:23,425 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=-0.0001, std=0.1029, max=0.4629, min=-0.9791
+2025-09-25 16:13:23,427 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 16:13:23,429 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Princess Diaries, The (2001) (Item 258, score: 0.1791)
+2025-09-25 16:13:23,430 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Silver Linings Playbook (2012) (Item 947, score: 0.1744)
+2025-09-25 16:13:23,431 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. Bridesmaids (2011) (Item 833, score: 0.1661)
+2025-09-25 16:13:23,431 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Little Miss Sunshine (2006) (Item 493, score: 0.1559)
+2025-09-25 16:13:23,432 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. Louis C.K.: Hilarious (2010) (Item 827, score: 0.1550)
+2025-09-25 16:15:07,231 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:15:07,234 - plugins.fastcompare.algo.query_boost_elsa - INFO - Predicting with 30 selected items, alpha=0.3
+2025-09-25 16:15:07,236 - plugins.fastcompare.algo.query_boost_elsa - INFO - Original sparse representation stats: {'mean': 0.007595919072628021, 'std': 0.06924569606781006, 'max': 1.3718738555908203, 'nonzero_count': 32}
+2025-09-25 16:15:07,236 - plugins.fastcompare.algo.query_boost_elsa - INFO - Applying query boost for query: 'light comedy that will cheer me up'
+2025-09-25 16:15:07,237 - plugins.fastcompare.algo.query_boost_elsa - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:15:07,237 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:15:07,238 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor mean: 0.000046
+2025-09-25 16:15:07,240 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor max: 0.980099
+2025-09-25 16:15:07,274 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag tensor nonzero: 1070525
+2025-09-25 16:15:07,325 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:15:07,326 - plugins.fastcompare.algo.query_boost_elsa - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:15:07,327 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:15:07,327 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:15:07,327 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:15:07,328 - plugins.fastcompare.algo.query_boost_elsa - INFO - Final boost vector: norm=0.4732, max=0.1798, nonzero=971
+2025-09-25 16:15:07,328 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boost vector stats: {'mean': -8.548163168597966e-05, 'std': 0.01045780349522829, 'max': 0.17980608344078064, 'nonzero_count': 972}
+2025-09-25 16:15:07,335 - plugins.fastcompare.algo.query_boost_elsa - INFO - most_boosted_indices: [ 26  70 230  65 140 175 153 171 248 323], type <class 'numpy.ndarray'>, len 10 
+2025-09-25 16:15:07,335 - plugins.fastcompare.algo.query_boost_elsa - INFO - TOP 10 MOST BOOSTED MOVIES:
+2025-09-25 16:15:07,335 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Pulp Fiction (1994)
+2025-09-25 16:15:07,336 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Pulp Fiction (1994) before:-0.0148 after:0.2232 change:+0.2381
+2025-09-25 16:15:07,336 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Reservoir Dogs (1992)
+2025-09-25 16:15:07,336 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Reservoir Dogs (1992) before:-0.0374 after:0.1883 change:+0.2257
+2025-09-25 16:15:07,336 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Snatch (2000)
+2025-09-25 16:15:07,336 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Snatch (2000) before:0.0247 after:0.2454 change:+0.2207
+2025-09-25 16:15:07,336 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Trainspotting (1996)
+2025-09-25 16:15:07,336 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Trainspotting (1996) before:-0.0427 after:0.1573 change:+0.1999
+2025-09-25 16:15:07,337 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title American History X (1998)
+2025-09-25 16:15:07,337 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. American History X (1998) before:0.0217 after:0.2215 change:+0.1998
+2025-09-25 16:15:07,337 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Fight Club (1999)
+2025-09-25 16:15:07,337 - plugins.fastcompare.algo.query_boost_elsa - INFO -   6. Fight Club (1999) before:0.0313 after:0.2299 change:+0.1986
+2025-09-25 16:15:07,337 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Lock, Stock & Two Smoking Barrels (1998)
+2025-09-25 16:15:07,337 - plugins.fastcompare.algo.query_boost_elsa - INFO -   7. Lock, Stock & Two Smoking Barrels (1998) before:0.0079 after:0.2042 change:+0.1963
+2025-09-25 16:15:07,338 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title American Beauty (1999)
+2025-09-25 16:15:07,338 - plugins.fastcompare.algo.query_boost_elsa - INFO -   8. American Beauty (1999) before:-0.0276 after:0.1589 change:+0.1865
+2025-09-25 16:15:07,338 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Shrek (2001)
+2025-09-25 16:15:07,338 - plugins.fastcompare.algo.query_boost_elsa - INFO -   9. Shrek (2001) before:0.0053 after:0.1823 change:+0.1770
+2025-09-25 16:15:07,338 - plugins.fastcompare.algo.query_boost_elsa - INFO - Processed title Old School (2003)
+2025-09-25 16:15:07,338 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Old School (2003) before:0.2470 after:0.4024 change:+0.1554
+2025-09-25 16:15:07,338 - plugins.fastcompare.algo.query_boost_elsa - INFO - Query boost effect (mean absolute change): 0.029160
+2025-09-25 16:15:07,339 - plugins.fastcompare.algo.query_boost_elsa - INFO - Overall score change: mean=0.007106, max_boost=0.238097, max_penalty=-0.194305
+2025-09-25 16:15:07,339 - plugins.fastcompare.algo.query_boost_elsa - INFO - Boosted sparse representation stats: {'mean': 0.031680069863796234, 'std': 0.2565820813179016, 'max': 6.704774379730225, 'nonzero_count': 48}
+2025-09-25 16:15:07,341 - plugins.fastcompare.algo.query_boost_elsa - INFO - Recommendation scores stats: mean=0.0004, std=0.1258, max=0.5264, min=-0.9480
+2025-09-25 16:15:07,341 - plugins.fastcompare.algo.query_boost_elsa - INFO - DETAILED SCORE ANALYSIS:
+2025-09-25 16:15:07,341 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 10 scores (before filtering):
+2025-09-25 16:15:07,341 - plugins.fastcompare.algo.query_boost_elsa - INFO -    1. 40-Year-Old Virgin, The (2005) (Item  450, score: 0.5264)
+2025-09-25 16:15:07,341 - plugins.fastcompare.algo.query_boost_elsa - INFO -    2. Superbad (2007)                (Item  549, score: 0.5212)
+2025-09-25 16:15:07,341 - plugins.fastcompare.algo.query_boost_elsa - INFO -    3. Anchorman: The Legend of Ron Burgundy (2004) (Item  390, score: 0.4605)
+2025-09-25 16:15:07,342 - plugins.fastcompare.algo.query_boost_elsa - INFO -    4. Old School (2003)              (Item  323, score: 0.4024)
+2025-09-25 16:15:07,342 - plugins.fastcompare.algo.query_boost_elsa - INFO -    5. Meet the Parents (2000)        (Item  224, score: 0.3911)
+2025-09-25 16:15:07,342 - plugins.fastcompare.algo.query_boost_elsa - INFO -    6. Knocked Up (2007)              (Item  531, score: 0.3802)
+2025-09-25 16:15:07,342 - plugins.fastcompare.algo.query_boost_elsa - INFO -    7. Forgetting Sarah Marshall (2008) (Item  595, score: 0.3644)
+2025-09-25 16:15:07,342 - plugins.fastcompare.algo.query_boost_elsa - INFO -    8. Mean Girls (2004)              (Item  372, score: 0.3493)
+2025-09-25 16:15:07,342 - plugins.fastcompare.algo.query_boost_elsa - INFO -    9. My Big Fat Greek Wedding (2002) (Item  288, score: 0.3204)
+2025-09-25 16:15:07,342 - plugins.fastcompare.algo.query_boost_elsa - INFO -   10. Dodgeball: A True Underdog Story (2004) (Item  384, score: 0.2789)
+2025-09-25 16:15:07,343 - plugins.fastcompare.algo.query_boost_elsa - INFO - Score distribution:
+2025-09-25 16:15:07,343 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Positive scores: 901 items (mean: 0.0374)
+2025-09-25 16:15:07,343 - plugins.fastcompare.algo.query_boost_elsa - INFO -   Negative scores: 677 items (mean: -0.0489)
+2025-09-25 16:15:07,343 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations (after filtering):
+2025-09-25 16:15:07,344 - plugins.fastcompare.algo.query_boost_elsa - INFO - Top 5 recommendations:
+2025-09-25 16:15:07,344 - plugins.fastcompare.algo.query_boost_elsa - INFO -   1. Trainspotting (1996) (Item 65, score: 0.1573)
+2025-09-25 16:15:07,344 - plugins.fastcompare.algo.query_boost_elsa - INFO -   2. Monsters, Inc. (2001) (Item 269, score: 0.1544)
+2025-09-25 16:15:07,344 - plugins.fastcompare.algo.query_boost_elsa - INFO -   3. Good Will Hunting (1997) (Item 110, score: 0.1497)
+2025-09-25 16:15:07,344 - plugins.fastcompare.algo.query_boost_elsa - INFO -   4. Wolf of Wall Street, The (2013) (Item 1044, score: 0.1477)
+2025-09-25 16:15:07,344 - plugins.fastcompare.algo.query_boost_elsa - INFO -   5. Goodfellas (1990) (Item 73, score: 0.1445)
+2025-09-25 16:15:11,847 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query set to: 'light comedy that will cheer me up'
+2025-09-25 16:15:11,848 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Predicting with 30 selected items, alpha=0.3
+2025-09-25 16:15:11,850 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Original sparse representation stats: {'mean': 0.007595919072628021, 'std': 0.06924569606781006, 'max': 1.3718738555908203, 'nonzero_count': 32}
+2025-09-25 16:15:11,850 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - DEBUG Tag Mapping Stats:
+2025-09-25 16:15:11,850 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor shape: torch.Size([2792, 2048])
+2025-09-25 16:15:11,854 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor mean: 0.008915
+2025-09-25 16:15:11,856 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor max: 0.318239
+2025-09-25 16:15:11,912 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag tensor nonzero: 1070425
+2025-09-25 16:15:11,965 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query 'light comedy that will cheer me up' interpreted as tags: ['stand up comedy movie tag', 'good romantic comedies movie tag', 'comedy movie genre', 'romantic comedy movie tag', 'funniest movies movie tag', 'comedy movie tag', 'crude humor movie tag', 'dark comedy movie tag', 'dark humor movie tag', 'funny moments movie tag'] (scores: [0.5842, 0.5493, 0.5454, 0.5094, 0.5052, 0.5032, 0.5027, 0.5015, 0.5008, 0.4865])
+2025-09-25 16:15:11,965 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Softmax weights: [0.1238, 0.1102, 0.1087, 0.0964, 0.0951, 0.0945, 0.0943, 0.0939, 0.0937, 0.0894]
+2025-09-25 16:15:11,965 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'stand up comedy movie tag': weight=0.1238, tag_vector_norm=1.0000, contribution_norm=0.1238
+2025-09-25 16:15:11,966 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'good romantic comedies movie tag': weight=0.1102, tag_vector_norm=1.0000, contribution_norm=0.1102
+2025-09-25 16:15:11,966 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   Tag 'comedy movie genre': weight=0.1087, tag_vector_norm=1.0000, contribution_norm=0.1087
+2025-09-25 16:15:11,966 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Final boost vector: norm=0.6198, max=0.0479, nonzero=1821
+2025-09-25 16:15:11,967 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Query boost effect (mean absolute change): 0.007119
+2025-09-25 16:15:11,970 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Boosted sparse representation stats: {'mean': 0.006936610676348209, 'std': 0.04767517000436783, 'max': 0.6953167915344238, 'nonzero_count': 48}
+2025-09-25 16:15:11,972 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Recommendation scores stats: mean=-0.0069, std=0.1217, max=0.4597, min=-0.9930
+2025-09-25 16:15:11,972 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO - Top 5 recommendations:
+2025-09-25 16:15:11,973 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   1. Project Almanac (2015) (Item 1191, score: 0.1519)
+2025-09-25 16:15:11,973 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   2. Stranger than Fiction (2006) (Item 497, score: 0.1254)
+2025-09-25 16:15:11,973 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   3. 22 Jump Street (2014) (Item 1090, score: 0.1233)
+2025-09-25 16:15:11,973 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   4. Louis C.K.: Chewed Up (2008) (Item 828, score: 0.1230)
+2025-09-25 16:15:11,974 - plugins.fastcompare.algo.query_boost_elsa_tfidf - INFO -   5. You've Got Mail (1998) (Item 147, score: 0.1225)
